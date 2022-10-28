@@ -21,8 +21,8 @@
 }
 .Main_Cont2{
     margin-left: 45px;
-    width: 1200px;
-    height: 690px;
+    width: 1100px;
+    height: 500px;
     transition: all 0.5s ease-in-out;
     display: flex;
     flex-direction: column;
@@ -36,8 +36,10 @@
     transition: all 0.5s ease-in-out;
 }
 
+/* AQUIIIIIIIIIIIIIII */
+
 /*FORMULARIO 1 - CADASTRO DE CHAVES*/
-/*.form1_cad_Chaves{
+.form1_cad_Chaves{
     width: 250px;
     height: 40px;
     background-image: linear-gradient(270deg, #2D4065 0%, #256b54 300%);
@@ -49,12 +51,13 @@
     box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.4);
     transition: all 0.5s ease-in-out;
     overflow: hidden;
-}*/
+}
+
 .form1_cad_Chaves{
     width: 600px;
     height: 300px;
     background-image: linear-gradient(270deg, #2D4065 0%, #256b54 300%);
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     gap: 20px;
@@ -209,6 +212,7 @@
 }
 
 /*FORMULARIO 2 - CADASTRO DE CHAVES*/
+
 .form2_alt_Chaves{
     width: 250px;
     height: 40px;
@@ -219,13 +223,24 @@
     gap: 20px;
     border-radius: 15px;
     box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.4);
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.form2_alt_Chaves{
+    width: 600px;
+    height: 300px; 
+    background-image: linear-gradient(270deg, #2D4065 0%, #256b54 300%);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.4);
     overflow: hidden;
     transition: all 0.5s ease-in-out;
 }
-.form2_alt_Chaves.active{
-    width: 600px;
-    height: 300px;
-}
+
 .form2_alt_Chaves > div{
     color: white;
     font-family: 'Alata', sans-serif;
@@ -333,6 +348,8 @@
 }
 
 /*FORMULARIO 3 - CADASTRO DE CHAVES*/
+
+
 .form3_excl_Chaves{
     width: 250px;
     height: 40px;
@@ -346,11 +363,21 @@
     overflow: hidden;
     transition: all 0.5s ease-in-out;
 }
-.form3_excl_Chaves.active{
+
+.form3_excl_Chaves{
     width: 600px;
-    height: 250px;
+    height: 300px;
+    background-image: linear-gradient(270deg, #2D4065 0%, #256b54 300%);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.4);
     transition: all 0.5s ease-in-out;
+    overflow: hidden;
 }
+
 .form3_excl_Chaves > div{
     color: white;
     font-family: 'Alata', sans-serif;
@@ -433,4 +460,26 @@
     background-image: linear-gradient(270deg, #531ed8 0%, #855BF0 100%);
     transition: all 0.4s ease-in-out;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.botao.chave{
+    width: 250px;
+    height: 40px;
+    background-image: linear-gradient(270deg, #2D4065 0%, #256b54 300%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.4);
+    transition: all 0.5s ease-in-out;
+    color: white;
+    font-family: 'Alata', sans-serif;
+    margin-top: 7px;
+    overflow: hidden;
+}
+
+.botao.chave > h3{
+    font-size: 20px;
+    margin-top: 7px;
 }
