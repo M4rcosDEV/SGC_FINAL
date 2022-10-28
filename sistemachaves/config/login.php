@@ -44,7 +44,7 @@ class Sessao {
                                 $_SESSION["nomeAdm"] = $nome_adm;
 
                                 //Redireciona-o para a página de gerenciamento de chaves
-                                header("location: ../Funcionario/home.php");
+                                header("location: ../Funcionario/Home.php");
                             }
                             else {
                                 $_SESSION["nao_autenticado"] = true;

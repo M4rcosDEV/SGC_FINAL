@@ -18,5 +18,5 @@ function cadastrar()
     $predio = new Predio($id_predio);
    
     $predio->inserir();
-    header("Location: ../index.php");
+    header("Location: ../Funcionario/Home.php");
 }

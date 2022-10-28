@@ -123,7 +123,7 @@
             </li>
             <!-- Item 7 MENU -->
             <li class="Item_Menu">
-                <a href="#" class="exit_menu">
+                <a href="../config/logout.php" class="exit_menu">
                     <div class="Item_Menu_Icon">
                         <i class='bx bx-export'></i>
                         <i class='bx bx-export'></i>

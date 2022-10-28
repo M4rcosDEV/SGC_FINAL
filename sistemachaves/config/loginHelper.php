@@ -4,7 +4,7 @@ include_once 'login.php';
 
 //Se o administrador já estiver logado, redireciona-o para a página de gerenciamento
 if (isset($_SESSION["logado"]) && $_SESSION["logado"] === true) {
-    header("location: ../Funcionario/home.php");
+    header("location: ../Funcionario/Home.php");
     exit;
 }
 

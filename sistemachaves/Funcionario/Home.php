@@ -1,3 +1,12 @@
+<?php 
+session_start();
+
+    //Se o usuário não estiver logado, ele é redirecionado para a página inicial
+    if (!isset($_SESSION["logado"]) || $_SESSION["logado"] !== true) {
+        header("location: index.php");
+        exit;
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -150,7 +159,7 @@
                     </li>
                     <!-- Item 7 = Sair -->
                     <li class="Li_Barra">
-                        <a href="../Funcionario/index.php" class="Item_Barra_Sair">
+                        <a href="../config/logout.php" class="Item_Barra_Sair">
                             <i class='bx bx-exit'></i>
                         </a>
                     </li>
@@ -167,8 +176,8 @@
         <!-- Bloco com Nome do Usuário -->
         <div class="Main_Cont1">
             <div class="Name_User">
-                <h4>Óla, </h4>
-                <h4>Matheus</h4>
+                <h4>Olá, </h4>
+                <h4><?php echo $_SESSION["nomeAdm"];?></h4>
                 <h4>!</h4>
             </div>
         </div>

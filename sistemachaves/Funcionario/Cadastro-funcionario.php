@@ -11,13 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastrar Funcionário</title>
     
-    <link rel="stylesheet" href="./css/cadastro_funcionario.css" />
-    <link rel="stylesheet" href="./css/Fonts&Color.css"/>
+    <link rel="stylesheet" href="./CSS/cadastro_funcionario.css" />
+    <link rel="stylesheet" href="./CSS/GLOBAL/Fonts&Color.css"/>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
         integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/c2363c17c5.js" crossorigin="anonymous"></script>
-    <script src="./JAVASCRIPT/dados_login.js" defer></script>
+    <script src="./JS/dados_login.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -41,7 +42,6 @@
                 endif;
                 unset($_SESSION['sucesso_cadastro']);
                 ?>
-
                 <?php
                     if (isset($_SESSION['usuario_ja_cadastrado'])):
                 ?>

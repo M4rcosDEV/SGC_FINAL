@@ -10,11 +10,11 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fazer login</title>
 
-    <link rel="stylesheet" href="css/login.css"/>
+    <link rel="stylesheet" href="./CSS/login.css"/>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
     integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous" />
-    <script src="./JAVASCRIPT/verificarLogin.js" defer></script>
+    <script src="./JS/verificarLogin.js" defer></script>
   </head>
   <body>
     <main>      

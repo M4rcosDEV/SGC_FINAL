@@ -1,7 +1,7 @@
 <?php
 
 include_once 'banco.php';
-
+include_once '../config/libs/envio.php';
 class Usuario {
     public $id;
     public $nome;
@@ -17,7 +17,6 @@ class Usuario {
         $this->senha = $senha;
         $this->email = $email;
     }
-
     function inserirCliente()
     {
         $banco = new Banco();
@@ -43,6 +42,7 @@ class Usuario {
                         $stmt->bindParam(':email', $this->email);
                         $stmt->execute();
                         $_SESSION['sucesso_cadastro'] = true;
+                        enviarEmail($this->nome, $this->email);
                         }
                     }
                 }
@@ -77,6 +77,7 @@ class Usuario {
                         $stmt->bindParam(':email', $this->email);
                         $stmt->execute();
                         $_SESSION['sucesso_cadastro'] = true;
+                        enviarEmail($this->nome, $this->email);
                         }
                     }
                 }

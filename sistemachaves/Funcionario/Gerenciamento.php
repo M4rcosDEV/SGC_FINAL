@@ -103,7 +103,7 @@
                     </li>
                     <!-- Item 7 = Sair -->
                     <li class="Li_Barra">
-                        <a href="../Funcionario/index.php" class="Item_Barra_Sair">
+                        <a href="../config/logout.php" class="Item_Barra_Sair">
                             <i class='bx bx-exit'></i>
                         </a>
                     </li>

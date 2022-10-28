@@ -20,6 +20,5 @@ class Predio{
         } catch(PDOException $ex){
             echo "Erro ao inserir aluno: " . $ex;
         }
-        
     }   
 }

@@ -25,5 +25,5 @@ else {
     $usuario = new Usuario($nome, $tipo_func, $matricula, $senha, $email);
     $usuario->inserirCliente();
 }
-header('Location: ../Funcionario/cadastro-funcionario.php');
+header('Location: ../Funcionario/Cadastro-funcionario.php');
 }
