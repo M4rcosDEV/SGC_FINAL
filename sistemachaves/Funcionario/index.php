@@ -36,7 +36,7 @@ session_start();
           unset($_SESSION['nao_autenticado']);
           ?>
             <div class="caixa-entrada">
-                <input type="number" name="matricula" placeholder="Matrícula" class="input" required>
+                <input type="number" name="matricula" placeholder="Matrícula" class="input" maxlength="15" required>
                 <i class="fa fa-user fa-lg fa-fw"></i>
             </div>
 

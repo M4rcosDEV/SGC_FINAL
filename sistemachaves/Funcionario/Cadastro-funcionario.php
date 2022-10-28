@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="caixa-entrada">
-                    <input type="number" name="matricula" placeholder="Matrícula" class="input" maxlength="12" required>
+                    <input type="number" name="matricula" placeholder="Matrícula" class="input" maxlength="15" required>
                     <i class="fa fa-id-card-clip fa-lg fa-fw"></i>
                 </div>
 

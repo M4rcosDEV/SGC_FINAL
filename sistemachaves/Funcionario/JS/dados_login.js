@@ -2,7 +2,7 @@ const inputs = document.querySelectorAll('.input');
 const botaoEntrar = document.querySelector('.botao-entrar');
 const verificarTamanhoInput = () => {
     const [nome, matricula, email, senha, confirmar_senha] = inputs;
-    if(matricula.value.length >8 && nome.value != "" && senha.value != "" && confirmar_senha.value != "" && email.value != "") {
+    if(matricula.value.length >=8 && nome.value != "" && senha.value != "" && confirmar_senha.value != "" && email.value != "") {
         botaoEntrar.removeAttribute('disabled');
     }
     else {

@@ -37,7 +37,6 @@ create table chave (
 	idPredio integer not null,
     descricao varchar(50) not null,
     foreign key(idPredio) references predio(idPredio)
-    
 );
 
 /*Sala vai ser criada de acordo a Chave que vai ser criada,
