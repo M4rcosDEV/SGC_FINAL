@@ -24,7 +24,7 @@ function exibirPredios(){
                                             <div class="Bloco_Chaves">
                                                     <!-- < -->
                                                     <div class="arrow_left_div">
-                                                        <button id="arrow_left_chaves" class="arrow_left_Predio_${element["idPredio"]}">
+                                                        <button id="arrow_left_chaves" class="Predio_${element["idPredio"]}">
                                                             <i class='bx bx-chevron-left' ></i>
                                                         </button>
                                                     </div>
@@ -115,70 +115,78 @@ function carrossel(){
         idChave.forEach(elementChave =>{
             predios.forEach(elementPredio =>{
                 
-                var currentEventCarrRight = 4; // Right
-                var currentEventCarrLeft = 4; // left
-
-                arrowRight.forEach(elementRight =>{
-                    if (elementChave['COUNT(idChave)'] == 4){
-                        elementRight.style.cssText = "display: none";
-                    } else {
-                        elementRight.style.cssText = "display: flex";
-                    }
-                    elementRight.addEventListener("click", ()=>{
-                        if (elementRight.className == elementPredio.id){
-                            if (('Predio_'+elementChave['idPredio']) == elementPredio.id){
-                                function right(){
-                                    console.log(elementChave['COUNT(idChave)']);
-                                    console.log(currentEventCarrRight);
-
-                                    if ((currentEventCarrRight+1) > elementChave['COUNT(idChave)']){
-                                        elementPredio.style.cssText = `transform: translate(${(currentEventCarrRight-4)*-400}px);`;
-                                        elementRight.style.cssText = `display: none`;
-                                    } else if ((currentEventCarrRight) < elementChave['COUNT(idChave)']){
-                                        currentEventCarrRight++;
-                                        elementPredio.style.cssText = `transform: translate(${(currentEventCarrRight-4)*-300}px);`;
-                                        elementRight.style.cssText = `display: flex`;
-                                        console.log(currentEventCarrRight);
-                                    }
-                                }
-                                right();
-                            }
-                        }
-                    });
-                });
+                var currentEventCarrRight = 0; // Right
+                var CarrLeft = 0; // left
 
                 arrowLeft.forEach(elementLeft =>{
-                    if (currentEventCarrRight <= 4){
-                        elementLeft.style.cssText = "display: none";
-                    } else {
-                        elementLeft.style.cssText = "display: flex";
-                    }
-                    elementLeft.addEventListener("click", ()=>{
-                        alert("as");
-                        if (elementLeft.className == elementPredio.id){
-                            if (('Predio_'+elementChave['idPredio']) == elementPredio.id){
+                    arrowRight.forEach(elementRight =>{
 
-                                function left(){
-
-                                    if ( (currentEventCarrRight-currentEventCarrLeft) == 0 ){
-                                        elementPredio.style.cssText = `transform: translate(${0*-400}px);`;
+                        elementLeft.style.cssText = `display: none`;
+                        function Right(){
+                            if (elementLeft.className == elementPredio.id && elementRight.className == elementPredio.id){
+                                if (('Predio_'+elementChave['idPredio']) == elementPredio.id){
+                                    if (elementChave['COUNT(idChave)'] < 4){
                                         elementLeft.style.cssText = `display: none`;
-                                    } else {
-                                        currentEventCarrLeft++;
-                                        elementPredio.style.cssText = `transform: translate(${(currentEventCarrLeft-4)*300}px);`;
-                                        elementLeft.style.cssText = `display: flex`;
+                                        elementRight.style.cssText = `display: none`;
                                     }
                                 }
-                                left();
                             }
                         }
-                    });
+                        Right();
+                        function LeftRight(){
+                            if (elementLeft.className == elementPredio.id && elementRight.className == elementPredio.id){
+                                if (('Predio_'+elementChave['idPredio']) == elementPredio.id){
+                                    if (elementChave['COUNT(idChave)'] < 4){
+                                        elementLeft.style.cssText = `display: none`;
+                                        elementRight.style.cssText = `display: none`;
+                                    } else {
+                                        elementRight.style.cssText = `display: flex`;
+                                    } 
+                                    if (currentEventCarrRight > 0){
+                                        elementLeft.style.cssText = `display: flex`;
+                                    } else if (currentEventCarrRight == 0){
+                                        elementLeft.style.cssText = `display: none`;
+                                    }
+                                }
+                            }
+                        }
+                            elementLeft.addEventListener("click", ()=>{
+                                if (elementLeft.className == elementPredio.id){
+                                    if (('Predio_'+elementChave['idPredio']) == elementPredio.id){
+                                            if ((currentEventCarrRight) == 0){
+                                                elementPredio.style.cssText = `transform: translate 0px);`;
+                                            } else {
+                                                currentEventCarrRight--;
+                                                elementPredio.style.cssText = `transform: translate(${(currentEventCarrRight)*-310}px);`;
+                                            } 
+                                    }
+                                }
+                                LeftRight();
+                            });    
+
+                        elementRight.addEventListener("click", ()=>{
+                            if (elementRight.className == elementPredio.id){
+                                if (('Predio_'+elementChave['idPredio']) == elementPredio.id){
+                                        if ((currentEventCarrRight+4) == elementChave['COUNT(idChave)']){
+                                            elementPredio.style.cssText = `transform: translate(${(currentEventCarrRight)*-310}px);`;
+                                            elementRight.style.cssText = `display: none`;
+                                        } else if ((currentEventCarrRight) < elementChave['COUNT(idChave)']){
+                                            currentEventCarrRight++;
+                                            elementPredio.style.cssText = `transform: translate(${(currentEventCarrRight)*-310}px);`;
+                                        }
+                                }
+                            }
+                            
+                            LeftRight();
+                        });                   
+                    });                
                 });
             });
         });
     }, 'JSON');
 }
 
+/*setInterval("exibirChaves()", 1000);*/
 $(function(){
     exibirPredios();
     exibirChaves();

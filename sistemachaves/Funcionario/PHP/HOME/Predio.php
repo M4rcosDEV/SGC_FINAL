@@ -15,14 +15,14 @@ function cadastrar_Predio(){
     $idCadPredio = $_POST['idCadPredio'];
     $predio = new Predio($idCadPredio);
     $predio->inserir();
-    header("Location: http://localhost/SISTEMACHAVES/Funcionario/Home.php");
+    header("Location: http://localhost/SGC_FINAL/SISTEMACHAVES/Funcionario/Home.php");
 }
 
 function excluir_Predio(){
     $idExcPredio = $_POST["idExcPredio"];
     $predio = new Predio($idExcPredio);
     $predio->excluir();
-    header("Location: http://localhost/SISTEMACHAVES/Funcionario/Home.php");
+    header("Location: http://localhost/SGC_FINAL/SISTEMACHAVES/Funcionario/Home.php");
 }
 
 function exibir(){

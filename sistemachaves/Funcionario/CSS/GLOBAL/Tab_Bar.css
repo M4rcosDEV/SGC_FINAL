@@ -1,5 +1,16 @@
 @import url(/Funcionario/Style/Fonts.css);
 
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #2D4065;
+}
+::-webkit-scrollbar-thumb {
+    background: #5677b9;
+}
+
 /* Config para Todas as Telas */
 *{
     padding: 0px;
