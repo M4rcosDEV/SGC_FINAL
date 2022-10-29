@@ -52,6 +52,7 @@ function exibirChaves(){
         var predios1 = document.querySelectorAll('.Bloco_Chaves_UL');
 
         predios1.forEach((predios) =>{
+            //Inserir chaves com status de disponivel
             chave.forEach((chaves) =>{
                     if (("Predio_"+chaves['idPredio']) == predios.id && chaves['situacao'] == 0){
                         predios.innerHTML += `<li class="Bloco_Chaves_LI_DISP" id="Predio_${chaves['idPredio']}">
@@ -76,6 +77,7 @@ function exibirChaves(){
                                             </li>`;   
                     }   
             });
+            //Inserir chaves com status de uso
             chave.forEach((chaves) =>{
             if (("Predio_"+chaves['idPredio']) == predios.id && chaves['situacao'] == 1){
                     predios.innerHTML += `<li class="Bloco_Chaves_LI_USO" id="Predio_${chaves['idPredio']}">
@@ -121,8 +123,10 @@ function carrossel(){
                 arrowLeft.forEach(elementLeft =>{
                     arrowRight.forEach(elementRight =>{
 
-                        elementLeft.style.cssText = `display: none`;
-                        function Right(){
+                        elementLeft.style.cssText = `display: none`; //Padrão o Left do Carrossel começa como oculto
+
+                        function Right(){ //Só para Verificar se o lenght é maior que 4 ou não
+                                            //-> 4 é a quantidade de aparece na tela
                             if (elementLeft.className == elementPredio.id && elementRight.className == elementPredio.id){
                                 if (('Predio_'+elementChave['idPredio']) == elementPredio.id){
                                     if (elementChave['COUNT(idChave)'] < 4){
@@ -133,6 +137,8 @@ function carrossel(){
                             }
                         }
                         Right();
+                        //São as causalidades, essas que são testadas a cada click
+                        //-> por isso é uma função e está em todos os addEvent
                         function LeftRight(){
                             if (elementLeft.className == elementPredio.id && elementRight.className == elementPredio.id){
                                 if (('Predio_'+elementChave['idPredio']) == elementPredio.id){
@@ -150,7 +156,8 @@ function carrossel(){
                                 }
                             }
                         }
-                            elementLeft.addEventListener("click", ()=>{
+                        //Para quando aperta no LEFT do carrossel
+                        elementLeft.addEventListener("click", ()=>{
                                 if (elementLeft.className == elementPredio.id){
                                     if (('Predio_'+elementChave['idPredio']) == elementPredio.id){
                                             if ((currentEventCarrRight) == 0){
@@ -161,9 +168,9 @@ function carrossel(){
                                             } 
                                     }
                                 }
-                                LeftRight();
-                            });    
-
+                            LeftRight();
+                        });    
+                        //Para quando aperta no RIGHT do carrossel
                         elementRight.addEventListener("click", ()=>{
                             if (elementRight.className == elementPredio.id){
                                 if (('Predio_'+elementChave['idPredio']) == elementPredio.id){
@@ -176,7 +183,6 @@ function carrossel(){
                                         }
                                 }
                             }
-                            
                             LeftRight();
                         });                   
                     });                
