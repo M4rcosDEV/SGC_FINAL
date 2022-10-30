@@ -22,7 +22,7 @@ session_start();
     <link href='../Funcionario/CSS/HOME/ResponseHome.css' rel='stylesheet'>
     <!-- JAVASCRIPT -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="../Funcionario/JS/HOME/AjaxHome.js" type="text/javascript" defer></script>
+    <script src="../Funcionario/JS/HOME/Ajax.js" type="text/javascript" defer></script>
     <script src="../Funcionario/JS/HOME/Home.js" type="text/javascript" defer></script>
     <script src="../Funcionario/JS/GLOBAL/TabBar.js" type="text/javascript" defer></script>
     <!-- CSS ASSETS -->
@@ -41,7 +41,7 @@ session_start();
         <!-- Cadastro Prédio -->
         <div class="PoPuCadastroPredio">
             <!-- Formulário Cadastro Prédio -->
-            <form class="FormCadastroPredio" action="../Funcionario/PHP/HOME/Predio.php" method="POST">
+            <form class="FormCadastroPredio"  method="POST" action="" id="FormCadastroPredio">
                 <div>
                     <img src="../Assets/Prédio.png" alt="Ilustração Predio">
                     <div></div>
@@ -49,9 +49,9 @@ session_start();
                 <div>
                     <h4>Novo Prédio</h4>
                     <div>
-                        <label for="idCadPredio">Número: </label>
-                        <input type="number" name="idCadPredio" id="idCadPredio" placeholder="Digite aqui...">
-                        <input style="display: none" name="tipo" type="text" value="cadastrarPredio">
+                        <label for="idNovoPredio">Número: </label>
+                        <input type="number" name="idNovoPredio" id="idNewPredio" placeholder="Digite aqui...">
+                        <input name="TipyRequisPredio" type="hidden" value="cadastrarPredio" id="TipyRequisPredio">
                     </div>
                 </div>
                 <div>
@@ -60,9 +60,10 @@ session_start();
                 </div>
             </form>
         </div>
+        <!-- Excluir Prédio -->
         <div class="PoPuExcluirPredio">
             <!-- Formulário Excluir Prédio -->
-            <form class="FormExcluirPredio" action="../Funcionario/PHP/HOME/Predio.php" method="POST">
+            <form class="FormExcluirPredio" method="POST" id="FormExcluirPredio">
                 <div>
                     <img src="../Assets/Prédio.png" alt="Ilustração Predio">
                     <div></div>
@@ -70,9 +71,9 @@ session_start();
                 <div>
                     <h4>Excluir Prédio</h4>
                     <div>
-                        <label for="idExcPredio">Número: </label>
-                        <input type="number" name="idExcPredio" id="idExcPredio" placeholder="Digite aqui...">
-                        <input style="display: none" name="tipo" type="text" value="excluirPredio">
+                        <label for="idExclPredio">Número: </label>
+                        <input type="number" name="idExclPredio" id="idDelePredio" placeholder="Digite aqui...">
+                        <input name="TipyRequisPredio" type="hidden" value="excluirPredio" id="TipyRequisPredio" >
                     </div>
                 </div>
                 <div>
@@ -81,7 +82,7 @@ session_start();
                 </div>
             </form>
         </div>
-    </div>
+    </div> 
     <header class="Header">
         <!-- Barra Laterial -->
         <nav class="Nav">
@@ -190,7 +191,7 @@ session_start();
             <div class="Container_Predios">
                 <ul class="Ul_Predios">
                 </ul>
-                <li class="Cadastr_Predio">
+                <li class="Cadastr_Predio" id="Cadastro_Predios">
                     <i class='bx bx-plus' ></i>
                 </li>
                 <li class="Apagar_Predio">

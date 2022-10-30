@@ -76,6 +76,7 @@ function exibirChaves(){
                                                 </div>
                                             </li>`;   
                     }   
+
             });
             //Inserir chaves com status de uso
             chave.forEach((chaves) =>{
@@ -105,7 +106,7 @@ function exibirChaves(){
                 
             });
         });
-    },'JSON');
+    },'JSON')
 }
 
 function carrossel(){
@@ -114,14 +115,16 @@ function carrossel(){
         var predios = document.querySelectorAll('.Bloco_Chaves_UL');
         var arrowRight = document.querySelectorAll('#arrow_right_chaves');
         var arrowLeft = document.querySelectorAll('#arrow_left_chaves');
+        
         idChave.forEach(elementChave =>{
+
             predios.forEach(elementPredio =>{
-                
-                var currentEventCarrRight = 0; // Right
+
                 var CarrLeft = 0; // left
 
                 arrowLeft.forEach(elementLeft =>{
                     arrowRight.forEach(elementRight =>{
+                        var currentEventCarrRight = 0; // Right
 
                         elementLeft.style.cssText = `display: none`; //Padrão o Left do Carrossel começa como oculto
 
@@ -137,7 +140,8 @@ function carrossel(){
                             }
                         }
                         Right();
-                        //São as causalidades, essas que são testadas a cada click
+
+                        //São as causalidades, essas que são testadas a cada click ----------------
                         //-> por isso é uma função e está em todos os addEvent
                         function LeftRight(){
                             if (elementLeft.className == elementPredio.id && elementRight.className == elementPredio.id){
@@ -156,17 +160,23 @@ function carrossel(){
                                 }
                             }
                         }
+
                         //Para quando aperta no LEFT do carrossel
                         elementLeft.addEventListener("click", ()=>{
                                 if (elementLeft.className == elementPredio.id){
                                     if (('Predio_'+elementChave['idPredio']) == elementPredio.id){
-                                            if ((currentEventCarrRight) == 0){
-                                                elementPredio.style.cssText = `transform: translate 0px);`;
-                                            } else {
-                                                currentEventCarrRight--;
-                                                elementPredio.style.cssText = `transform: translate(${(currentEventCarrRight)*-310}px);`;
-                                            } 
+                                        if ((currentEventCarrRight+5) == elementChave['COUNT(idChave)']){
+                                            var aux = currentEventCarrRight - 1;
+                                            elementPredio.style.cssText = `transform: translate(${(aux)*-300}px);`;
+                                            elementRight.style.cssText = `display: none`;
+                                        }else if ((currentEventCarrRight) == 0){
+                                            elementPredio.style.cssText = `transform: translate 0px);`;
+                                        } else {
+                                            currentEventCarrRight--;
+                                            elementPredio.style.cssText = `transform: translate(${(currentEventCarrRight)*-300}px);`;
+                                        } 
                                     }
+                                    console.log("left" + currentEventCarrRight)
                                 }
                             LeftRight();
                         });    
@@ -174,17 +184,19 @@ function carrossel(){
                         elementRight.addEventListener("click", ()=>{
                             if (elementRight.className == elementPredio.id){
                                 if (('Predio_'+elementChave['idPredio']) == elementPredio.id){
-                                        if ((currentEventCarrRight+4) == elementChave['COUNT(idChave)']){
-                                            elementPredio.style.cssText = `transform: translate(${(currentEventCarrRight)*-310}px);`;
+                                        if ((currentEventCarrRight+5) == elementChave['COUNT(idChave)']){
+                                            var aux = currentEventCarrRight + 1;
+                                            elementPredio.style.cssText = `transform: translate(${(aux)*-300}px);`;
                                             elementRight.style.cssText = `display: none`;
                                         } else if ((currentEventCarrRight) < elementChave['COUNT(idChave)']){
                                             currentEventCarrRight++;
-                                            elementPredio.style.cssText = `transform: translate(${(currentEventCarrRight)*-310}px);`;
+                                            elementPredio.style.cssText = `transform: translate(${(currentEventCarrRight)*-300}px);`;
+                                            LeftRight(); 
                                         }
                                 }
-                            }
-                            LeftRight();
-                        });                   
+                                console.log("right" + currentEventCarrRight)
+                            } 
+                        });
                     });                
                 });
             });
@@ -192,7 +204,7 @@ function carrossel(){
     }, 'JSON');
 }
 
-/*setInterval("exibirChaves()", 1000);*/
+
 $(function(){
     exibirPredios();
     exibirChaves();

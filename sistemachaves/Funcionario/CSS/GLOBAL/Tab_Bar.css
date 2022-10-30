@@ -1,4 +1,4 @@
-@import url(/Funcionario/Style/Fonts.css);
+@import url(./Funcionario/CSS/GLOBAL/Fonts&Color.css);
 
 ::-webkit-scrollbar {
     width: 10px;

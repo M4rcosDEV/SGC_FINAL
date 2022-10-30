@@ -55,7 +55,7 @@ function fechaPopupDelet (){
     popupDELETPredio.style.display = "none";
 }
 buttonDELETPredioIcon.addEventListener('click', abrirPopupDelet); // Botão abrir
-buttonSalvarPredio.addEventListener('click', submitPopupDelet); // Botão Salvar
+buttonDELETPredio.addEventListener('click', submitPopupDelet); // Botão Salvar
 buttonFechaDELETPredio.addEventListener('click', fechaPopupDelet); // Botão Fecha
 
 

@@ -533,21 +533,19 @@
     transition: 0.5s ease-in-out;
     display: flex;
     align-items: center;
-
+    overflow: hidden;
 }
-
 .Ul_Chave_EmUso {
     /*Container Chaves completo em status 1*/
-    margin-left: -20px;
+    margin-left: -30px;
+    margin-top: 60px;
     height: 200px;
-    overflow: hidden;
     transition: 0.5s ease-in-out;
     display: flex;
-    flex-flow: wrap;
+    flex-flow:  wrap column ;
     gap: 15px;
 }
-
-.Main_Cont2.active .Ul_Chave_EmUso {
+.Main_Cont2.active .Container_Chaves_EmUso {
     /*Container Chaves completo em status 2*/
     width: 1310px;
     transition: 0.5s ease-in-out;
@@ -855,12 +853,12 @@
 .Bloco_Chaves_UL {
     margin-top: 20px;
     height: 370px;
+    width: auto;
     display: flex;
     flex-direction: row;
     gap: 30px;
     transition: all 0.5s ease-in-out;
 }
-
 .Bloco_Chaves_LI_DISP {
     display: flex;
     flex-direction: column;
