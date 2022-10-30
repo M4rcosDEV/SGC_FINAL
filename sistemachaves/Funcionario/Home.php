@@ -14,17 +14,18 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SGC - HOME</title>
-    <!-- CSS GLOBAL -->
+    <!-- GLOBAL -->
     <link href='../Funcionario/CSS/GLOBAL/Tab_Bar.css' rel='stylesheet'>
     <link href='../Funcionario/CSS/GLOBAL/ResponseGlobal.css' rel='stylesheet'>
+    <script src="../Funcionario/JS/GLOBAL/TabBar.js" type="text/javascript" defer></script>
     <!-- CSS -->
     <link href='../Funcionario/CSS/HOME/Home.css' rel='stylesheet'>
     <link href='../Funcionario/CSS/HOME/ResponseHome.css' rel='stylesheet'>
     <!-- JAVASCRIPT -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="../Funcionario/JS/HOME/Ajax.js" type="text/javascript" defer></script>
-    <script src="../Funcionario/JS/HOME/Home.js" type="text/javascript" defer></script>
-    <script src="../Funcionario/JS/GLOBAL/TabBar.js" type="text/javascript" defer></script>
+    <script src="../Funcionario/JS/HOME/Ajax_Insert_Home.js" type="text/javascript" defer></script>
+    <script src="../Funcionario/JS/HOME/Gerenciamento_Home.js" type="text/javascript" defer></script>
+    <script src="../Funcionario/JS/HOME/Ajax_Exibir_Home.js" type="text/javascript" defer></script>
     <!-- CSS ASSETS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href='../Funcionario/CSS/GLOBAL/Fonts&Color.css' rel='stylesheet'>
@@ -326,7 +327,8 @@ session_start();
                 </div>
             </div>
             <!-- Predio -->
-            <div class="Main_Cont3_Bloco-Chaves">                                      
+            <div class="Main_Cont3_Bloco-Chaves" id="Main_Cont3_Bloco_Chaves_Inferior">
+            </div>                                      
         </div>
     </main>
 </body>

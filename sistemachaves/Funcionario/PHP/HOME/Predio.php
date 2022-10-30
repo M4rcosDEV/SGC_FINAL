@@ -2,12 +2,13 @@
 
 include_once 'Insert.php';
 
-$tipo = $_POST['tipo'];
-
-if($tipo == "cadastrarPredio"){
-    cadastrar_Predio();
-} else if($tipo == "excluirPredio"){
-    excluir_Predio();
+if(isset($_POST['tipo'])){
+    $tipo = $_POST['tipo'];
+    if($tipo === "cadastrarPredio"){
+        cadastrar_Predio();
+    } else if($tipo === "excluirPredio"){
+        excluir_Predio();
+    }
 }
 
 function cadastrar_Predio(){
