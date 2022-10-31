@@ -149,7 +149,7 @@
                         </select>
                     </div>
                     <div>
-                        <input type="text" name="tipo" value="AddChave" style="display: none">
+                        <input type="text" name="tipo" value="AddChave">
                         <input type="submit" value="Salvar" id="SubmitAddChave">
                     </div>
                 </form>

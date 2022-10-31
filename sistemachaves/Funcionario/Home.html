@@ -174,12 +174,27 @@
         </div>
         <!-- Bloco com Predios -->
         <div class="Main_Cont2">
-            <!-- Predios -->
+            <!-- Predios Titulo -->
             <div>
                 <h4>EM USO</h4>
+                <li class="Cadastr_Predio">
+                    <i class='bx bx-plus' ></i>
+                </li>
+                <li class="Apagar_Predio">
+                    <i class='bx bx-plus' ></i>
+                </li>
             </div>
-            <div class="Container_Predios" style="display: none;">
+            <!-- Predios Blocos -->
+            <div class="Container_Predios">
                 <ul class="Ul_Predios">
+                <!-- Caso a UL estaja vazia -->
+                <div>
+                    <h4>Nem umas chave em uso</h4>
+                    <figure class="gifGhost">
+                        <img src="/Assets/loading-ghost.gif">
+                    </figure>
+                </div>
+                <!-- Elementos da Ul -->
                 <li class="Modelo_Predio">
                                      <div>
                                          <h4 class="Modelo_Predio_h4_1" >Prédio</h4>
@@ -188,14 +203,8 @@
                                      <img src="../Assets/Prédio.png" alt="Ilustração Prédio">
                                  </li>
                 </ul>
-                <li class="Cadastr_Predio">
-                    <i class='bx bx-plus' ></i>
-                </li>
-                <li class="Apagar_Predio">
-                    <i class='bx bx-plus' ></i>
-                </li>
             </div>
-            <div class="Container_Chaves_EmUso" style="display: flex;">
+            <div class="Container_Chaves_EmUso" style="display: none;">
                 <div class="Container_Chave_EmUso">
                     <ul class="Ul_Chave_EmUso">
                         <li class="Li_Chave_EmUso">
@@ -316,7 +325,15 @@
         <div class="Main_Cont3">
             <!-- Bloco Chaves -->
             <div class="Main_Cont3_Bloco1">
-                <h4>CHAVES</h4>
+                <div>
+                    <h4>CHAVES</h4> 
+                    <div class="Refresh_Chaves">
+                        <i class='bx bx-refresh'></i>
+                        <div class="Refresh_Chaves_Name">
+                            <h4>Atualizar Chaves</h4>
+                        </div>
+                    </div>
+                </div>
                 <div>
                     <i class='bx bx-slider'></i>
                     <span>Filtros</span>

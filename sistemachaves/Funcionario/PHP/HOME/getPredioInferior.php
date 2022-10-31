@@ -19,11 +19,7 @@
                     <!-- Dados do Predio -->
                     <div class='Bloco_Chaves'>
                             <!-- < -->
-                            <div class='arrow_left_div'>
-                                <button id='arrow_left_chaves' class='Predio_".$id['idPredio']."'>
-                                    <i class='bx bx-chevron-left' ></i>
-                                </button>
-                            </div>
+
                             <!-- > -->
                             <div class='arrow_right_div'>
                                 <button id='arrow_right_chaves' class='Predio_".$id['idPredio']."'>

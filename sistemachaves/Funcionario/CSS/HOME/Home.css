@@ -413,7 +413,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    gap: 10px;
+    gap: 20px;
 }
 
 .Main_Cont2>div {
@@ -422,6 +422,9 @@
 
 .Main_Cont2>div:nth-child(1) {
     font-family: 'Sen', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .Main_Cont2>div:nth-child(1)>h4 {
@@ -435,11 +438,36 @@
     flex-direction: row;
     gap: 15px;
 }
-
-.Ul_Predios {
+.Container_Predios:nth-child(2){
+    display: flex;
+    justify-content: flex-start;
+    align-items: center ;
+}
+.Ul_Predios{
     display: flex;
     gap: 15px;
 }
+/* Caso não tenha predios no EM USO */
+.Ul_Predios.active{
+    display: flex;
+    gap: 15px;
+}
+.Ul_Predios.active > li{
+    display: flex;
+}
+.gifGhost{
+    background: #00FF0A;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gifGhost > img{
+   width: 300px;
+}
+
 
 /*Modelo Predio*/
 .Modelo_Predio {
@@ -470,10 +498,10 @@
 
 /*Modelo Adicionar Predio*/
 .Cadastr_Predio {
-    width: 100px;
-    height: 100px;
+    width: 30px;
+    height: 30px;
     background-color: #2D4065;
-    border-radius: 10px;
+    border-radius: 4px;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
@@ -484,24 +512,27 @@
 
 .Cadastr_Predio>i {
     color: rgba(188, 255, 199, 0.781);
-    font-size: 50px;
+    font-size: 20px;
     transition: 0.3s ease-in-out;
     transform: rotate(0deg);
 }
+.Cadastr_Predio:hover {
+    background-color: white;
+}
 
 .Cadastr_Predio:hover>i {
-    color: #6cff73;
-    font-size: 60px;
+    color: rgba(0, 255, 42, 0.781);
+    font-size: 25px;
     transition: 0.3s ease-in-out;
     transform: rotate(90deg);
 }
 
 /*Modelo Apagar Predio*/
 .Apagar_Predio {
-    width: 100px;
-    height: 100px;
+    width: 30px;
+    height: 30px;
     background-color: #2D4065;
-    border-radius: 10px;
+    border-radius: 4px;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
@@ -512,14 +543,17 @@
 
 .Apagar_Predio>i {
     color: rgb(255, 205, 205);
-    font-size: 50px;
+    font-size: 20px;
     transition: 0.3s ease-in-out;
     transform: rotate(45deg);
 }
-
+.Apagar_Predio:hover {
+    background-color: #ff0000;
+    transition: 0.3s ease-in-out;
+}
 .Apagar_Predio:hover>i {
-    color: #ff0000;
-    font-size: 60px;
+    color: white;
+    font-size: 30px;
     transition: 0.3s ease-in-out;
     transform: rotate(135deg);
 }
@@ -677,9 +711,40 @@
     font-size: 20px;
     gap: 10px;
     padding-right: 60px;
-    transition: 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
-
+.Refresh_Chaves{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: #6F9DF5;
+    height: 20px;
+    transition: all 0.5s ease-in-out;
+}
+.Refresh_Chaves > i{
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+.Refresh_Chaves:hover > i{
+    font-size: 25px;
+    color: #FFC700;
+    transition: all 0.5s ease-in-out;
+    transform: rotate(-180deg);
+}
+.Refresh_Chaves_Name{
+    font-size: 13px;
+    height: 15px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+.Refresh_Chaves_Name > h4{
+    margin-top: -20px;
+    transition: all 0.5s ease-in-out;
+}
+.Refresh_Chaves:hover > .Refresh_Chaves_Name > h4{
+    margin-top: 0px;
+    transition: all 0.5s ease-in-out;
+}
 /* -------- PREDIO + CHAVE -------- */
 .Bloco_Chaves {
     position: relative;

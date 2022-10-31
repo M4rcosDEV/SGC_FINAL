@@ -40,7 +40,7 @@ create table chave (
 );
 
 /*Sala vai ser criada de acordo a Chave que vai ser criada,
-ou seja, cria a chave e automáticamente a sala é criada
+ou seja, cria a chave e automáticamente a sala é criada*/
 
 create table sala ( 
 	idSala integer,
@@ -49,7 +49,6 @@ create table sala (
 	foreign key (idPredio) references predio(idPredio),
 	primary key(idSala, idPredio)
 ); 
-*/
 create table agendar (
 	idChave integer,
     id_cliente integer, 

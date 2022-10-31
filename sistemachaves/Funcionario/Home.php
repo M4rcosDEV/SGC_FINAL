@@ -184,151 +184,54 @@ session_start();
             </div>
         </div>
         <!-- Bloco com Predios -->
+        <!-- Bloco com Predios -->
         <div class="Main_Cont2">
-            <!-- Predios -->
+            <!-- Predios Titulo -->
             <div>
                 <h4>EM USO</h4>
-            </div>
-            <div class="Container_Predios">
-                <ul class="Ul_Predios">
-                </ul>
-                <li class="Cadastr_Predio" id="Cadastro_Predios">
+                <li class="Cadastr_Predio">
                     <i class='bx bx-plus' ></i>
                 </li>
                 <li class="Apagar_Predio">
                     <i class='bx bx-plus' ></i>
                 </li>
             </div>
-            <div class="Container_Chaves_EmUso" style="display: none;">
-                <div class="Container_Chave_EmUso">
-                    <ul class="Ul_Chave_EmUso">
-                        <li class="Li_Chave_EmUso">
-                            <img src="../Assets/Chave.png">
-                            <div></div>
-                            <h4>Sala 101</h4>
-                            <div></div>
-                            <h4>Matheus Ulman</h4>
-                            <div>
-                                <button type="submit"><i class='bx bx-check-double'></i></button>
-                                <button type="submit"><i class='bx bx-x'></i></button>
-                            </div>
-                        </li>
-                        <li class="Li_Chave_EmUso">
-                            <img src="../Assets/Chave.png">
-                            <div></div>
-                            <h4>Sala 102</h4>
-                            <div></div>
-                            <h4>Matheus Ulman</h4>
-                            <div>
-                                <button type="submit"><i class='bx bx-check-double'></i></button>
-                                <button type="submit"><i class='bx bx-x'></i></button>
-                            </div>
-                        </li>
-                        <li class="Li_Chave_EmUso">
-                            <img src="../Assets/Chave.png">
-                            <div></div>
-                            <h4>Sala 103</h4>
-                            <div></div>
-                            <h4>Matheus Ulman</h4>
-                            <div>
-                                <button type="submit"><i class='bx bx-check-double'></i></button>
-                                <button type="submit"><i class='bx bx-x'></i></button>
-                            </div>
-                        </li>
-                        <li class="Li_Chave_EmUso">
-                            <img src="../Assets/Chave.png">
-                            <div></div>
-                            <h4>Sala 104</h4>
-                            <div></div>
-                            <h4>Matheus Ulman</h4>
-                            <div>
-                                <button type="submit"><i class='bx bx-check-double'></i></button>
-                                <button type="submit"><i class='bx bx-x'></i></button>
-                            </div>
-                        </li>
-                        <li class="Li_Chave_EmUso">
-                            <img src="../Assets/Chave.png">
-                            <div></div>
-                            <h4>Sala 105</h4>
-                            <div></div>
-                            <h4>Matheus Ulman</h4>
-                            <div>
-                                <button type="submit"><i class='bx bx-check-double'></i></button>
-                                <button type="submit"><i class='bx bx-x'></i></button>
-                            </div>
-                        </li>
-                        <li class="Li_Chave_EmUso">
-                            <img src="../Assets/Chave.png">
-                            <div></div>
-                            <h4>Sala 106</h4>
-                            <div></div>
-                            <h4>Matheus Ulman</h4>
-                            <div>
-                                <button type="submit"><i class='bx bx-check-double'></i></button>
-                                <button type="submit"><i class='bx bx-x'></i></button>
-                            </div>
-                        </li>
-                        <li class="Li_Chave_EmUso">
-                            <img src="../Assets/Chave.png">
-                            <div></div>
-                            <h4>Sala 107</h4>
-                            <div></div>
-                            <h4>Matheus Ulman</h4>
-                            <div>
-                                <button type="submit"><i class='bx bx-check-double'></i></button>
-                                <button type="submit"><i class='bx bx-x'></i></button>
-                            </div>
-                        </li>
-                        <li class="Li_Chave_EmUso">
-                            <img src="../Assets/Chave.png">
-                            <div></div>
-                            <h4>Sala 108</h4>
-                            <div></div>
-                            <h4>Matheus Ulman</h4>
-                            <div>
-                                <button type="submit"><i class='bx bx-check-double'></i></button>
-                                <button type="submit"><i class='bx bx-x'></i></button>
-                            </div>
-                        </li>
-                        <li class="Li_Chave_EmUso">
-                            <img src="../Assets/Chave.png">
-                            <div></div>
-                            <h4>Sala 109</h4>
-                            <div></div>
-                            <h4>Matheus Ulman</h4>
-                            <div>
-                                <button type="submit"><i class='bx bx-check-double'></i></button>
-                                <button type="submit"><i class='bx bx-x'></i></button>
-                            </div>
-                        </li>
-                        <li class="Li_Chave_EmUso">
-                            <img src="../Assets/Chave.png">
-                            <div></div>
-                            <h4>Sala 110</h4>
-                            <div></div>
-                            <h4>Matheus Ulman</h4>
-                            <div>
-                                <button type="submit"><i class='bx bx-check-double'></i></button>
-                                <button type="submit"><i class='bx bx-x'></i></button>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+            <!-- Predios Blocos -->
+            <div class="Container_Predios">
+                <ul class="Ul_Predios">
+                <!-- Caso a UL estaja vazia -->
+                <!-- <div>
+                    <h4>Nem umas chave em uso</h4>
+                    <figure class="gifGhost">
+                        <img src="/Assets/loading-ghost.gif">
+                    </figure>
+                </div> -->
+                <!-- Elementos da Ul -->
+                </ul>
             </div>
         </div>
         <!-- Bloco com Chaves -->
         <div class="Main_Cont3">
             <!-- Bloco Chaves -->
             <div class="Main_Cont3_Bloco1">
-                <h4>CHAVES</h4>
+                <div>
+                    <h4>CHAVES</h4> 
+                    <div class="Refresh_Chaves">
+                        <i class='bx bx-refresh'></i>
+                        <div class="Refresh_Chaves_Name">
+                            <h4>Atualizar Chaves</h4>
+                        </div>
+                    </div>
+                </div>
                 <div>
                     <i class='bx bx-slider'></i>
                     <span>Filtros</span>
                 </div>
             </div>
             <!-- Predio -->
-            <div class="Main_Cont3_Bloco-Chaves" id="Main_Cont3_Bloco_Chaves_Inferior">
-            </div>                                      
+            <div class="Main_Cont3_Bloco-Chaves">
+
+            </div>     
         </div>
     </main>
 </body>
