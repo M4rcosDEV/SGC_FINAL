@@ -86,4 +86,3 @@ botao_excluir_chave.addEventListener("click", ()=>{
 });
 
 // Pop para inserir os novos dados da chave que vai ser alterada.
-

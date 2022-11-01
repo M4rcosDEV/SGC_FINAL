@@ -103,7 +103,7 @@
                     </li>
                     <!-- Item 7 = Sair -->
                     <li class="Li_Barra">
-                        <a href="../config/logout.php" class="Item_Barra_Sair">
+                        <a href="../Funcionario/index.php" class="Item_Barra_Sair">
                             <i class='bx bx-exit'></i>
                         </a>
                     </li>
@@ -125,8 +125,10 @@
         <!-- Bloco com Predios -->
         <div class="Main_Cont2">
            <!-- Adicionar Chave -->
+           <div class="botao chave" id="botao-cadastro1"><h3>Cadastro de Chaves</h3></div>
             <div class="form1_cad_Chaves" id="formChave">
-                <div><h3>Cadastro de Chaves</h3></div>
+                <div id="botao-cadastro2"><h3>Cadastro de Chaves</h3></div>
+                
                 <form id="CadastroChaves" action="../Funcionario/PHP/GERENCIAMENTO/Chave.php" method="POST">
                     <div style="display: none"></div>
                     <div>
@@ -149,15 +151,18 @@
                         </select>
                     </div>
                     <div>
-                        <input type="text" name="tipo" value="AddChave">
+                        <input type="text" name="tipo" value="AddChave" style="display: none">
                         <input type="submit" value="Salvar" id="SubmitAddChave">
                     </div>
                 </form>
             </div>
             <!-- Alterar Chave -->
+            <div class="botao chave" id="botao-alterar1"><h3>Alterar de Chaves</h3></div>
+            
             <div class="form2_alt_Chaves" id="formChave">
                 <div><h3>Alterar Chaves</h3></div>
-                <form id="AlterarChaves">
+                <form id="AlterarChaves" action="../Funcionario/PHP/GERENCIAMENTO/Chave.php" method="POST">
+                    
                     <div>
                         <label for="idChave">Número da chave: </label>
                         <input type="number" name="idChave" id="idChave">
@@ -177,15 +182,46 @@
                             <option value="Outros">Outros</option>
                         </select>
                     </div>
+                    
                     <div>
-                        <input type="submit" value="Alterar" id="SubmitAlterarPredio">
+                        <input type="text" name="tipo" value="alterarChave" style="display: none">
+
+                        <input type="submit" value="Alterar" id="SubmitAlterarPredio" onclick=" return pegarInfo()">
+                        <script type="text/javascript" defer>
+	                        function pegarInfo() {
+		                    // define as variáveis nome e sobrenome
+                            let nome = prompt("Digite o seu nome");
+                            let sobrenome = prompt("Digite o seu sobrenome");
+                                
+                            // REQUISIÇÃO AJAX
+                            // cria o objeto XMLHttpRequest
+                            const xhttp = new XMLHttpRequest(); 
+                            // chama a função quando a requisição é recebida
+                            xhttp.onload = function() { 
+                                document.getElementById("demo").innerHTML = this.responseText;
+                            }
+                            // faz a requisição AJAX - método POST
+                            xhttp.open("POST", "../Funcionario/PHP/GERENCIAMENTO/Chave.php");
+                            // adiciona um header para a requisição HTTP
+                            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                            // especifica os dados que deseja enviar   
+                            xhttp.send("nome="+nome+"&sobrenome="+sobrenome);
+	                        }
+                        </script>
+                        <form action="../Funcionario/PHP/GERENCIAMENTO/Chave.php" method="POST" name="form1">
+	                        <input type="hidden" name="numChave" id="numChave">
+                            <input type="hidden" name="numPredio" id="numPredio">
+                        </form>
+
                     </div>
                 </form>
             </div>
             <!-- Excluir Chave -->
+            <div class="botao chave" id="botao-excluir1"><h3>Excluir Chaves</h3></div>
+            
             <div class="form3_excl_Chaves" id="formChave">
                 <div><h3>Excluir Chaves</h3></div>
-                    <form id="ExcluirChaves">
+                    <form id="ExcluirChaves" action="../Funcionario/PHP/GERENCIAMENTO/Chave.php" method="POST">
                         <div>
                             <label for="idChave">Número da chave: </label>
                             <input type="number" name="idChave" id="idChave">
@@ -195,6 +231,7 @@
                             <input type="number" name="idPredio" id="idPredio">
                         </div>
                         <div>
+                            <input type="text" name="tipo" value="excluirChave" style="display: none">
                             <input type="submit" value="Excluir" id="SubmitExcluirPredio">
                         </div>
                     </form>

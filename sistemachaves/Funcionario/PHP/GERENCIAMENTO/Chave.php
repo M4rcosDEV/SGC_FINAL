@@ -24,6 +24,20 @@
         header("Location: http://localhost/SISTEMACHAVES/Funcionario/Gerenciamento.php");
     }
 
+    function exibirChaves(){
+        $banco = new Banco();
+        $conn = $banco -> conectar();
+        $sql = $conn->prepare("SELECT * FROM chave");
+        $sql -> execute();
+            $dadosChave = $sql->fetchAll(PDO::FETCH_ASSOC);
+            echo json_encode($dadosChave);
+    }
+    print_r(exibirChaves());
+
+    //if(isset($_POST) && isset($_POST[ 'numChave']) && isset($_POST[ 'numPredio'])) { 
+            
+   // }
+
     function alterar(){
         $numChave=strip_tags($_POST[ 'numChave']);
         $numPredio=strip_tags($_POST[ 'numPredio']);
@@ -55,48 +69,4 @@
         header("Location: http://localhost/SISTEMACHAVES/Funcionario/Gerenciamento.php");
     }
 
-
-    function exibirChaves(){
-        $banco = new Banco();
-        $conn = $banco -> conectar();
-        $sql = $conn->prepare("SELECT * FROM chave");
-        $sql -> execute();
-            $dadosChave = $sql->fetchAll(PDO::FETCH_ASSOC);
-            echo json_encode($dadosChave);
-    }
-    print_r(exibirChaves());
-    /*
-    function exibirChaves(){
-        $banco = new Banco();
-        $conn = $banco -> conectar();
-        $sql = $conn->prepare("SELECT * FROM chave");
-        $sql -> execute();
-            $dadosChave = $sql->fetchAll(PDO::FETCH_ASSOC);
-            foreach($dadosChave as $Chave){
-                if ($Chave['situacao'] == 0){
-                    $aux = ("<li class='Bloco_Chaves_LI_DISP' id='Predio_".$Chave['idPredio']."'>
-                    <div>
-                        <input type='checkbox'>
-                    </div>
-                    <div>
-                        <img src='../Assets/Chave.png' alt='Ilustração chave'>
-                    </div>
-                    <div>
-                        <h4> ".$Chave['descricao']." ".$Chave['idChave']."</h4>
-                        <span>status:</span>
-                        <div>
-                            <div></div>
-                            <h4>Disponivél</h4>
-                        </div>
-                    </div>
-                    <div>
-                        <input type='submit' value='AGENDAR'>
-                        <input type='submit' value='RETIRAR'>
-                    </div>
-                </li>");
-                }
-                echo ($aux);
-            }
-    }
-print_r(exibirChaves());
-*/
+    
