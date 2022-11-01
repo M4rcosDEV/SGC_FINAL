@@ -17,8 +17,10 @@ class Predio{
             $stmt->bindParam(':idPredio', $this->idPredio);
             $stmt->execute();
 
+            echo "Prédio adicionar com sucesso";
+
         } catch(PDOException $ex){
-            echo "Erro ao inserir aluno: " . $ex;
+            echo "Erro ao adicionar prédio";
         }
         
     }
@@ -30,9 +32,11 @@ class Predio{
             $stmt = $conexao->prepare("DELETE FROM predio WHERE (idPredio = :idPredio)");
             $stmt->bindParam(':idPredio', $this->idPredio);
             $stmt->execute();
-        
+            
+            echo "Prédio excluido com sucesso";
+            
         } catch(PDOException $ex){
-            echo "Erro ao inserir aluno: " . $ex;
+            echo "Erro ao excluir predio: " . $ex;
         }
     }
 }

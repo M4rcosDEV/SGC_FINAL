@@ -12,27 +12,13 @@ if(isset($_POST['tipo'])){
 }
 
 function cadastrar_Predio(){
-    $idCadPredio = $_POST['idCadPredio'];
-    $predio = new Predio($idCadPredio);
+    $NovoPredio = $_POST['idNovoPredio'];
+    $predio = new Predio($NovoPredio);
     $predio->inserir();
-    header("Location: http://localhost/SISTEMACHAVES/Funcionario/Home.php");
 }
 
 function excluir_Predio(){
-    $idExcPredio = $_POST["idExcPredio"];
-    $predio = new Predio($idExcPredio);
+    $ExcluirPredio = $_POST['idExclPredio'];
+    $predio = new Predio($ExcluirPredio);
     $predio->excluir();
-    header("Location: http://localhost/SISTEMACHAVES/Funcionario/Home.php");
 }
-
-function exibir(){
-    $banco = new Banco();
-    $conexao = $banco -> conectar();
-        /*dados*/
-        $stmt = $conexao -> prepare("SELECT * FROM predio");
-        $stmt -> execute();
-            $stmt = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            echo json_encode($stmt);
-}
-
-print_r (exibir());

@@ -14,17 +14,18 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SGC - HOME</title>
-    <!-- CSS GLOBAL -->
+    <!-- GLOBAL -->
     <link href='../Funcionario/CSS/GLOBAL/Tab_Bar.css' rel='stylesheet'>
     <link href='../Funcionario/CSS/GLOBAL/ResponseGlobal.css' rel='stylesheet'>
+    <script src="../Funcionario/JS/GLOBAL/TabBar.js" type="text/javascript" defer></script>
     <!-- CSS -->
     <link href='../Funcionario/CSS/HOME/Home.css' rel='stylesheet'>
     <link href='../Funcionario/CSS/HOME/ResponseHome.css' rel='stylesheet'>
     <!-- JAVASCRIPT -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="../Funcionario/JS/HOME/AjaxHome.js" type="text/javascript" defer></script>
-    <script src="../Funcionario/JS/HOME/Home.js" type="text/javascript" defer></script>
-    <script src="../Funcionario/JS/GLOBAL/TabBar.js" type="text/javascript" defer></script>
+    <script src="../Funcionario/JS/HOME/Ajax_Insert_Home.js" type="text/javascript" defer></script>
+    <script src="../Funcionario/JS/HOME/Gerenciamento_Home.js" type="text/javascript" defer></script>
+    <script src="../Funcionario/JS/HOME/Ajax_Exibir_Home.js" type="text/javascript" defer></script>
     <!-- CSS ASSETS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href='../Funcionario/CSS/GLOBAL/Fonts&Color.css' rel='stylesheet'>
@@ -41,7 +42,7 @@ session_start();
         <!-- Cadastro Prédio -->
         <div class="PoPuCadastroPredio">
             <!-- Formulário Cadastro Prédio -->
-            <form class="FormCadastroPredio" action="../Funcionario/PHP/HOME/Predio.php" method="POST">
+            <form class="FormCadastroPredio"  method="POST" action="" id="FormCadastroPredio">
                 <div>
                     <img src="../Assets/Prédio.png" alt="Ilustração Predio">
                     <div></div>
@@ -49,9 +50,9 @@ session_start();
                 <div>
                     <h4>Novo Prédio</h4>
                     <div>
-                        <label for="idCadPredio">Número: </label>
-                        <input type="number" name="idCadPredio" id="idCadPredio" placeholder="Digite aqui...">
-                        <input style="display: none" name="tipo" type="text" value="cadastrarPredio">
+                        <label for="idNovoPredio">Número: </label>
+                        <input type="number" name="idNovoPredio" id="idNewPredio" placeholder="Digite aqui...">
+                        <input name="TipyRequisPredio" type="hidden" value="cadastrarPredio" id="TipyRequisPredio">
                     </div>
                 </div>
                 <div>
@@ -60,9 +61,10 @@ session_start();
                 </div>
             </form>
         </div>
+        <!-- Excluir Prédio -->
         <div class="PoPuExcluirPredio">
             <!-- Formulário Excluir Prédio -->
-            <form class="FormExcluirPredio" action="../Funcionario/PHP/HOME/Predio.php" method="POST">
+            <form class="FormExcluirPredio" method="POST" id="FormExcluirPredio">
                 <div>
                     <img src="../Assets/Prédio.png" alt="Ilustração Predio">
                     <div></div>
@@ -70,9 +72,9 @@ session_start();
                 <div>
                     <h4>Excluir Prédio</h4>
                     <div>
-                        <label for="idExcPredio">Número: </label>
-                        <input type="number" name="idExcPredio" id="idExcPredio" placeholder="Digite aqui...">
-                        <input style="display: none" name="tipo" type="text" value="excluirPredio">
+                        <label for="idExclPredio">Número: </label>
+                        <input type="number" name="idExclPredio" id="idDelePredio" placeholder="Digite aqui...">
+                        <input name="TipyRequisPredio" type="hidden" value="excluirPredio" id="TipyRequisPredio" >
                     </div>
                 </div>
                 <div>
@@ -81,7 +83,7 @@ session_start();
                 </div>
             </form>
         </div>
-    </div>
+    </div> 
     <header class="Header">
         <!-- Barra Laterial -->
         <nav class="Nav">
@@ -182,14 +184,11 @@ session_start();
             </div>
         </div>
         <!-- Bloco com Predios -->
+        <!-- Bloco com Predios -->
         <div class="Main_Cont2">
-            <!-- Predios -->
+            <!-- Predios Titulo -->
             <div>
                 <h4>EM USO</h4>
-            </div>
-            <div class="Container_Predios">
-                <ul class="Ul_Predios">
-                </ul>
                 <li class="Cadastr_Predio">
                     <i class='bx bx-plus' ></i>
                 </li>
@@ -197,135 +196,42 @@ session_start();
                     <i class='bx bx-plus' ></i>
                 </li>
             </div>
-            <div class="Container_Chaves_EmUso" style="display: none;">
-                <div class="Container_Chave_EmUso">
-                    <ul class="Ul_Chave_EmUso">
-                        <li class="Li_Chave_EmUso">
-                            <img src="../Assets/Chave.png">
-                            <div></div>
-                            <h4>Sala 101</h4>
-                            <div></div>
-                            <h4>Matheus Ulman</h4>
-                            <div>
-                                <button type="submit"><i class='bx bx-check-double'></i></button>
-                                <button type="submit"><i class='bx bx-x'></i></button>
-                            </div>
-                        </li>
-                        <li class="Li_Chave_EmUso">
-                            <img src="../Assets/Chave.png">
-                            <div></div>
-                            <h4>Sala 102</h4>
-                            <div></div>
-                            <h4>Matheus Ulman</h4>
-                            <div>
-                                <button type="submit"><i class='bx bx-check-double'></i></button>
-                                <button type="submit"><i class='bx bx-x'></i></button>
-                            </div>
-                        </li>
-                        <li class="Li_Chave_EmUso">
-                            <img src="../Assets/Chave.png">
-                            <div></div>
-                            <h4>Sala 103</h4>
-                            <div></div>
-                            <h4>Matheus Ulman</h4>
-                            <div>
-                                <button type="submit"><i class='bx bx-check-double'></i></button>
-                                <button type="submit"><i class='bx bx-x'></i></button>
-                            </div>
-                        </li>
-                        <li class="Li_Chave_EmUso">
-                            <img src="../Assets/Chave.png">
-                            <div></div>
-                            <h4>Sala 104</h4>
-                            <div></div>
-                            <h4>Matheus Ulman</h4>
-                            <div>
-                                <button type="submit"><i class='bx bx-check-double'></i></button>
-                                <button type="submit"><i class='bx bx-x'></i></button>
-                            </div>
-                        </li>
-                        <li class="Li_Chave_EmUso">
-                            <img src="../Assets/Chave.png">
-                            <div></div>
-                            <h4>Sala 105</h4>
-                            <div></div>
-                            <h4>Matheus Ulman</h4>
-                            <div>
-                                <button type="submit"><i class='bx bx-check-double'></i></button>
-                                <button type="submit"><i class='bx bx-x'></i></button>
-                            </div>
-                        </li>
-                        <li class="Li_Chave_EmUso">
-                            <img src="../Assets/Chave.png">
-                            <div></div>
-                            <h4>Sala 106</h4>
-                            <div></div>
-                            <h4>Matheus Ulman</h4>
-                            <div>
-                                <button type="submit"><i class='bx bx-check-double'></i></button>
-                                <button type="submit"><i class='bx bx-x'></i></button>
-                            </div>
-                        </li>
-                        <li class="Li_Chave_EmUso">
-                            <img src="../Assets/Chave.png">
-                            <div></div>
-                            <h4>Sala 107</h4>
-                            <div></div>
-                            <h4>Matheus Ulman</h4>
-                            <div>
-                                <button type="submit"><i class='bx bx-check-double'></i></button>
-                                <button type="submit"><i class='bx bx-x'></i></button>
-                            </div>
-                        </li>
-                        <li class="Li_Chave_EmUso">
-                            <img src="../Assets/Chave.png">
-                            <div></div>
-                            <h4>Sala 108</h4>
-                            <div></div>
-                            <h4>Matheus Ulman</h4>
-                            <div>
-                                <button type="submit"><i class='bx bx-check-double'></i></button>
-                                <button type="submit"><i class='bx bx-x'></i></button>
-                            </div>
-                        </li>
-                        <li class="Li_Chave_EmUso">
-                            <img src="../Assets/Chave.png">
-                            <div></div>
-                            <h4>Sala 109</h4>
-                            <div></div>
-                            <h4>Matheus Ulman</h4>
-                            <div>
-                                <button type="submit"><i class='bx bx-check-double'></i></button>
-                                <button type="submit"><i class='bx bx-x'></i></button>
-                            </div>
-                        </li>
-                        <li class="Li_Chave_EmUso">
-                            <img src="../Assets/Chave.png">
-                            <div></div>
-                            <h4>Sala 110</h4>
-                            <div></div>
-                            <h4>Matheus Ulman</h4>
-                            <div>
-                                <button type="submit"><i class='bx bx-check-double'></i></button>
-                                <button type="submit"><i class='bx bx-x'></i></button>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+            <!-- Predios Blocos -->
+            <div class="Container_Predios">
+                <ul class="Ul_Predios">
+                <!-- Caso a UL estaja vazia -->
+                <!-- <div>
+                    <h4>Nem umas chave em uso</h4>
+                    <figure class="gifGhost">
+                        <img src="/Assets/loading-ghost.gif">
+                    </figure>
+                </div> -->
+                <!-- Elementos da Ul -->
+                </ul>
             </div>
         </div>
         <!-- Bloco com Chaves -->
         <div class="Main_Cont3">
             <!-- Bloco Chaves -->
             <div class="Main_Cont3_Bloco1">
-                <h4>CHAVES</h4>
+                <div>
+                    <h4>CHAVES</h4> 
+                    <div class="Refresh_Chaves">
+                        <i class='bx bx-refresh'></i>
+                        <div class="Refresh_Chaves_Name">
+                            <h4>Atualizar Chaves</h4>
+                        </div>
+                    </div>
+                </div>
                 <div>
                     <i class='bx bx-slider'></i>
                     <span>Filtros</span>
                 </div>
             </div>
             <!-- Predio -->
-            <div class="Main_Cont3_Bloco-Chaves">                                      
+            <div class="Main_Cont3_Bloco-Chaves">
+
+            </div>     
         </div>
     </main>
 </body>
