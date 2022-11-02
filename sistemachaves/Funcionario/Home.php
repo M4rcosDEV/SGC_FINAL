@@ -83,6 +83,43 @@ session_start();
                 </div>
             </form>
         </div>
+        <!-- Agendar Prédio -->
+        <div class="PoPuAgendarChave">
+            <!-- Formulário Cadastro Prédio -->
+            <form class="FormaAgendarChave"  method="POST" action="" id="FormaAgendarChave">
+                <div>
+                    <img src="../Assets/Prédio.png" alt="Ilustração Predio">
+                    <div></div>
+                </div>
+                <div>
+                    <div>
+                        <h4 id="NumeroSalaAgendamento">Sala ???</h4>
+                        <h4 id="NumeroPredioAgendamento">Predio ???</h4>
+                    </div>
+                    <div class="informacoes_agendamento">
+                        <div>
+                            <label for="Matricula">Matricula: </label>
+                            <input type="number" name="Matricula" id="Matricula_agendamento" placeholder="Digite aqui...">
+                        </div>
+                        <div>
+                            <label for="data">Data: </label>
+                            <input type="date" name="data" id="data_agendamento" placeholder="Digite aqui...">
+                        </div>
+                        <div>
+                            <label for="turno_agendamento">Turno: </label>
+                            <select id="turno_agendamento" name="turno_agendamento" form="PoPuAgendarChave">
+                                <option value="Turno1">Turno 1</option>
+                                <option value="Turno2">Turno 2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div><i class='bx bx-x-circle' id="FechaAgendarChave"></i></div>
+                    <input type="submit" value="Agendar" id="SubmitAgendarChave">
+                </div>
+            </form>
+        </div>
     </div> 
     <header class="Header">
         <!-- Barra Laterial -->

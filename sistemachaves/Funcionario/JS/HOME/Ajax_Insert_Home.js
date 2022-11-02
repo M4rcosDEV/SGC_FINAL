@@ -19,6 +19,7 @@ function GerenciamentoPredios(){
                     getPredioInferior();
                     getPredioSuperior();
                     GerenciamentoChaves(); //Atualizar chaves
+                    getChaves();
                 }
             })
         });    
@@ -43,6 +44,7 @@ function GerenciamentoPredios(){
                     getPredioInferior();
                     getPredioSuperior();
                     GerenciamentoChaves(); //Atualizar chaves
+                    getChaves();
                 }
             })
         })
@@ -68,34 +70,27 @@ function GerenciamentoPredios(){
             type: 'GET',
             dataType: 'html',
             success: (function (resultados){
-                $('.Main_Cont3_Bloco-Chaves').html(resultados)})
+                $('.Main_Cont3_Bloco-Chaves').html(resultados)
+                getChaves();
+            })
         })
     }
     getPredioInferior();
 
-    function getChaves(){
-        $.ajax({
-            url: './PHP/Gerenciamento/chave.php',
-            type: 'GET',
-            dataType: 'JSON',
-            
-        })
-    }
 
     function RefreshChaves(){
         var btn = document.querySelector('.Refresh_Chaves');
         btn.addEventListener('click', function(){
-            var li = document.querySelectorAll('.Bloco_Chaves_LI_DISP')
-            $('.Bloco_Chaves_LI_DISP').remove();
             getChaves();
         })
     }
     RefreshChaves();
 
     function getChaves(){
+        $('.Bloco_Chaves_LI_DISP').remove();
+        $('.Bloco_Chaves_LI_USO').remove();
         //Adicionar Chaves aos Blocos Prédio
         $.getJSON('./PHP/Gerenciamento/chave.php', function(chaves){
-            console.log("asd");
             $('.Bloco_Chaves_UL').each((index, elementUL) => {
                 $.each(chaves, function (indexC, chave) {
                     if (("Predio_"+chave.idPredio) == elementUL.id && chave.situacao == 0){
@@ -115,12 +110,59 @@ function GerenciamentoPredios(){
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        <input type="submit" value="AGENDAR">
+                                                        <input type="submit" value="AGENDAR" id="AgendarChave"  class="idChave_${chave.idChave}">
                                                         <input type="submit" value="RETIRAR">
                                                     </div>
                                                 </li>`;
                             elementUL.innerHTML += text;
-                            }
+                            $('.idChave_'+chave.idChave).click(()=>{
+                                    /*----------------------------------------------------------------------------------*/
+                                    var POPUPS = document.querySelector('.POPUPS');
+                                    var div_PopupCadPredios = document.querySelector('.PoPuCadastroPredio'); // Cadastro
+                                    var div_PopupExcluirPredios = document.querySelector('.PoPuExcluirPredio') // Delete
+                                    var div_PopupAgendarChave = document.querySelector('.PoPuAgendarChave') // Agendar
+                                    /*----------------------------------------------------------------------------------*/
+                                    var buttonAgendarChave = document.getElementById('AgendarChave');
+                                    var buttonFechaSubmit = document.getElementById('FechaAgendarChave');
+                                    var buttonSubmitAgendarChave = document.getElementById('SubmitAgendarChave');
+                                    /*----------------------------------------------------------------------------------*/
+                                    document.getElementById('NumeroSalaAgendamento').innerHTML = `${chave.descricao} ${chave.idChave}`;
+                                    document.getElementById('NumeroPredioAgendamento').innerHTML = `Predio ${chave.idPredio}`;
+                                    /*----------------------------------------------------------------------------------*/
+                                        /*Blur*/
+                                        POPUPS.style.display = 'flex';
+                                        POPUPS.classList.add("active");
+                                        /*O que será aberto*/
+                                        div_PopupAgendarChave.style.display = "flex";
+                                        div_PopupAgendarChave.classList.add("active");
+                                        /*O que será oculto*/
+                                        div_PopupCadPredios.style.display = "none";
+                                        div_PopupExcluirPredios.style.display = "none";
+                            
+                                    
+                                    buttonSubmitAgendarChave.addEventListener('click', ()=>{ // Botão Salvar
+                                        /*Blur*/
+                                        POPUPS.style.display = 'none';
+                                        POPUPS.classList.remove("active");
+                                        /*O que será aberto*/   
+                                        div_PopupAgendarChave.style.display = "none";
+                                        div_PopupAgendarChave.style.display = "none";
+
+
+
+                                    });
+                                    
+                                    buttonFechaSubmit.addEventListener('click', ()=>{ // Botão Fecha
+                                        /*Blur*/
+                                        POPUPS.style.display = 'none';
+                                        POPUPS.classList.remove("active");
+                                        /*O que será aberto*/
+                                        div_PopupAgendarChave.style.display = "none";
+                                        div_PopupAgendarChave.style.display = "none";
+                                    });
+            
+                            })
+                        }
                     })
                 $.each(chaves, function (indexC, chave) {
                     if (("Predio_"+chave.idPredio) == elementUL.id && chave.situacao == 1){
@@ -151,10 +193,70 @@ function GerenciamentoPredios(){
             })
         })
     }
-    getChaves();
+    function Agendar(){
+        $('.Bloco_Chaves_LI_DISP').remove();
+        $('.Bloco_Chaves_LI_USO').remove();
+        //Adicionar Chaves aos Blocos Prédio
+        $.getJSON('./PHP/Gerenciamento/chave.php', function(chaves){
+            $('.Bloco_Chaves_UL').each((index, elementUL) => {
+                $.each(chaves, function (indexC, chave) {
+                    if (("Predio_"+chave.idPredio) == elementUL.id && chave.situacao == 0){
+                            $('.idChave_'+chave.idChave).click(()=>{
+                                    /*----------------------------------------------------------------------------------*/
+                                    var POPUPS = document.querySelector('.POPUPS');
+                                    var div_PopupCadPredios = document.querySelector('.PoPuCadastroPredio'); // Cadastro
+                                    var div_PopupExcluirPredios = document.querySelector('.PoPuExcluirPredio') // Delete
+                                    var div_PopupAgendarChave = document.querySelector('.PoPuAgendarChave') // Agendar
+                                    /*----------------------------------------------------------------------------------*/
+                                    var buttonAgendarChave = document.getElementById('AgendarChave');
+                                    var buttonFechaSubmit = document.getElementById('FechaAgendarChave');
+                                    var buttonSubmitAgendarChave = document.getElementById('SubmitAgendarChave');
+                                    /*----------------------------------------------------------------------------------*/
+                                    document.getElementById('NumeroSalaAgendamento').innerHTML = `${chave.descricao} ${chave.idChave}`;
+                                    document.getElementById('NumeroPredioAgendamento').innerHTML = `Predio ${chave.idPredio}`;
+                                    /*----------------------------------------------------------------------------------*/
+                                        /*Blur*/
+                                        POPUPS.style.display = 'flex';
+                                        POPUPS.classList.add("active");
+                                        /*O que será aberto*/
+                                        div_PopupAgendarChave.style.display = "flex";
+                                        div_PopupAgendarChave.classList.add("active");
+                                        /*O que será oculto*/
+                                        div_PopupCadPredios.style.display = "none";
+                                        div_PopupExcluirPredios.style.display = "none";
+                            
+                                    
+                                    buttonSubmitAgendarChave.addEventListener('click', ()=>{ // Botão Salvar
+                                        /*Blur*/
+                                        POPUPS.style.display = 'none';
+                                        POPUPS.classList.remove("active");
+                                        /*O que será aberto*/   
+                                        div_PopupAgendarChave.style.display = "none";
+                                        div_PopupAgendarChave.style.display = "none";
+
+                                        
+
+                                    });
+                                    
+                                    buttonFechaSubmit.addEventListener('click', ()=>{ // Botão Fecha
+                                        /*Blur*/
+                                        POPUPS.style.display = 'none';
+                                        POPUPS.classList.remove("active");
+                                        /*O que será aberto*/
+                                        div_PopupAgendarChave.style.display = "none";
+                                        div_PopupAgendarChave.style.display = "none";
+                                    });
+            
+                            })
+                        }
+                    })
+            })
+        })
+    }Agendar();
+    /*---------*/
 }
+
 GerenciamentoPredios();
 
-//  --------    Gerenciamento de todas as chaves    --------
-function GerenciamentoChaves(){
-}
+// $(document).load(getChaves());
+

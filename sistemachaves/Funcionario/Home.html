@@ -29,50 +29,45 @@
     </div>
     <!-- POPUPS -->
     <div class="POPUPS">
-        <!-- Cadastro Prédio -->
-        <div class="PoPuCadastroPredio">
+
+        <!-- Agendar Prédio -->
+        <div class="PoPuAgendarChave">
             <!-- Formulário Cadastro Prédio -->
-            <form class="FormCadastroPredio" action="../Funcionario/PHP/HOME/Predio.php" method="POST">
+            <form class="FormaAgendarChave"  method="POST" action="" id="FormaAgendarChave">
                 <div>
                     <img src="../Assets/Prédio.png" alt="Ilustração Predio">
                     <div></div>
                 </div>
                 <div>
-                    <h4>Novo Prédio</h4>
                     <div>
-                        <label for="idCadPredio">Número: </label>
-                        <input type="number" name="idCadPredio" id="idCadPredio" placeholder="Digite aqui...">
-                        <input style="display: none" name="tipo" type="text" value="cadastrarPredio">
+                        <h4>Sala 101</h4>
+                        <h4>Predio 1</h4>
+                    </div>
+                    <div class="informacoes_agendamento">
+                        <div>
+                            <label for="Matricula">Matricula: </label>
+                            <input type="number" name="Matricula" id="Matricula_agendamento" placeholder="Digite aqui...">
+                        </div>
+                        <div>
+                            <label for="data">Data: </label>
+                            <input type="date" name="data" id="data_agendamento" placeholder="Digite aqui...">
+                        </div>
+                        <div>
+                            <label for="turno_agendamento">Turno: </label>
+                            <select id="turno_agendamento" name="turno_agendamento" form="PoPuAgendarChave">
+                                <option value="Turno1">Turno 1</option>
+                                <option value="Turno2">Turno 2</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div>
-                    <div><i class='bx bx-x-circle' id="FechaAddPredio"></i></div>
-                    <input type="submit" value="Salvar" id="SubmitAddPredio">
+                    <div><i class='bx bx-x-circle' id="FechaAgendarChave"></i></div>
+                    <input type="submit" value="Agendar" id="SubmitAgendarChave">
                 </div>
             </form>
         </div>
-        <div class="PoPuExcluirPredio">
-            <!-- Formulário Excluir Prédio -->
-            <form class="FormExcluirPredio" action="../Funcionario/PHP/HOME/Predio.php" method="POST">
-                <div>
-                    <img src="../Assets/Prédio.png" alt="Ilustração Predio">
-                    <div></div>
-                </div>
-                <div>
-                    <h4>Excluir Prédio</h4>
-                    <div>
-                        <label for="idExcPredio">Número: </label>
-                        <input type="number" name="idExcPredio" id="idExcPredio" placeholder="Digite aqui...">
-                        <input style="display: none" name="tipo" type="text" value="excluirPredio">
-                    </div>
-                </div>
-                <div>
-                    <div><i class='bx bx-x-circle' id="FechaExcPredio"></i></div>
-                    <input type="submit" value="Excluir" id="SubmitExcPredio">
-                </div>
-            </form>
-        </div>
-    </div>
+    </div> 
     <header class="Header">
         <!-- Barra Laterial -->
         <nav class="Nav">
@@ -350,11 +345,7 @@
                                             <!-- Dados do Predio -->
                                             <div class="Bloco_Chaves">
                                                     <!-- < -->
-                                                    <div class="arrow_left_div">
-                                                        <button id="arrow_left_chaves">
-                                                            <i class='bx bx-chevron-left' ></i>
-                                                        </button>
-                                                    </div>
+                                     
                                                     <!-- > -->
                                                     <div class="arrow_right_div">
                                                         <button id="arrow_right_chaves">
@@ -363,26 +354,26 @@
                                                     </div>
                                                 <div class="Container_Chaves_Ul">
                                                     <ul class="Bloco_Chaves_UL" id="">
-                                                    <li class="Bloco_Chaves_LI_USO">
-                                                        <div>
-                                                            <input type="checkbox">
-                                                        </div>
-                                                        <div>
-                                                            <img src="../Assets/Chave.png" alt="Ilustração chave">
-                                                        </div>
-                                                        <div>
-                                                            <h4> Sala 101</h4>
-                                                            <span>status:</span>
+                                                        <li class="Bloco_Chaves_LI_DISP" id="Predio_${chave.idPredio}">
                                                             <div>
-                                                                <div></div>
-                                                                <h4>Disponivél</h4>
+                                                                <input type="checkbox">
                                                             </div>
-                                                        </div>
-                                                        <div>
-                                                            <input type="submit" value="AGENDAR">
-                                                            <input type="submit" value="RETIRAR">
-                                                        </div>
-                                                    </li>
+                                                            <div>
+                                                                <img src="../Assets/Chave.png" alt="Ilustração chave">
+                                                            </div>
+                                                            <div>
+                                                                <h4>Sala 101</h4>
+                                                                <span>status:</span>
+                                                                <div>
+                                                                    <div></div>
+                                                                    <h4>Disponivél</h4>
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <input type="submit" value="AGENDAR" id="Agendar_Chave">
+                                                                <input type="submit" value="RETIRAR">
+                                                            </div>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>

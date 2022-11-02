@@ -36,4 +36,3 @@
     }   
     
     exibir();
-    header("Refresh: 1");
