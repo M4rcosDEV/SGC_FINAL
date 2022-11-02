@@ -308,7 +308,7 @@
 }
 /*-----------------------------------------------------------------------------------------*/
 .FormaAgendarChave {
-    background-image: linear-gradient(120deg, #2D4065 10%, rgb(255, 166, 0) 400%);
+    background-image: linear-gradient(120deg, #2D4065 10%, rgb(174, 0, 255) 400%);
     width: 450px;
     height: 280px;
     border-radius: 20px;
