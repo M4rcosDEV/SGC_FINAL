@@ -297,6 +297,7 @@ function GerenciamentoPredios(){
                                             div_PopupCadPredios.style.display = "none";
                                             div_PopupExcluirPredios.style.display = "none";
                                             div_PopupAgendarChave.style.display = "none";
+                                            
                                             buttonSubmitRetirarChave.addEventListener('click', (event)=>{ // Botão Salvar
                                             event.preventDefault();
                                                     $.ajax({
