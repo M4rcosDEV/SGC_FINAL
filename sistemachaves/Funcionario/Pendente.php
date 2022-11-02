@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SGC - CADASTRO</title>
     <!-- CSS GLOBAL -->
-    <link href='../Funcionario/CSS/Tab_Bar.css' rel='stylesheet'>
+    <link href='./CSS/GLOBAL/Tab_Bar.css' rel='stylesheet'>
     <!-- CSS -->
-    <link href="../Funcionario/CSS/Pendente.css" rel="stylesheet" type="text/css" />
+    <link href="./CSS/Pendente.css" rel="stylesheet" type="text/css" />
     <!-- JAVASCRIPT GLOBAL -->
-    <script src="../Funcionario/JAVASCRIPT/TabBar.js" type="text/javascript" defer></script>
+    <script src="./JS/GLOBAL/TabBar.js" type="text/javascript" defer></script>
     <!-- JAVASCRIPT -->
-    <script src="/Funcionario/JAVASCRIPT/pendente.js" type="text/JavaScript" defer ></script>
+    <script src="./JS/pendente.js" type="text/JavaScript" defer ></script>
     <!-- CSS ASSETS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href='../Funcionario/CSS/Fonts.css' rel='stylesheet'>
+    <link href='./CSS/GLOBAL/Fonts&Color.css' rel='stylesheet'>
 </head>
 <body>
     <div class="indicador1">

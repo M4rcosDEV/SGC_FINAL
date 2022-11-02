@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SGC - CADASTRO</title>
     <!-- CSS GLOBAL -->
-    <link href='../Funcionario/CSS/Tab_Bar.css' rel='stylesheet'>
+    <link href='./CSS/GLOBAL/Tab_Bar.css' rel='stylesheet'>
     <!-- CSS -->
-    <link href="../Funcionario/CSS/solicitacoes.css" rel="stylesheet" type="text/css" />
+    <link href="./CSS/solicitacoes.css" rel="stylesheet" type="text/css" />
     <!-- JAVASCRIPT GLOBAL -->
-    <script src="../Funcionario/JAVASCRIPT/TabBar.js" type="text/javascript" defer></script>
+    <script src="./JS/" type="text/javascript" defer></script>
     <!-- JAVASCRIPT -->
     <script src="/Funcionario/JAVASCRIPT/popSala.js" defer></script>
     <script src="/Funcionario/JAVASCRIPT/sala.js" defer></script>
