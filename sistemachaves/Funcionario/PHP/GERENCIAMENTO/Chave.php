@@ -21,7 +21,7 @@
         $chave = new Chave($idChave, $Situacao, $idPredio, $Descricao);
         $chave -> inserirChave();
         $chave -> inserirSala();
-        header("Location: http://localhost/SISTEMACHAVES/Funcionario/Gerenciamento.php");
+        header("Location: http://localhost/SGC_FINAL/SISTEMACHAVES/Funcionario/Gerenciamento.php");
     }
 
     function exibirChaves(){
@@ -56,17 +56,20 @@
         
         $chave = new Chave($idChave, $Situacao, $idPredio, $Descricao);
         $chave -> alterarChave($numChave, $numPredio);
-        //header("Location: http://localhost/SISTEMACHAVES/Funcionario/Gerenciamento.php");
+        //header("Location: http://localhost/SGC_FINAL/SISTEMACHAVES/Funcionario/Gerenciamento.php");
     }
 
     function remover(){
         $idChave = $_POST['idChave'];
         $Situacao = 0;
         $idPredio = $_POST['idPredio'];
-        $Descricao = $_POST['DescriChave'];
+        $Descricao = 'Sala';
         $chave = new Chave($idChave, $Situacao, $idPredio, $Descricao);
+        // echo  $idChave. '<br>';
+        // echo $Situacao . '<br>';
+        // echo $idPredio . '<br>';
         $chave -> excluirChave();
-        header("Location: http://localhost/SISTEMACHAVES/Funcionario/Gerenciamento.php");
+        header("Location: http://localhost/SGC_FINAL/SISTEMACHAVES/Funcionario/Gerenciamento.php");
     }
 
     

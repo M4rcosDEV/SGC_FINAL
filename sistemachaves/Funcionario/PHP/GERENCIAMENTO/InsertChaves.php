@@ -72,7 +72,7 @@
                 $stmt->execute();
         
             }catch(PDOException $ex){
-            echo "Erro ao inserir aluno: " . $ex;
+            echo "Erro ao remover chave: " . $ex;
             }
         }
 
