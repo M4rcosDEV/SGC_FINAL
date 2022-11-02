@@ -132,8 +132,8 @@ session_start();
                 </div>
                 <div>
                     <div>
-                        <h4 id="NumeroSalaAgendamento">Sala ???</h4>
-                        <h4 id="NumeroPredioAgendamento">Predio ???</h4>
+                        <h4 id="NumeroSalaRetirar">Sala ???</h4>
+                        <h4 id="NumeroPredioRetirar">Predio ???</h4>
                     </div>
                     <div class="informacoes_agendamento">
                         <div>

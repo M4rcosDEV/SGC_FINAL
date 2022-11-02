@@ -284,8 +284,8 @@ function GerenciamentoPredios(){
                                         /*----------------------------------------------------------------------------------*/
                                         var buttonFechaSubmit = document.getElementById('FechaRetirarChave');
                                         var buttonSubmitRetirarChave = document.getElementById('SubmitRetirarChave');
-                                        document.getElementById('NumeroSalaAgendamento').innerHTML = `${chavesLI['descricao']} ${chavesLI['idChave']}`;
-                                        document.getElementById('NumeroPredioAgendamento').innerHTML = `Predio ${chavesLI['idPredio']}`;
+                                        document.getElementById('NumeroSalaRetirar').innerHTML = `${chavesLI['descricao']} ${chavesLI['idChave']}`;
+                                        document.getElementById('NumeroPredioRetirar').innerHTML = `Predio ${chavesLI['idPredio']}`;
                                         /*----------------------------------------------------------------------------------*/
                                         /*Blur*/
                                             POPUPS.style.display = 'flex';
