@@ -13,7 +13,6 @@ create table cliente (
 
 create table administrador (
 	id_administrador integer auto_increment primary key,
-	id_funcionario integer,
 	nome varchar(200) not null,
 	matricula varchar(15) not null unique,
 	senha varchar(255) not null,
