@@ -13,6 +13,8 @@
     <script src="../Funcionario/JS/GLOBAL/TabBar.js" type="text/javascript" defer></script>
     <!-- JAVASCRIPT -->
     <script src="../Funcionario/JS/GERENCIAMENTO/Gerenciamento.js" type="text/javascript" defer></script>
+    <!--JQUERY/AJAX-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- CSS ASSETS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href='../Funcionario/CSS/Fonts&Color.css' rel='stylesheet'>
@@ -57,7 +59,7 @@
                     </li>
                     <!-- Item 2 = Cadastro -->
                     <li class="Li_Barra">
-                        <a href="../Funcionario/Cadastro.php" class="Item_Barra active">
+                        <a href="../Funcionario/Gerenciamento.php" class="Item_Barra active">
                             <div class="Div_Item_Barra">
                                 <i class='bx bxs-key'></i>
                             </div>
@@ -129,7 +131,8 @@
             <div class="form1_cad_Chaves" id="formChave">
                 <div id="botao-cadastro2"><h3>Cadastro de Chaves</h3></div>
                 
-                <form id="CadastroChaves" action="../Funcionario/PHP/GERENCIAMENTO/Chave.php" method="POST">
+                <form id="CadastroChaves" action="../Funcionario/PHP/GERENCIAMENTO/Chave.php"
+                 method="POST">
                     <div style="display: none"></div>
                     <div>
                         <label for="idChave">Número da chave: </label>

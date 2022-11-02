@@ -14,6 +14,12 @@ function abrirJanela(){
     divBack.style.display = 'none';
 }
 
+$(document).ready(function() {
+    $(janelaExcluir).click(function () {
+        $(janelaExcluir).slideToggle();
+    })
+})
+
 excluir_chave.addEventListener('click', abrirJanela);
 
 fechaPopup.addEventListener('click', fecharJanela);
