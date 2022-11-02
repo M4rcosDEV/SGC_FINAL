@@ -51,7 +51,7 @@ create table agendar (
 create table emprestimo (
 	id_emprestimo integer auto_increment primary key,
     idChave integer,
-    id_cliente integer,
+    id_cliente varchar(15), 
     id_funcionario integer,
 	foreign key(idChave, id_cliente) references agendar(idChave, id_cliente),
     foreign key(id_funcionario) references administrador(id_administrador)
