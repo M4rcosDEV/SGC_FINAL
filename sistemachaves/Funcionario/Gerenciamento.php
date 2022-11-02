@@ -8,11 +8,15 @@
     <!-- CSS GLOBAL -->
     <link href='../Funcionario/CSS/GLOBAL/Tab_Bar.css' rel='stylesheet'>
     <!-- CSS -->
+    <link href="../Funcionario/CSS/GERENCIAMENTO/alterarchave.css" rel="stylesheet" type="text/css" />
     <link href="../Funcionario/CSS/GERENCIAMENTO/Gerenciamento.css" rel="stylesheet" type="text/css" />
     <!-- JAVASCRIPT GLOBAL -->
     <script src="../Funcionario/JS/GLOBAL/TabBar.js" type="text/javascript" defer></script>
     <!-- JAVASCRIPT -->
+    <script src="../Funcionario/JS/GERENCIAMENTO/alterarchave.js" type="text/javascript" defer></script>
     <script src="../Funcionario/JS/GERENCIAMENTO/Gerenciamento.js" type="text/javascript" defer></script>
+    <!--JQUERY/AJAX-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- CSS ASSETS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href='../Funcionario/CSS/Fonts&Color.css' rel='stylesheet'>
@@ -57,7 +61,7 @@
                     </li>
                     <!-- Item 2 = Cadastro -->
                     <li class="Li_Barra">
-                        <a href="../Funcionario/Cadastro.php" class="Item_Barra active">
+                        <a href="../Funcionario/Gerenciamento.php" class="Item_Barra active">
                             <div class="Div_Item_Barra">
                                 <i class='bx bxs-key'></i>
                             </div>
@@ -129,7 +133,8 @@
             <div class="form1_cad_Chaves" id="formChave">
                 <div id="botao-cadastro2"><h3>Cadastro de Chaves</h3></div>
                 
-                <form id="CadastroChaves" action="../Funcionario/PHP/GERENCIAMENTO/Chave.php" method="POST">
+                <form id="CadastroChaves" action="../Funcionario/PHP/GERENCIAMENTO/Chave.php"
+                 method="POST">
                     <div style="display: none"></div>
                     <div>
                         <label for="idChave">Número da chave: </label>
@@ -186,16 +191,19 @@
                     <div>
                         <input type="text" name="tipo" value="alterarChave" style="display: none">
 
-                        <input type="submit" value="Alterar" id="SubmitAlterarPredio" onclick=" return pegarInfo()">
-                        <script type="text/javascript" defer>
+                        <input type="submit" value="Alterar" id="SubmitAlterarPredio">
+
+                        
+
+                        <!-- <script type="text/javascript" defer>
 	                        function pegarInfo() {
 		                    // define as variáveis nome e sobrenome
-                            let nome = prompt("Digite o seu nome");
-                            let sobrenome = prompt("Digite o seu sobrenome");
-                                
+                            let numChave = prompt("Novo número: ");
+                            let numPredio = prompt("Novo número: ");
+                            let descricao = prompt('[1] Sala\n[2]Laboratorio');
                             // REQUISIÇÃO AJAX
                             // cria o objeto XMLHttpRequest
-                            const xhttp = new XMLHttpRequest(); 
+                            const xhttp = new XMLHttpRequest();
                             // chama a função quando a requisição é recebida
                             xhttp.onload = function() { 
                                 document.getElementById("demo").innerHTML = this.responseText;
@@ -207,11 +215,11 @@
                             // especifica os dados que deseja enviar   
                             xhttp.send("nome="+nome+"&sobrenome="+sobrenome);
 	                        }
-                        </script>
-                        <form action="../Funcionario/PHP/GERENCIAMENTO/Chave.php" method="POST" name="form1">
+                        </script> -->
+                        <!-- <form action="../Funcionario/PHP/GERENCIAMENTO/Chave.php" method="POST" name="form1">
 	                        <input type="hidden" name="numChave" id="numChave">
                             <input type="hidden" name="numPredio" id="numPredio">
-                        </form>
+                        </form> -->
 
                     </div>
                 </form>

@@ -21,7 +21,7 @@
         $chave = new Chave($idChave, $Situacao, $idPredio, $Descricao);
         $chave -> inserirChave();
         $chave -> inserirSala();
-        header("Location: http://localhost/SISTEMACHAVES/Funcionario/Gerenciamento.php");
+        header("Location: http://localhost/SGC_FINAL/SISTEMACHAVES/Funcionario/Gerenciamento.php");
     }
 
     function exibirChaves(){
@@ -39,8 +39,8 @@
    // }
 
     function alterar(){
-        $numChave=strip_tags($_POST[ 'numChave']);
-        $numPredio=strip_tags($_POST[ 'numPredio']);
+        // $numChave=strip_tags($_POST[ 'numChave']);
+        // $numPredio=strip_tags($_POST[ 'numPredio']);
 
         
         $idChave = $_POST['idChave'];
@@ -49,24 +49,27 @@
         $Descricao = 'Sala';
         //  $Descricao = $_POST['descriChave'];
         //  echo $Descricao;
-        echo $numChave. '<br>';
-        echo $numPredio. '<br>';
+        //echo $idChave. '<br>';
+        //echo $idPredio. '<br>';
         // echo $idChave. '<br>';
         // echo $idPredio. '<br>';
         
-        $chave = new Chave($idChave, $Situacao, $idPredio, $Descricao);
-        $chave -> alterarChave($numChave, $numPredio);
-        //header("Location: http://localhost/SISTEMACHAVES/Funcionario/Gerenciamento.php");
+        //$chave = new Chave($idChave, $Situacao, $idPredio, $Descricao);
+        //$chave -> alterarChave($numChave, $numPredio);
+        header("Location: http://localhost/SGC_FINAL/SISTEMACHAVES/Funcionario/Gerenciamento.php");
     }
 
     function remover(){
         $idChave = $_POST['idChave'];
         $Situacao = 0;
         $idPredio = $_POST['idPredio'];
-        $Descricao = $_POST['DescriChave'];
+        $Descricao = 'Sala';
         $chave = new Chave($idChave, $Situacao, $idPredio, $Descricao);
+        // echo  $idChave. '<br>';
+        // echo $Situacao . '<br>';
+        // echo $idPredio . '<br>';
         $chave -> excluirChave();
-        header("Location: http://localhost/SISTEMACHAVES/Funcionario/Gerenciamento.php");
+        header("Location: http://localhost/SGC_FINAL/SISTEMACHAVES/Funcionario/Gerenciamento.php");
     }
 
     
