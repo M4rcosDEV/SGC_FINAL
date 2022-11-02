@@ -53,8 +53,7 @@ create table agendar (
 	idChave integer,
     id_cliente integer, 
 	turno integer not null, 
-    data_agendar integer not null,  
-    hora integer not null,
+    data_agendar date not null,  
 	foreign key(idChave) references chave(idChave),
     foreign key(id_cliente) references cliente(id_cliente),
     primary key(idChave, id_cliente)
