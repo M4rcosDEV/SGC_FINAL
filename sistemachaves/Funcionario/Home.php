@@ -122,6 +122,38 @@ session_start();
                 </div>
             </form>
         </div>
+        <!-- Agendar Prédio -->
+        <div class="PoPuRetirarChave">
+            <!-- Formulário Cadastro Prédio action="../Funcionario/PHP/Agendar/postAgendar.php"  -->
+            <form class="FormaAgendarChave" method="POST" id="FormaAgendarChave">
+                <div>
+                    <img src="../Assets/Prédio.png" alt="Ilustração Predio">
+                    <div></div>
+                </div>
+                <div>
+                    <div>
+                        <h4 id="NumeroSalaAgendamento">Sala ???</h4>
+                        <h4 id="NumeroPredioAgendamento">Predio ???</h4>
+                    </div>
+                    <div class="informacoes_agendamento">
+                        <div>
+                            <label for="Matricula">Matricula: </label>
+                            <input type="number" name="Matricula" id="Matricula_agendamento" placeholder="Digite aqui...">
+                        </div>
+                        <div>
+                            <label for="data">Senha: </label>
+                            <input type="password" name="data" id="data_agendamento" placeholder="Digite aqui...">
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div><i class='bx bx-x-circle' id="FechaRetirarChave"></i></div>
+                    <input type="submit" value="Retirar" id="SubmitRetirarChave">
+                </div>
+            </form>
+        </div>
     </div> 
     <header class="Header">
         <!-- Barra Laterial -->

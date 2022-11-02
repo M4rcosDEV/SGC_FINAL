@@ -34,4 +34,24 @@ class Agendar{
             echo "Erro ao excluir predio: " . $ex;
         }
     }
+
+    function Agendar_Chave(){
+        $banco = new Banco();
+        $conexao = $banco->conectar();
+        try{
+            $stmt = $conexao->prepare("INSERT INTO agendar (idChave, id_cliente, turno, data_agendar) 
+            VALUES (:idChave, :id_cliente, :turno, :data_agendar)");
+            
+            $stmt->bindParam(':idChave', $this->idChave);
+            $stmt->bindParam(':id_cliente', $this->id_cliente);
+            $stmt->bindParam(':turno', $this->Turno);
+            $stmt->bindParam(':data_agendar', $this->Data);
+            $stmt->execute();
+            
+            echo "Chave agendada";
+            
+        } catch(PDOException $ex){
+            echo "Erro ao excluir predio: " . $ex;
+        }
+    }
 }
