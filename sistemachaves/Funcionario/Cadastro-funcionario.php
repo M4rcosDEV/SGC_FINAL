@@ -58,7 +58,7 @@
                 <div class="caixa-entrada">
                     <select name="tipo_func" id="Selecionar-servidor" required>
                         <option value="" disabled selected hidden>Tipo de Funcionário</option>
-                        <option value="terceirizado">terceirizado</option>
+                        <option value="terceirizado">Terceirizado</option>
                         <option value="servidor">Servidor</option>
                         <option value="professor">Professor</option>
                         <option value="administrador">Administrador</option>
