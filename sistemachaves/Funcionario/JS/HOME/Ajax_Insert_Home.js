@@ -115,53 +115,6 @@ function GerenciamentoPredios(){
                                                     </div>
                                                 </li>`;
                             elementUL.innerHTML += text;
-                            $('.idChave_'+chave.idChave).click(()=>{
-                                    /*----------------------------------------------------------------------------------*/
-                                    var POPUPS = document.querySelector('.POPUPS');
-                                    var div_PopupCadPredios = document.querySelector('.PoPuCadastroPredio'); // Cadastro
-                                    var div_PopupExcluirPredios = document.querySelector('.PoPuExcluirPredio') // Delete
-                                    var div_PopupAgendarChave = document.querySelector('.PoPuAgendarChave') // Agendar
-                                    /*----------------------------------------------------------------------------------*/
-                                    var buttonAgendarChave = document.getElementById('AgendarChave');
-                                    var buttonFechaSubmit = document.getElementById('FechaAgendarChave');
-                                    var buttonSubmitAgendarChave = document.getElementById('SubmitAgendarChave');
-                                    /*----------------------------------------------------------------------------------*/
-                                    document.getElementById('NumeroSalaAgendamento').innerHTML = `${chave.descricao} ${chave.idChave}`;
-                                    document.getElementById('NumeroPredioAgendamento').innerHTML = `Predio ${chave.idPredio}`;
-                                    /*----------------------------------------------------------------------------------*/
-                                        /*Blur*/
-                                        POPUPS.style.display = 'flex';
-                                        POPUPS.classList.add("active");
-                                        /*O que será aberto*/
-                                        div_PopupAgendarChave.style.display = "flex";
-                                        div_PopupAgendarChave.classList.add("active");
-                                        /*O que será oculto*/
-                                        div_PopupCadPredios.style.display = "none";
-                                        div_PopupExcluirPredios.style.display = "none";
-                            
-                                    
-                                    buttonSubmitAgendarChave.addEventListener('click', ()=>{ // Botão Salvar
-                                        /*Blur*/
-                                        POPUPS.style.display = 'none';
-                                        POPUPS.classList.remove("active");
-                                        /*O que será aberto*/   
-                                        div_PopupAgendarChave.style.display = "none";
-                                        div_PopupAgendarChave.style.display = "none";
-
-
-
-                                    });
-                                    
-                                    buttonFechaSubmit.addEventListener('click', ()=>{ // Botão Fecha
-                                        /*Blur*/
-                                        POPUPS.style.display = 'none';
-                                        POPUPS.classList.remove("active");
-                                        /*O que será aberto*/
-                                        div_PopupAgendarChave.style.display = "none";
-                                        div_PopupAgendarChave.style.display = "none";
-                                    });
-            
-                            })
                         }
                     })
                 $.each(chaves, function (indexC, chave) {
@@ -193,6 +146,7 @@ function GerenciamentoPredios(){
             })
         })
     }
+    
     function Agendar(){
         $('.Bloco_Chaves_LI_DISP').remove();
         $('.Bloco_Chaves_LI_USO').remove();
@@ -226,17 +180,11 @@ function GerenciamentoPredios(){
                                         div_PopupExcluirPredios.style.display = "none";
                             
                                     
-                                    buttonSubmitAgendarChave.addEventListener('click', ()=>{ // Botão Salvar
-                                        /*Blur*/
-                                        POPUPS.style.display = 'none';
-                                        POPUPS.classList.remove("active");
-                                        /*O que será aberto*/   
-                                        div_PopupAgendarChave.style.display = "none";
-                                        div_PopupAgendarChave.style.display = "none";
-
-                                        
-
-                                    });
+                                    buttonSubmitAgendarChave.addEventListener('click', (event)=>{ // Botão Salvar
+                                        event.preventDefault();
+                                        var aux1 = document.querySelector('#turno_agendamento').value
+                                        var aux2 = document.querySelector('#data_agendamento').value
+                                        alert('as');
                                     
                                     buttonFechaSubmit.addEventListener('click', ()=>{ // Botão Fecha
                                         /*Blur*/
@@ -259,4 +207,3 @@ function GerenciamentoPredios(){
 GerenciamentoPredios();
 
 // $(document).load(getChaves());
-

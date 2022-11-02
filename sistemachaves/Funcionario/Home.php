@@ -6,6 +6,7 @@ session_start();
         header("location: index.php");
         exit;
     }
+    // include_once '/PHP/Agendar/postAgendar.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -85,8 +86,8 @@ session_start();
         </div>
         <!-- Agendar Prédio -->
         <div class="PoPuAgendarChave">
-            <!-- Formulário Cadastro Prédio -->
-            <form class="FormaAgendarChave"  method="POST" action="" id="FormaAgendarChave">
+            <!-- Formulário Cadastro Prédio action="../Funcionario/PHP/Agendar/postAgendar.php"  -->
+            <form class="FormaAgendarChave" method="POST" id="FormaAgendarChave">
                 <div>
                     <img src="../Assets/Prédio.png" alt="Ilustração Predio">
                     <div></div>
@@ -108,13 +109,14 @@ session_start();
                         <div>
                             <label for="turno_agendamento">Turno: </label>
                             <select id="turno_agendamento" name="turno_agendamento" form="PoPuAgendarChave">
-                                <option value="Turno1">Turno 1</option>
-                                <option value="Turno2">Turno 2</option>
+                                <option value="0">Turno 1</option>
+                                <option value="1">Turno 2</option>
                             </select>
                         </div>
                     </div>
                 </div>
                 <div>
+                    <input style="display: none" name="tipo" id="tipo" type="text" value="AgendarChave">
                     <div><i class='bx bx-x-circle' id="FechaAgendarChave"></i></div>
                     <input type="submit" value="Agendar" id="SubmitAgendarChave">
                 </div>

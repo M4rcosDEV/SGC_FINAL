@@ -4,6 +4,7 @@ include_once '../Conexao.php';
 
 class Predio{
     public $idPredio;
+
     
     function __construct($idPredio){
         $this->idPredio = $idPredio;    
