@@ -65,8 +65,6 @@ function fecharFormExcluir(){
     botao_cadastro.style.display = "flex";
 }
 
-
-
 botao_salvar.addEventListener("click", fecharFormSalvar);
 
 botao_cadastro.addEventListener("click", abrirForm);
@@ -77,7 +75,7 @@ botao_excluir.addEventListener("click", fecharFormExcluir);
 
 botao_alt_chave.addEventListener("click", ()=>{
     //formAlterar.style.display = 'none';
-    botao_alterar.style.display = 'flex';
+    botao_alterar.style.display = 'none';
 });
 
 botao_excluir_chave.addEventListener("click", ()=>{

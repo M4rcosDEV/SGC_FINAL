@@ -43,7 +43,7 @@ function PopusHome(){ //Todos os popus da home
     }
     PopupCadPredio();
 
-    function PopupExcluirPredio(){;
+    function PopupExcluirPredio(){
         var buttonExcPredio = document.querySelector('.Apagar_Predio');
         var buttonFechaExclPredio = document.getElementById('FechaExcPredio');
         var buttonExcluirPredio = document.getElementById('SubmitExcPredio');
