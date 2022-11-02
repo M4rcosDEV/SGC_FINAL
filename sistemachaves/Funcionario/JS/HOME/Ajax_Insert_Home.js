@@ -201,7 +201,7 @@ function GerenciamentoPredios(){
             var AgendarLi = document.querySelectorAll('#AgendarChave');
             $.each(AgendarLi, (indexLi, Li) =>{
                 Li.addEventListener('click', ()=>{
-                    function popup(){
+                    function popupAgendar(){
                         $.getJSON('./PHP/Gerenciamento/chave.php', function(chaves){
                                 $.each(chaves, function(indexChave, chavesLI){
                                     if (indexLi == indexChave){
@@ -265,13 +265,13 @@ function GerenciamentoPredios(){
                             })
                         })
                     }
-                    popup();
+                    popupAgendar();
                 })
             })
             var RetirarLi = document.querySelectorAll('#RetirarChave');
             $.each(RetirarLi, (indexLi, Li) =>{
                 Li.addEventListener('click', ()=>{
-                    function popup(){
+                    function popupRetirar(){
                         $.getJSON('./PHP/Gerenciamento/chave.php', function(chaves){
                                 $.each(chaves, function(indexChave, chavesLI){
                                     if (indexLi == indexChave){
@@ -297,7 +297,7 @@ function GerenciamentoPredios(){
                                             div_PopupCadPredios.style.display = "none";
                                             div_PopupExcluirPredios.style.display = "none";
                                             div_PopupAgendarChave.style.display = "none";
-                                            
+
                                             buttonSubmitRetirarChave.addEventListener('click', (event)=>{ // Botão Salvar
                                             event.preventDefault();
                                                     $.ajax({
@@ -335,7 +335,7 @@ function GerenciamentoPredios(){
                             })
                         })
                     }
-                    popup();
+                    popupRetirar();
                 })
             })
         })
