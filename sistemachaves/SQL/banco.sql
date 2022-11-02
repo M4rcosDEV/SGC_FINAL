@@ -41,11 +41,11 @@ create table chave (
  
 create table agendar (
 	idChave integer,
-    id_cliente integer, 
+    id_cliente varchar(15), 
 	turno integer not null, 
     data_agendar date not null,  
 	foreign key(idChave) references chave(idChave),
-    foreign key(id_cliente) references cliente(id_cliente),
+    foreign key(id_cliente) references cliente(matricula),
     primary key(idChave, id_cliente)
 );
 
