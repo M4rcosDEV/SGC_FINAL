@@ -13,7 +13,6 @@ create table cliente (
 
 create table administrador (
 	id_administrador integer auto_increment primary key,
-	id_funcionario integer,
 	nome varchar(200) not null,
 	matricula varchar(15) not null unique,
 	senha varchar(255) not null,
@@ -41,18 +40,18 @@ create table chave (
  
 create table agendar (
 	idChave integer,
-    id_cliente integer, 
+    id_cliente varchar(15), 
 	turno integer not null, 
     data_agendar date not null,  
 	foreign key(idChave) references chave(idChave),
-    foreign key(id_cliente) references cliente(id_cliente),
+    foreign key(id_cliente) references cliente(matricula),
     primary key(idChave, id_cliente)
 );
 
 create table emprestimo (
 	id_emprestimo integer auto_increment primary key,
     idChave integer,
-    id_cliente integer,
+    id_cliente varchar(15), 
     id_funcionario integer,
 	foreign key(idChave, id_cliente) references agendar(idChave, id_cliente),
     foreign key(id_funcionario) references administrador(id_administrador)

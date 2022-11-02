@@ -155,6 +155,32 @@ function GerenciamentoPredios(){
                                                 </li>`;
                             ul.innerHTML += text;
                         }
+                })
+                $.each(chaves, function(index, chavesLI){
+                    if (("Predio_"+chavesLI['idPredio']) == ul.id && chavesLI['situacao'] == 1){
+                        var text2 = `<li class="Bloco_Chaves_LI_USO" id="Predio_${chavesLI['idPredio']}">
+                                        <div>
+                                            <input type="checkbox">
+                                        </div>
+                                        <div>
+                                            <img src="../Assets/Chave.png" alt="Ilustração chave">
+                                        </div>
+                                        <div>
+                                            <h4>${chavesLI['descricao']} ${chavesLI['idChave']}</h4>
+                                            <span>status:</span>
+                                            <div>
+                                                <div></div>
+                                                <h4>Em Uso</h4>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <input type="submit" value="AGENDAR">
+                                            <input type="submit" value="RETIRAR">
+                                        </div>
+                                    </li>`;
+                        ul.innerHTML += text2;
+                    
+                }  
 
                 })
             })
