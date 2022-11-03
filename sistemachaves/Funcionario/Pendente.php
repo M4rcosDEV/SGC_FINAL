@@ -1,3 +1,8 @@
+<?php
+
+include_once '../config/pendenteHelper.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -48,7 +53,7 @@
                 <ul class="Ul_Barra">
                     <!-- Item 1 = Home -->
                     <li class="Li_Barra">
-                        <a href="../Funcionario/Home.php" class="Item_Barra">
+                        <a href="./Home.php" class="Item_Barra">
                             <div class="Div_Item_Barra">
                                 <i class='bx bx-home'></i>
                             </div>
@@ -57,16 +62,16 @@
                     </li>
                     <!-- Item 2 = Cadastro -->
                     <li class="Li_Barra">
-                        <a href="../Funcionario/Cadastro.php" class="Item_Barra">
+                        <a href="./Gerenciamento.php" class="Item_Barra">
                             <div class="Div_Item_Barra">
                                 <i class='bx bxs-key'></i>
                             </div>
-                            <span class="Name_Item_Barra Status1">Cadastro</span>
+                            <span class="Name_Item_Barra Status1">Gerenciamento</span>
                         </a>
                     </li>
                     <!-- Item 3 = Pendetes -->
                     <li class="Li_Barra">
-                        <a href="../Funcionario/Pendente.php" class="Item_Barra active">
+                        <a href="./Pendente.php" class="Item_Barra active">
                             <div class="Div_Item_Barra">
                                 <i class='bx bx-time-five'></i>
                             </div>
@@ -75,7 +80,7 @@
                     </li>
                     <!-- Item 4 = Solicitações -->
                     <li class="Li_Barra">
-                        <a href="../Funcionario/Solicitacoes.php" class="Item_Barra">
+                        <a href="./Solicitacoes.php" class="Item_Barra">
                             <div class="Div_Item_Barra">
                                 <i class='bx bx-archive-in'></i>
                             </div>
@@ -84,7 +89,7 @@
                     </li>
                     <!-- Item 5 = Agendamento -->
                     <li class="Li_Barra">
-                        <a href="../Funcionario/Agendamento.php" class="Item_Barra">
+                        <a href="../Agendamento.php" class="Item_Barra">
                             <div class="Div_Item_Barra">
                                 <i class='bx bx-bell'></i>
                             </div>
@@ -119,31 +124,33 @@
     <main class="Main">
         <!-- Bloco com Nome do Usuário -->
         <div class="Main_Cont1">
-            
+        <i class='bx bx-chevron-right' ></i>
+            <h3>Chaves Pendentes</h3>
         </div>
-        <!-- Bloco com Predios -->
-        <div class="Main_Cont2">
+        <!-- Bloco com chaves pendentes -->
+        <?php
+        $pendentes = getPendentes();
+        foreach ($pendentes as $pen) {
+            echo '<div class="Main_Cont2">
             <div class = "container-pendente">
-                <img src="../Assets/Chave.png" alt="chave do container">
-                <div class = "linha-horizontal"></div>
-                <div class="informacoes-pendente">
-                    <p>Chave: 731</p>
-                    <p>Usuário: Javi Jamilton</p>
-                    <p>Data de emissão: 07/08/2021</p>
-                </div>
-                <div class ="linha-horizontal"></div>
-
-                <div class="botao-chave" onclick="receberChave()">
-                    <button class="chave-recebida">Recebida</button>
-                    <i class='bx bx-check-circle'></i>
-                
-                </div>
+            <img src="../Assets/Chave.png" alt="chave do container">
+            <div class = "linha-horizontal"></div>
+            <div class="informacoes-pendente">' .
+            '<p> Chave: ' . $pen->id_chave . '</p>' .
+            '<p> Usuário: ' . $pen->nome_cliente . '</p>' .
+            '<p> Data de emissão: ' .$pen->data_agendamento -> format('d/m/Y') . '</p>' .
+            '</div>'.
+            '<div class ="linha-horizontal"></div>
+            <div class="botao-chave" onclick="receberChave()">
+            <button class="chave-recebida">Recebida</button>
+            <i class="bx bx-check-circle"></i>
             </div>
-
-        </div>
+            </div>
+            </div>';
+        }
+        ?>
         <!-- Bloco com Chaves -->
         <div class="Main_Cont3">
-            
         </div>
     </main>
 </body>

@@ -1,10 +1,25 @@
+.Main_Cont1{
+    margin-left: 45px;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    font-size: 25px;
+    font-family: 'Alata', sans-serif;
+    color: white;
+}
+.Main_Cont1 > h3{
+    font-weight: 500;
+}
+.Main_Cont1 > i {
+    color: #4b69a7;
+    font-size: 45px;
+}
 .Infor_Gerenciamento {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
 }
-
 .Infor_Gerenciamento>a {
     display: flex;
     flex-direction: row;
@@ -52,10 +67,7 @@
     transform: rotate(180deg);
     margin-left: 20px;
     transition: all 0.5s ease-in-out;
-
 }
-
-
 .container-pendente .linha-horizontal {
     display: flex;
     height: 50%;
@@ -113,5 +125,5 @@ p {
     display: flex;
     align-items: center;
     width: 1200px;
-    height: 300px;
+    height: 140px;
 }
