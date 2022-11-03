@@ -27,7 +27,7 @@ class Agendar{
             $stmt->bindParam(':turno', $this->Turno);
             $stmt->bindParam(':data_agendar', $this->Data);
             $stmt->execute();
-            
+
             echo "Chave agendada";
             
         } catch(PDOException $ex){

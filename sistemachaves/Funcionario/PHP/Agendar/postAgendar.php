@@ -18,3 +18,4 @@ function Agendar_C(){
     $predio->Agendar_Chave();
     // header("Location:../Funcionario/sala.php?id_predio=");
 }
+header("refresh: 3");

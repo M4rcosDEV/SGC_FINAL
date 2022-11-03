@@ -269,6 +269,7 @@ function GerenciamentoPredios(){
                                                         },
                                                         success: (function(msg){
                                                             console.log(msg);
+                                                            console.log($('#data_agendamento').val());
                                                             /*Blur*/
                                                             POPUPS.style.display = 'none';
                                                             POPUPS.classList.remove("active");
