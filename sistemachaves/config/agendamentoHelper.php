@@ -1,5 +1,5 @@
 <?php
-include_once 'pendente.php';
+include_once 'agendamento.php';
 function getPendentes() { 
     try {
         $banco = new Banco();

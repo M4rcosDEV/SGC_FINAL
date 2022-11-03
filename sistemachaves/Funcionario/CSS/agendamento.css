@@ -1,4 +1,19 @@
-
+.Main_Cont1{
+    margin-left: 45px;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    font-size: 25px;
+    font-family: 'Alata', sans-serif;
+    color: white;
+}
+.Main_Cont1 > h3{
+    font-weight: 500;
+}
+.Main_Cont1 > i {
+    color: #4b69a7;
+    font-size: 45px;
+}
 .Infor_Gerenciamento {
     display: flex;
     flex-direction: row;
@@ -41,9 +56,9 @@
     height: 120px;
     transition: all 0.5s ease-in-out;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
-    overflow: hidder;
+    overflow: hidden;
     margin-left: 100px;
-    margin-top: 200px;
+    margin-top: 20px;
 }
 .container-pendente:hover{
     box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.3);
@@ -56,8 +71,6 @@
     transition: all 0.5s ease-in-out;
 
 }
-
-
 .container-pendente .linha-horizontal {
     display: flex;
     height: 50%;

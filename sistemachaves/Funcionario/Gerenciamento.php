@@ -88,7 +88,7 @@
                     </li>
                     <!-- Item 5 = Agendamento -->
                     <li class="Li_Barra">
-                        <a href="../Funcionario/Agendamento.php" class="Item_Barra">
+                        <a href="./Agendamento.php" class="Item_Barra">
                             <div class="Div_Item_Barra">
                                 <i class='bx bx-bell'></i>
                             </div>
