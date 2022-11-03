@@ -75,14 +75,3 @@ CASE WHEN agendar.data_agendar = date(now()) THEN 'sim'
 ELSE 'nao' end as agendado, chave.idPredio, chave.descricao 
  from chave left join agendar on (chave.idChave = agendar.idChave);
 
-select data_agendar from agendar where idChave = 100;
-
-delete from agendar where idChave = 100;
-
-UPDATE table_name
-SET column1 = value1, column2 = value2, ...
-WHERE condition;
-
-UPDATE chave
-SET situacao = 0
-WHERE idChave = 100;

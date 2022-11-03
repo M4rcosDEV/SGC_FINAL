@@ -109,7 +109,6 @@ function GerenciamentoPredios(){
                     $.get('./PHP/Home/CountSala.php', function (countChave){
                         countChave.forEach(elementPredio => {
                             var currentClick = 4;
-                            console.log(elementPredio['COUNT(idChave)'])
                             arrowLeft.forEach(elementArrowL => {
                                 if (elementPredio['COUNT(idChave)'] > 3){
                                 } 
@@ -220,15 +219,8 @@ function GerenciamentoPredios(){
                             ul.innerHTML += text;
                         }
                 })
-                
-            
+    
                 $.each(chaves, function(index, chavesLI){
-                    
-                    console.log(dataAt);
-                    console.log(chavesLI['data_agendar']);
-
-              //      if ( '2022-11-03' == chavesLI['data_agendar']){
-
                         if (("Predio_"+chavesLI['idPredio']) == ul.id && chavesLI['situacao'] == 1){
 
                         
@@ -254,11 +246,9 @@ function GerenciamentoPredios(){
                                         </li>`;
                             ul.innerHTML += text2;
                     }      
-               // } else {
-                    
-              //  }  
 
                 })
+
             })
             var AgendarLi = document.querySelectorAll('#AgendarChave');
             $.each(AgendarLi, (indexLi, Li) =>{
@@ -266,8 +256,7 @@ function GerenciamentoPredios(){
                     function popupAgendar(){
                         $.getJSON('./PHP/Gerenciamento/chave.php', function(chaves){
                                 $.each(chaves, function(indexChave, chavesLI){
-                                    console.log(indexChave)
-                                    if (indexLi.className == indexChave.id){
+                                    if (Li.className == ('idChave_'+chavesLI['idChave'])){
                                         /*----------------------------------------------------------------------------------*/
                                         var POPUPS = document.querySelector('.POPUPS');
                                         var div_PopupCadPredios = document.querySelector('.PoPuCadastroPredio'); // Cadastro
@@ -335,15 +324,11 @@ function GerenciamentoPredios(){
             })
             var RetirarLi = document.querySelectorAll('#RetirarChave');
             $.each(RetirarLi, (indexLi, Li) =>{
-                console.log(Li)
                 Li.addEventListener('click', ()=>{
                     function popupRetirar(){
                         $.getJSON('./PHP/Gerenciamento/chave.php', function(chaves){
                                 $.each(chaves, function(indexChave, chavesLI){
-                                    console.log(chavesLI)
-                                    if (indexLi == indexChave){
-                                        console.log(indexLI);
-                                        console.log(indexChave)
+                                    if (Li.className == ('idChave_'+chavesLI['idChave'])){
                                         /*----------------------------------------------------------------------------------*/
                                         var POPUPS = document.querySelector('.POPUPS');
                                         var div_PopupCadPredios = document.querySelector('.PoPuCadastroPredio'); // Cadastro
