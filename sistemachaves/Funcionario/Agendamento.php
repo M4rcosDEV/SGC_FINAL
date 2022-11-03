@@ -134,19 +134,22 @@ include_once '../config/agendamentoHelper.php';
             <img src="../Assets/Chave.png" alt="chave do container">
             <div class = "linha-horizontal"></div>
             <div class="informacoes-pendente">' .
-            '<p> Chave: ' . $pen->id_chave . '</p>' .
-            '<p> Usuário: ' . $pen->nome_cliente . '</p>' .
-            '<p> Data de emissão: ' .$pen->data_agendamento -> format('d/m/Y') . '</p>' .
+            '<input type="number" name="idChave" value='. $pen->id_chave . ' class="input">' .
+            '<input type="text" name="nome_cliente" value='. $pen->nome_cliente . ' class="input">' .
+            '<input type="date" name="data_agendamento" value='.$pen->data_agendamento -> format('Y/m/d'). 'class="input">'.
             '</div>'.
             '<div class ="linha-horizontal"></div>
             <div class="botao-chave" onclick="receberChave()">
-            <button class="chave-recebida">Recebida</button>
+            <button class="chave-recebida">entregue</button>
             <i class="bx bx-check-circle"></i>
             </div>
             </div>
             </div>';
         }
         ?>
+        <!-- <input type="number" name="idChave" placeholder=class="input">
+        <input type="text" name="nome_cliente" placeholder="nome_cliente" class="input">
+        <input type="date" name="data_agendamento" placeholder="data_agendamento" class="input"> -->
         <!-- Bloco com Chaves -->
         <div class="Main_Cont3">
             

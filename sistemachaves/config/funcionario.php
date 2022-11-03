@@ -30,7 +30,7 @@ class Usuario {
                     /**valida a existencia de linhas na consulta */
                     if ($stmt->rowCount() == 1) {
                         $_SESSION['usuario_ja_cadastrado'] = true;
-                    }  
+                    }
                     else {
                         /**Caso não existir o usuário, o cadastro é realizado */
                         $stmt = $conexao->prepare("insert into cliente (nome, matricula, senha, tipo_func, email) values (:nome, :matricula, :senha, :tipo_func, :email)");
