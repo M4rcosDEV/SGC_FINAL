@@ -132,12 +132,23 @@ include_once '../config/agendamentoHelper.php';
             echo '<div class="Main_Cont2">
             <div class = "container-pendente">
             <img src="../Assets/Chave.png" alt="chave do container">
-            <div class = "linha-horizontal"></div>
-            <div class="informacoes-pendente">' .
-            '<input type="number" name="idChave" value='. $pen->id_chave . ' class="input">' .
-            '<input type="text" name="nome_cliente" value='. $pen->nome_cliente . ' class="input">' .
-            '<input type="date" name="data_agendamento" value='.$pen->data_agendamento -> format('Y/m/d'). 'class="input">'.
+            <div class = "linha-horizontal"></div>'.
+            //Inicio informacoes pendente
+            '<div class="informacoes-pendente">' .
+            '<div class="container-input">'.
+            '<label for="idChave">Chave:</label>'.
+            '<input type="number" name="idChave" value='. $pen->id_chave . ' class="input" disabled>' .
             '</div>'.
+            '<div class="container-input">' .
+            '<label for="nome_cliente">Usuário: </label>'.
+            '<input type="text" name="nome_cliente" value='. $pen->nome_cliente . ' class="input" disabled>' .
+            '</div>'.
+            '<div class="container-input">'.
+            '<label for="data_agendamento">Data:</label>'.
+            '<input type="date" name="data_agendamento" value='.$pen->data_agendamento -> format('Y/m/d'). 'class="input" disabled>'.
+            '</div>'.
+            '</div>'.
+            //Fim informações pendente 
             '<div class ="linha-horizontal"></div>
             <div class="botao-chave" onclick="receberChave()">
             <button class="chave-recebida">entregue</button>
