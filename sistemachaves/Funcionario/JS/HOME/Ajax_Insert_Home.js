@@ -64,18 +64,8 @@ function GerenciamentoPredios(){
     getPredioSuperior();
     
     //Get Predios Bloco Inferior
-    /*function getPredioInferior(){
-        $.ajax({
-            url: './PHP/Home/getPredioInferior.php',
-            type: 'GET',
-            dataType: 'html',
-            success: (function (resultados){
-                $('.Main_Cont3_Bloco-Chaves').html(resultados)
-                getChaves();
-            })
-        })
-    }*/
     function getPredioInferior(){
+        $('.Main_Cont3_Bloco-Chaves .Main_Cont3_Bloco-Chaves').remove()
         $.ajax({
             url: './PHP/Home/getPredioInferior.php',
             type: 'GET',
@@ -93,10 +83,14 @@ function GerenciamentoPredios(){
                                     <!-- Dados do Predio -->
                                     <div class='Bloco_Chaves'>
                                             <!-- < -->
-                
+                                            <div class="arrow_left_div">
+                                                <button id="arrow_left_chaves" class="Predio_${item['idPredio']}">
+                                                    <i class='bx bx-chevron-left'></i>
+                                                </button>
+                                            </div>
                                             <!-- > -->
-                                            <div class='arrow_right_div'>
-                                                <button id='arrow_right_chaves' class='Predio_"${item['idPredio']}"'>
+                                            <div class="arrow_right_div">
+                                                <button id="arrow_right_chaves" class="Predio_${item['idPredio']}">
                                                     <i class='bx bx-chevron-right'></i>
                                                 </button>
                                             </div>
@@ -107,14 +101,81 @@ function GerenciamentoPredios(){
                                     </div>
                                 </div>`;
                     bloco_predios.innerHTML += texteHTML
+                    
                 })
+                function Carrossel(){   
+                    var arrowRight = document.querySelectorAll('#arrow_right_chaves');
+                    var arrowLeft = document.querySelectorAll('#arrow_left_chaves')
+                    $.get('./PHP/Home/CountSala.php', function (countChave){
+                        countChave.forEach(elementPredio => {
+                            var currentClick = 0;
+                            var currentClick2 = 0;
+                            var clickR = 0;
+                            
+                            arrowLeft.forEach(elementArrowL => {
+                                if (elementPredio['COUNT(idChave)'] > 4){
+                                } 
+                                else {
+                                    elementArrowL.style.cssText = "display: none";
+                                }
+
+                                elementArrowL.addEventListener('click', ()=>{
+                                    
+                                    if (elementArrowL.className == ('Predio_'+elementPredio['idPredio'])){
+
+                                        var ul = document.querySelector(`.Container_Chaves_Ul #Predio_${elementPredio['idPredio']}`);
+                                        if (currentClick == 0){
+                                            ul.style.cssText = `margin-left: ${currentClick*-300}px;`
+                                            elementArrowL.style.cssText = "display: none";
+                                        } else {
+                                            currentClick--;
+                                            ul.style.cssText = `margin-left: ${currentClick*-300}px;`
+                                        }
+                                    }
+                                })
+                            })
+
+                            arrowRight.forEach(elementArrowR =>{
+
+                                if (elementArrowR.className == ('Predio_'+elementPredio['idPredio'])){
+                                    if (elementPredio['COUNT(idChave)'] > 4){
+                                        elementArrowR.style.cssText = "display: flex";
+                                    } else {
+                                        elementArrowR.style.cssText = "display: none";
+                                    }
+                                }        
+                                elementArrowR.addEventListener('click', ()=>{
+                                    arrowLeft.forEach(elementArrowL => {
+                                        if (elementArrowR.className == elementArrowL.className){
+                                            elementArrowL.style.cssText = "display: flex";
+                                        }
+                                    })
+                                    
+                                    if (elementArrowR.className == ('Predio_'+elementPredio['idPredio'])){
+                                        var ul = document.querySelector(`.Container_Chaves_Ul #Predio_${elementPredio['idPredio']}`);
+                                        
+                                        console.log(currentClick)
+                                        if (currentClick+4 == elementPredio['COUNT(idChave)']){
+                                            ul.style.cssText = `margin-left: ${(currentClick)*-300}px;`
+                                            elementArrowR.style.cssText = "display: none";
+                                        } else {
+                                            currentClick++;
+                                            ul.style.cssText = `margin-left: ${currentClick*-300}px;`
+                                        }
+                                    }
+                                })
+                            })
+                        })
+                    }, 'JSON')
+                }
+                Carrossel();
                 getChaves();
             })
         })
     }
     getPredioInferior();
 
-
+    //Button Refresh
     function RefreshChaves(){
         var btn = document.querySelector('.Refresh_Chaves');
         btn.addEventListener('click', function(){
@@ -123,7 +184,7 @@ function GerenciamentoPredios(){
     }
     RefreshChaves();
 
-
+    //Get Todas as Chaves do Banco
     function getChaves(){
         $('.Bloco_Chaves_LI_DISP').remove();
         $('.Bloco_Chaves_LI_USO').remove();
@@ -184,46 +245,6 @@ function GerenciamentoPredios(){
 
                 })
             })
-            // $.each(aux, (index1, li) => {
-            //         li.addEventListener('click', () => {
-            //             $.each(chaves, function(index, chavesLI){
-
-            //                 if (index1 == index){
-            //                     console.log(chavesLI['idChave'])
-            //                     var count = document.querySelector('.Bloco_Chaves_LI_DISP' + ' .idChave_'+chavesLI['idChave'])
-            //                     console.log(count)
-            //                     popup();
-            //                     function popup(){
-            //                         /*----------------------------------------------------------------------------------*/
-            //                         var POPUPS = document.querySelector('.POPUPS');
-            //                         var div_PopupCadPredios = document.querySelector('.PoPuCadastroPredio'); // Cadastro
-            //                         var div_PopupExcluirPredios = document.querySelector('.PoPuExcluirPredio') // Delete
-            //                         var div_PopupAgendarChave = document.querySelector('.PoPuAgendarChave') // Agendar
-            //                         /*----------------------------------------------------------------------------------*/
-            //                         var buttonAgendarChave = document.querySelector('.Bloco_Chaves_LI_DISP' + ' .idChave_'+chavesLI['idChave']);
-            //                         var buttonFechaSubmit = document.getElementById('FechaAgendarChave');
-            //                         var buttonSubmitAgendarChave = document.querySelector('.Bloco_Chaves_LI_DISP' + ' .idChave_'+chavesLI['idChave']);
-            //                         /*----------------------------------------------------------------------------------*/
-            //                         document.getElementById('NumeroSalaAgendamento').innerHTML = `${chavesLI['descricao']} ${chavesLI['idChave']}`;
-            //                         document.getElementById('NumeroPredioAgendamento').innerHTML = `Predio ${chavesLI['idPredio']}`;
-            //                         /*----------------------------------------------------------------------------------*/
-            //                         buttonAgendarChave.addEventListener('click', ()=>{
-            //                             /*Blur*/
-            //                             POPUPS.style.display = 'flex';
-            //                             POPUPS.classList.add("active");
-            //                             /*O que será aberto*/
-            //                             div_PopupAgendarChave.style.display = "flex";
-            //                             div_PopupAgendarChave.classList.add("active");
-            //                             /*O que será oculto*/
-            //                             div_PopupCadPredios.style.display = "none";
-            //                             div_PopupExcluirPredios.style.display = "none";
-            //                         })
-
-            //                     }
-            //                 }
-            //             })
-            //         })
-            //     })
             var AgendarLi = document.querySelectorAll('#AgendarChave');
             $.each(AgendarLi, (indexLi, Li) =>{
                 Li.addEventListener('click', ()=>{
@@ -368,7 +389,6 @@ function GerenciamentoPredios(){
             })
         })
     }
-}
 
+}
 GerenciamentoPredios();
-/*$(document).load(getChaves());*/
