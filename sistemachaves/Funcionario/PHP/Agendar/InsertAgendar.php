@@ -78,19 +78,7 @@ class Agendar{
             CASE WHEN agendar.data_agendar = date(now()) THEN 'sim'
             ELSE 'nao' end as agendado, chave.idPredio, chave.descricao, agendar.turno, agendar.id_cliente, agendar.data_agendar from chave left join agendar on (chave.idChave = agendar.idChave)");
 
-            
-            $agendadas = array();
-            foreach($stmt->fetchAll() as $v => $value){
-                $chaves = new Agendadas(
-                    $value['idChave'],
-                    $value['situacao'],
-                    $value['idPredio'],
-                    $value['agendado']
-                    $value['descricao']);
-                array_push($agendadas, $chaves);
-            }
-
-            return $a;
+        
 
         }catch(PDOException $ex){
             echo $ex;

@@ -24,3 +24,4 @@ function Agendar_C(){
     // header("Location:../Funcionario/sala.php?id_predio=");
 }
 
+
