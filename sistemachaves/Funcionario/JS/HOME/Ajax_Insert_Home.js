@@ -109,9 +109,9 @@ function GerenciamentoPredios(){
                     $.get('./PHP/Home/CountSala.php', function (countChave){
                         countChave.forEach(elementPredio => {
                             var currentClick = 4;
-                            
+                            console.log(elementPredio['COUNT(idChave)'])
                             arrowLeft.forEach(elementArrowL => {
-                                if (elementPredio['COUNT(idChave)'] > 4){
+                                if (elementPredio['COUNT(idChave)'] > 3){
                                 } 
                                 else {
                                     elementArrowL.style.cssText = "display: none";
