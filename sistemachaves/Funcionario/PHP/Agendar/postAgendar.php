@@ -1,6 +1,8 @@
+
 <?php
 
 include_once 'InsertAgendar.php';
+include_once 'funcaoRefresh.php';
 
 if(isset($_POST['tipo'])){
     $tipo = $_POST['tipo'];
@@ -17,8 +19,9 @@ function Agendar_C(){
     echo $id_chave;
     $predio = new Agendar($id_chave, $id_cliente, $turno, $data);
     $predio->Agendar_Chave();
-    $predio->registrarUSO();
     
     // $predio->getAgendar();
     // header("Location:../Funcionario/sala.php?id_predio=");
 }
+
+

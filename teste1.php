@@ -1,11 +1,21 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="refresh" content="1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php
     
 
     //$dataUser = '2022/11/02';
     
-    $hoje = date('Y-m-d');
+    $hoje = date('Y-m-d H:i:s');
     
-    $date = date('d-m-Y', strtotime($hoje));
+    echo 'dsds';
 
     echo $hoje;
 
@@ -35,3 +45,6 @@
 //retirar_chave();
     
 ?>
+</body>
+</html>
+

@@ -109,9 +109,9 @@ function GerenciamentoPredios(){
                     $.get('./PHP/Home/CountSala.php', function (countChave){
                         countChave.forEach(elementPredio => {
                             var currentClick = 4;
-                            
+                            console.log(elementPredio['COUNT(idChave)'])
                             arrowLeft.forEach(elementArrowL => {
-                                if (elementPredio['COUNT(idChave)'] > 4){
+                                if (elementPredio['COUNT(idChave)'] > 3){
                                 } 
                                 else {
                                     elementArrowL.style.cssText = "display: none";
@@ -190,6 +190,9 @@ function GerenciamentoPredios(){
         $('.Bloco_Chaves_LI_USO').remove();
         //Adicionar Chaves aos Blocos Prédio
         $.getJSON('./PHP/Gerenciamento/chave.php', function(chaves){
+            var dataAtual = new Date();
+            var dataAt = dataAtual.toLocaleDateString('en-GB').split('/').reverse().join('-');
+            
             $('.Bloco_Chaves_UL').each((index, ul) => {
 
                 $.each(chaves, function(index, chavesLI){
@@ -217,29 +220,41 @@ function GerenciamentoPredios(){
                             ul.innerHTML += text;
                         }
                 })
+                
+            
                 $.each(chaves, function(index, chavesLI){
-                    if (("Predio_"+chavesLI['idPredio']) == ul.id && chavesLI['situacao'] == 1){
-                        var text2 = `<li class="Bloco_Chaves_LI_USO" id="Predio_${chavesLI['idPredio']}">
-                                        <div>
-                                            <input type="checkbox">
-                                        </div>
-                                        <div>
-                                            <img src="../Assets/Chave.png" alt="Ilustração chave">
-                                        </div>
-                                        <div>
-                                            <h4>${chavesLI['descricao']} ${chavesLI['idChave']}</h4>
-                                            <span>status:</span>
+                    
+                    console.log(dataAt);
+                    console.log(chavesLI['data_agendar']);
+
+                    if ( '2022-11-02' == chavesLI['data_agendar']){
+
+                        if (("Predio_"+chavesLI['idPredio']) == ul.id && chavesLI['situacao'] == 1){
+
+                        
+                            var text2 = `<li class="Bloco_Chaves_LI_USO" id="Predio_${chavesLI['idPredio']}">
                                             <div>
-                                                <div></div>
-                                                <h4>Em Uso</h4>
+                                                <input type="checkbox">
                                             </div>
-                                        </div>
-                                        <div>
-                                            <input type="submit" value="AGENDAR">
-                                            <input type="submit" value="RETIRAR">
-                                        </div>
-                                    </li>`;
-                        ul.innerHTML += text2;
+                                            <div>
+                                                <img src="../Assets/Chave.png" alt="Ilustração chave">
+                                            </div>
+                                            <div>
+                                                <h4>${chavesLI['descricao']} ${chavesLI['idChave']}</h4>
+                                                <span>status:</span>
+                                                <div>
+                                                    <div></div>
+                                                    <h4>Em Uso</h4>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <input type="submit" value="AGENDAR">
+                                                <input type="submit" value="RETIRAR">
+                                            </div>
+                                        </li>`;
+                            ul.innerHTML += text2;
+                    }      
+                } else {
                     
                 }  
 
