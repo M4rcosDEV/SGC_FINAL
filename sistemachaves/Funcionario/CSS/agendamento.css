@@ -7,6 +7,40 @@
     font-family: 'Alata', sans-serif;
     color: white;
 }
+.informacoes-pendente {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.container-input > label {
+    font-family: 'Armata', sans-serif;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 15px;
+}
+.container-input > .input {
+    font-family: 'Armata', sans-serif;
+    text-decoration: none;
+    background: none;
+    border: none;
+    margin-left: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: 300;
+    cursor: default;
+}
+input[type=number]{
+    -moz-appearance: textfield;
+}
+input[type=data]{
+    background: transparent;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 .Main_Cont1 > h3{
     font-weight: 500;
 }
@@ -46,22 +80,28 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     gap: 50px;
-    background: linear-gradient(90deg, #00A3FF -9.97%, #213967 39.59%);    
-    background-size: 700px;
+    background-image: url(../../Assets/fundo-agendadas.png);
+    background-size: contain;
     background-repeat: no-repeat;
-    background-size: cover;
     background-position: center;
-    width: 700px;
-    height: 120px;
+    width: 937px;
+    height: 143px;
     transition: all 0.5s ease-in-out;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     margin-left: 100px;
     margin-top: 20px;
 }
+.container-input { 
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    align-items: baseline;
+}
+
 .container-pendente:hover{
-    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.3);
+    scale: 1.01;
     transition: all 0.5s ease-in-out;
 }
 .container-pendente>img {
@@ -90,12 +130,12 @@ p {
     align-items: center;
     justify-content: space-between;
     gap:10px;
-    padding: 20px 20px;
+    padding: 25px 25px;
     border-radius: 17px;
     border: none;
     background-color: #2D4A81;
     color: white;
-
+    
     cursor: pointer;
     animation: 2s ease-in-out;
 }
@@ -110,6 +150,9 @@ p {
     border: none;
     color: white;
     order: -1;
+    font-size: 20px;
+    font-family: 'Alata', sans-serif;
+    font-weight: 300;
 }
 .botao-chave:hover {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.048);
@@ -117,8 +160,12 @@ p {
 
 .botao-chave>i {
     /* position: absolute; */
-    font-size: 30px;
+    font-size: 40px;
     /* left: 35px;
     bottom: 8px; */
+    color: #aaa;
+    transition: all 0.5s ease-in-out;
+}
+.botao-chave>i:hover { 
     color: #00FF0A;
 }

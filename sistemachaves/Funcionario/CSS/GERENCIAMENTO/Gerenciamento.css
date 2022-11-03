@@ -470,6 +470,7 @@
     font-family: 'Alata', sans-serif;
     margin-top: 7px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .botao.chave > h3{

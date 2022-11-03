@@ -7,7 +7,7 @@ include_once '../config/agendamentoHelper.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SGC - CADASTRO</title>
+    <title>SGC - AGENDAMENTO</title>
     <!-- CSS GLOBAL -->
     <link href='./CSS/GLOBAL/Tab_Bar.css' rel='stylesheet'>
     <!-- CSS -->
@@ -129,25 +129,39 @@ include_once '../config/agendamentoHelper.php';
         <?php
         $pendentes = getPendentes();
         foreach ($pendentes as $pen) {
-            echo '<div class="Main_Cont2">
-            <div class = "container-pendente">
+            // $data = substr($pen->data_agendamento, 0, 10);
+            echo '<div class="Main_Cont2">' . 
+            
+            '<form name="formAgend" method="POST" action="../config/updateAgendarHelper.php" target="_self">'.
+            '<div class = "container-pendente">
+            <input style="display: none" name="tipo" id="tipo" type="text" value="updateAgendar">
             <img src="../Assets/Chave.png" alt="chave do container">
-            <div class = "linha-horizontal"></div>
-            <div class="informacoes-pendente">' .
-            '<p> Chave: ' . $pen->id_chave . '</p>' .
-            '<p> Usuário: ' . $pen->nome_cliente . '</p>' .
-            '<p> Data de emissão: ' .$pen->data_agendamento -> format('d/m/Y') . '</p>' .
+            <div class = "linha-horizontal"></div>'.
+            //Inicio informacoes pendente 
+            '<div class="informacoes-pendente">' .
+            '<div class="container-input">'.
+            '<label for="idChave">Chave:</label>'.
+            '<input type="number" name="idChave" value='. $pen->id_chave . ' class="input" disabled>' .
             '</div>'.
-            '<div class ="linha-horizontal"></div>
-            <div class="botao-chave" onclick="receberChave()">
-            <button class="chave-recebida">Recebida</button>
+            '<div class="container-input">' .
+            '<label for="nome_cliente">Usuário: </label>'.
+            '<input type="text" name="nome_cliente" value='. $pen->nome_cliente . ' class="input" disabled>' .
+            '</div>'.
+            '<div class="container-input">'.
+            '<label for="data_agendamento">Data:</label>'.
+            '<input type="text" name="data_agendamento" value='. $pen->data_agendamento->format('d/m/Y'). ' class="input">'.
+            '</div>'.
+            '</div>'.
+            //Fim informações pendente 
+            '<div class="botao-chave">
+            <input type="submit" value="entregue" class="chave-recebida">
             <i class="bx bx-check-circle"></i>
             </div>
             </div>
+            </form>
             </div>';
         }
         ?>
-        <!-- Bloco com Chaves -->
         <div class="Main_Cont3">
             
         </div>
