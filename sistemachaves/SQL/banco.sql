@@ -47,12 +47,42 @@ create table agendar (
     foreign key(id_cliente) references cliente(matricula),
     primary key(idChave, id_cliente)
 );
-
+select * from agendar;
 create table emprestimo (
 	id_emprestimo integer auto_increment primary key,
     idChave integer,
-    id_cliente varchar(15),
+    id_cliente varchar(15), 
     id_funcionario integer,
 	foreign key(idChave, id_cliente) references agendar(idChave, id_cliente),
     foreign key(id_funcionario) references administrador(id_administrador)
 );
+
+select * from administrador;
+select * from cliente;
+select * from agendar;
+select * from chave;
+
+select chave.idChave, 
+chave.situacao, 	
+CASE WHEN agendar.data_agendar = date(now()) THEN 'sim'
+ELSE 'nao' end as agendado, chave.idPredio, chave.descricao, 
+agendar.turno, agendar.id_cliente, agendar.data_agendar from chave left join agendar on (chave.idChave = agendar.idChave);
+
+
+select chave.idChave, 
+chave.situacao, 	
+CASE WHEN agendar.data_agendar = date(now()) THEN 'sim'
+ELSE 'nao' end as agendado, chave.idPredio, chave.descricao 
+ from chave left join agendar on (chave.idChave = agendar.idChave);
+
+select data_agendar from agendar where idChave = 100;
+
+delete from agendar where idChave = 100;
+
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+
+UPDATE chave
+SET situacao = 0
+WHERE idChave = 100;

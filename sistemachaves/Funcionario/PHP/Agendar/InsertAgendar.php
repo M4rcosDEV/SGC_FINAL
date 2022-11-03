@@ -1,7 +1,8 @@
+
 <?php
 
 include_once '../Conexao.php';
-
+include_once 'funcaoRefresh.php';
 
 class Agendar{
     public $idChave;
@@ -13,10 +14,12 @@ class Agendar{
         $this->idChave = $idChave;   
         $this->id_cliente = $id_cliente; 
         $this->Turno = $Turno; 
-        $this->Data =  DATE($Data);  
+        $this->Data =  DATE($Data); 
+        
+        $id_chave = $this->idChave;
+        $dataI = $this->Data;
     }
 
-    
 
     function Agendar_Chave(){
         $banco = new Banco();
@@ -37,6 +40,7 @@ class Agendar{
             // $stmt = $conexao->prepare("UPDATE chave SET situacao = 1 WHERE idChave = :id_chave");
             // $stmt->bindParam('id_chave', $this->idChave);
             // }
+
             $stmt->execute();
             echo "Chave agendada";
             
@@ -45,38 +49,8 @@ class Agendar{
             echo "Erro ao excluir predio: " . $ex;
         }
     }
-    function registrarUSO(){
-        //$dataEntrega = $this->Data;
-        $banco = new Banco();
-        $conexao = $banco->conectar();
-        //$dtEntrega=date("Y-m-d",strtotime($dataEntrega));
-
-        $hoje = date('Y-m-d');
-        try{
-            if('2022/11/06' == '2022/11/06'){
-                $stmt = $conexao->prepare("UPDATE chave SET situacao = 1 WHERE idChave = :id_chave");
-                $stmt->bindParam('id_chave', $this->idChave);
-
-                $stmt->execute();
-
-                echo "Chave agendada";
-            }
-
-        } catch(PDOException $ex){
-            echo "Erro ao excluir predio: " . $ex;
-        }
-        // //$dataUser = '2022/11/02';
-        // $hoje = date('Y/m/d');
-
-        // if($hoje == $this->Data){
-        //     //echo 'Chave indisponivel';
-        //     $stmt = $conexao->prepare("UPDATE chave SET situacao = 1 WHERE idChave = :id_chave");
-        //             $stmt->bindParam('id_chave', $this->idChave);
-        // }else{
-        //     //echo 'Chave ainda disponivel';
-        // }
-    }
-
+    
+    //registrarUSO($id_chave, $dataI);
 
     // function getAgendar(){
     //     $banco = new Banco();
@@ -94,4 +68,36 @@ class Agendar{
     //         echo "Erro ao excluir predio: " . $ex;
     //     }
     // }
+
+
+    function getAgendada(){
+        $banco = new Banco();
+        $conexao = $banco->conectar();
+        try{
+            $stmt = $conexao->prepare("select chave.idChave, chave.situacao,
+            CASE WHEN agendar.data_agendar = date(now()) THEN 'sim'
+            ELSE 'nao' end as agendado, chave.idPredio, chave.descricao, agendar.turno, agendar.id_cliente, agendar.data_agendar from chave left join agendar on (chave.idChave = agendar.idChave)");
+
+            
+            $agendadas = array();
+            foreach($stmt->fetchAll() as $v => $value){
+                $chaves = new Agendadas(
+                    $value['idChave'],
+                    $value['situacao'],
+                    $value['idPredio'],
+                    $value['agendado']
+                    $value['descricao']);
+                array_push($agendadas, $chaves);
+            }
+
+            return $a;
+
+        }catch(PDOException $ex){
+            echo $ex;
+        }
+        
+    }
+    
 }
+
+?>

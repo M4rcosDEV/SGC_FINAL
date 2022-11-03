@@ -27,7 +27,9 @@
     function exibirChaves(){
         $banco = new Banco();
         $conn = $banco -> conectar();
-        $sql = $conn->prepare("SELECT * FROM chave");
+      //  $sql = $conn->prepare("SELECT * FROM chave");
+      $sql = $conn->prepare("select chave.idChave, chave.situacao, chave.idPredio, chave.descricao, 
+      agendar.turno, agendar.id_cliente, agendar.data_agendar from chave left join agendar on (chave.idChave = agendar.idChave)");
         $sql -> execute();
             $dadosChave = $sql->fetchAll(PDO::FETCH_ASSOC);
             echo json_encode($dadosChave);
