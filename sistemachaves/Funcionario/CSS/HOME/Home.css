@@ -1089,8 +1089,6 @@
 }
 
 .Main_Cont3.active>.Main_Cont3_Bloco-Chaves>.Bloco_Chaves {
-    width: 1370px;
-    overflow-x: hidden;
     transition: 0.4s ease-in-out;
 }
 
@@ -1115,7 +1113,7 @@
     position: absolute;
     z-index: 2;
     left: -30px;
-    top: 135px;
+    top: 125px;
 }
 
 #arrow_left_chaves {
@@ -1163,9 +1161,13 @@
     position: absolute;
     z-index: 2;
     left: 1080px;
-    top: 135px;
+    top: 125px;
+    transition: 0.5s ease-in-out;
 }
-
+.Main_Cont3.active .arrow_right_div{
+    left: 1240px;
+    transition: 0.5s ease-in-out;
+}
 #arrow_right_chaves {
     width: 50px;
     height: 50px;
@@ -1242,14 +1244,19 @@
     padding-left: 30px;
     display: flex;
     align-items: center;
-    height: 390px;
+    height: 420px;
+    margin-top: -25px;
 }
 
-.Main_Cont3.active>.Main_Cont3_Bloco-Chaves>.Bloco_Chaves>.Container_Chaves_Ul {
+.Main_Cont3.active > .Main_Cont3_Bloco-Chaves > .Main_Cont3_Bloco-Chaves >  .Bloco_Chaves >  .Container_Chaves_Ul {
     width: 1380px;
-    overflow-x: hidden;
     transition: 0.4s ease-in-out;
 }
+.Main_Cont3.active > .Main_Cont3_Bloco-Chaves > .Main_Cont3_Bloco-Chaves >  .Bloco_Chaves  {
+    width: 1380px;
+    transition: 0.4s ease-in-out;
+}
+
 
 .Bloco_Chaves_UL {
     margin-top: 20px;
@@ -1270,6 +1277,7 @@
     border-radius: 15px;
     position: relative;
     z-index: 0;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /*checkbox*/

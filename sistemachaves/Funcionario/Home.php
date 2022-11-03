@@ -32,12 +32,14 @@ session_start();
     <link href='../Funcionario/CSS/GLOBAL/Fonts&Color.css' rel='stylesheet'>
 </head>
 <body>
+
     <div class="indicador1">
         <div>
             <i class='bx bx-chevron-left'></i>
             <i class='bx bx-chevron-left'></i>
         </div>
     </div>
+
     <!-- POPUPS -->
     <div class="POPUPS">
         <!-- Cadastro Prédio -->
@@ -245,6 +247,7 @@ session_start();
                 <div class="indicador3"></div>
             </div>
     </header>
+
     <main class="Main">
         <!-- Bloco com Nome do Usuário -->
         <div class="Main_Cont1">
@@ -254,7 +257,6 @@ session_start();
                 <h4>!</h4>
             </div>
         </div>
-        <!-- Bloco com Predios -->
         <!-- Bloco com Predios -->
         <div class="Main_Cont2">
             <!-- Predios Titulo -->

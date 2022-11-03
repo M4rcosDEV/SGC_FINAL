@@ -63,7 +63,7 @@ function GerenciamentoPredios(){
     }
     getPredioSuperior();
     
-    //Get Predios Bloco Inferior
+    //Get Predios Bloco Inferior + Carrossel
     function getPredioInferior(){
         $('.Main_Cont3_Bloco-Chaves .Main_Cont3_Bloco-Chaves').remove()
         $.ajax({
@@ -109,8 +109,6 @@ function GerenciamentoPredios(){
                     $.get('./PHP/Home/CountSala.php', function (countChave){
                         countChave.forEach(elementPredio => {
                             var currentClick = 4;
-                            var currentClick2 = 0;
-                            var clickR = 0;
                             
                             arrowLeft.forEach(elementArrowL => {
                                 if (elementPredio['COUNT(idChave)'] > 4){
@@ -131,7 +129,6 @@ function GerenciamentoPredios(){
                                         } else {
                                             currentClick--;
                                             ul.style.cssText = `margin-left: ${(currentClick-4)*-300}px;`
-                                            console.log(currentClick)
                                         }
                                     }
                                 })
@@ -393,5 +390,8 @@ function GerenciamentoPredios(){
         })
     }
 
+    function getSalas(){
+        
+    }
 }
 GerenciamentoPredios();
