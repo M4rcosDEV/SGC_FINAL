@@ -276,6 +276,7 @@ function GerenciamentoPredios(){
                                                             /*O que será aberto*/
                                                             div_PopupAgendarChave.style.display = "none";
                                                             div_PopupAgendarChave.style.display = "none";
+                                                            
                                                 })
                                             })
                                         })

@@ -14,8 +14,14 @@ function Agendar_C(){
     $id_cliente = $_POST['Matricula'];
     $turno = $_POST['turno'];
     $data = $_POST['data'];
+    echo $id_chave;
     $predio = new Agendar($id_chave, $id_cliente, $turno, $data);
     $predio->Agendar_Chave();
+    $predio->registrarUSO();
+    // $predio->getAgendar();
     // header("Location:../Funcionario/sala.php?id_predio=");
 }
+<<<<<<< HEAD
 header("refresh: 3");
+=======
+>>>>>>> 8dc0174c1dd9a6a4a6c526ff1f93b40a4e571631
