@@ -7,7 +7,7 @@ include_once '../config/agendamentoHelper.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SGC - CADASTRO</title>
+    <title>SGC - AGENDAMENTO</title>
     <!-- CSS GLOBAL -->
     <link href='./CSS/GLOBAL/Tab_Bar.css' rel='stylesheet'>
     <!-- CSS -->
@@ -129,11 +129,15 @@ include_once '../config/agendamentoHelper.php';
         <?php
         $pendentes = getPendentes();
         foreach ($pendentes as $pen) {
-            echo '<div class="Main_Cont2">
-            <div class = "container-pendente">
+            // $data = substr($pen->data_agendamento, 0, 10);
+            echo '<div class="Main_Cont2">' . 
+            
+            '<form name="formAgend" method="POST" action="../config/updateAgendarHelper.php" target="_self">'.
+            '<div class = "container-pendente">
+            <input style="display: none" name="tipo" id="tipo" type="text" value="updateAgendar">
             <img src="../Assets/Chave.png" alt="chave do container">
             <div class = "linha-horizontal"></div>'.
-            //Inicio informacoes pendente
+            //Inicio informacoes pendente 
             '<div class="informacoes-pendente">' .
             '<div class="container-input">'.
             '<label for="idChave">Chave:</label>'.
@@ -145,23 +149,19 @@ include_once '../config/agendamentoHelper.php';
             '</div>'.
             '<div class="container-input">'.
             '<label for="data_agendamento">Data:</label>'.
-            '<input type="date" name="data_agendamento" value='.$pen->data_agendamento -> format('Y/m/d'). 'class="input" disabled>'.
+            '<input type="text" name="data_agendamento" value='. $pen->data_agendamento->format('d/m/Y'). ' class="input">'.
             '</div>'.
             '</div>'.
             //Fim informações pendente 
-            '<div class ="linha-horizontal"></div>
-            <div class="botao-chave" onclick="receberChave()">
-            <button class="chave-recebida">entregue</button>
+            '<div class="botao-chave">
+            <input type="submit" value="entregue" class="chave-recebida">
             <i class="bx bx-check-circle"></i>
             </div>
             </div>
+            </form>
             </div>';
         }
         ?>
-        <!-- <input type="number" name="idChave" placeholder=class="input">
-        <input type="text" name="nome_cliente" placeholder="nome_cliente" class="input">
-        <input type="date" name="data_agendamento" placeholder="data_agendamento" class="input"> -->
-        <!-- Bloco com Chaves -->
         <div class="Main_Cont3">
             
         </div>
