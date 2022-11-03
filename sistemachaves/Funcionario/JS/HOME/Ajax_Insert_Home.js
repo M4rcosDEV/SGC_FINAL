@@ -108,7 +108,7 @@ function GerenciamentoPredios(){
                     var arrowLeft = document.querySelectorAll('#arrow_left_chaves')
                     $.get('./PHP/Home/CountSala.php', function (countChave){
                         countChave.forEach(elementPredio => {
-                            var currentClick = 0;
+                            var currentClick = 4;
                             var currentClick2 = 0;
                             var clickR = 0;
                             
@@ -124,12 +124,14 @@ function GerenciamentoPredios(){
                                     if (elementArrowL.className == ('Predio_'+elementPredio['idPredio'])){
 
                                         var ul = document.querySelector(`.Container_Chaves_Ul #Predio_${elementPredio['idPredio']}`);
-                                        if (currentClick == 0){
-                                            ul.style.cssText = `margin-left: ${currentClick*-300}px;`
+                                        if (currentClick-4 == 0){
+                                            ul.style.cssText = `margin-left: ${(currentClick-4)*-300}px;`
                                             elementArrowL.style.cssText = "display: none";
+                                            
                                         } else {
                                             currentClick--;
-                                            ul.style.cssText = `margin-left: ${currentClick*-300}px;`
+                                            ul.style.cssText = `margin-left: ${(currentClick-4)*-300}px;`
+                                            console.log(currentClick)
                                         }
                                     }
                                 })
@@ -155,12 +157,13 @@ function GerenciamentoPredios(){
                                         var ul = document.querySelector(`.Container_Chaves_Ul #Predio_${elementPredio['idPredio']}`);
                                         
                                         console.log(currentClick)
-                                        if (currentClick+4 == elementPredio['COUNT(idChave)']){
-                                            ul.style.cssText = `margin-left: ${(currentClick)*-300}px;`
-                                            elementArrowR.style.cssText = "display: none";
+                                        if (currentClick == elementPredio['COUNT(idChave)']){
+                                            ul.style.cssText = `margin-left: ${(currentClick-4)*-300}px;`
+                                            elementArrowR.style.cssText = "display: flex";
                                         } else {
                                             currentClick++;
-                                            ul.style.cssText = `margin-left: ${currentClick*-300}px;`
+                                            elementArrowR.style.cssText = "display: flex";
+                                            ul.style.cssText = `margin-left: ${(currentClick-4)*-300}px;`
                                         }
                                     }
                                 })
