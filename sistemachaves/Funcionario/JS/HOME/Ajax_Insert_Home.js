@@ -227,7 +227,7 @@ function GerenciamentoPredios(){
                     console.log(dataAt);
                     console.log(chavesLI['data_agendar']);
 
-                    if ( '2022-11-02' == chavesLI['data_agendar']){
+              //      if ( '2022-11-03' == chavesLI['data_agendar']){
 
                         if (("Predio_"+chavesLI['idPredio']) == ul.id && chavesLI['situacao'] == 1){
 
@@ -254,9 +254,9 @@ function GerenciamentoPredios(){
                                         </li>`;
                             ul.innerHTML += text2;
                     }      
-                } else {
+               // } else {
                     
-                }  
+              //  }  
 
                 })
             })
@@ -266,7 +266,8 @@ function GerenciamentoPredios(){
                     function popupAgendar(){
                         $.getJSON('./PHP/Gerenciamento/chave.php', function(chaves){
                                 $.each(chaves, function(indexChave, chavesLI){
-                                    if (indexLi == indexChave){
+                                    console.log(indexChave)
+                                    if (indexLi.className == indexChave.id){
                                         /*----------------------------------------------------------------------------------*/
                                         var POPUPS = document.querySelector('.POPUPS');
                                         var div_PopupCadPredios = document.querySelector('.PoPuCadastroPredio'); // Cadastro
@@ -304,7 +305,7 @@ function GerenciamentoPredios(){
                                                             'data': $('#data_agendamento').val()
                                                         },
                                                         success: (function(msg){
-                                                            console.log(msg);
+                                                            console.log('testeb04');
                                                             console.log($('#data_agendamento').val());
                                                             /*Blur*/
                                                             POPUPS.style.display = 'none';
@@ -334,11 +335,15 @@ function GerenciamentoPredios(){
             })
             var RetirarLi = document.querySelectorAll('#RetirarChave');
             $.each(RetirarLi, (indexLi, Li) =>{
+                console.log(Li)
                 Li.addEventListener('click', ()=>{
                     function popupRetirar(){
                         $.getJSON('./PHP/Gerenciamento/chave.php', function(chaves){
                                 $.each(chaves, function(indexChave, chavesLI){
+                                    console.log(chavesLI)
                                     if (indexLi == indexChave){
+                                        console.log(indexLI);
+                                        console.log(indexChave)
                                         /*----------------------------------------------------------------------------------*/
                                         var POPUPS = document.querySelector('.POPUPS');
                                         var div_PopupCadPredios = document.querySelector('.PoPuCadastroPredio'); // Cadastro

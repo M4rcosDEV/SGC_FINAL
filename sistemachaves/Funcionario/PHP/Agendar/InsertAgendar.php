@@ -68,23 +68,6 @@ class Agendar{
     //         echo "Erro ao excluir predio: " . $ex;
     //     }
     // }
-
-
-    function getAgendada(){
-        $banco = new Banco();
-        $conexao = $banco->conectar();
-        try{
-            $stmt = $conexao->prepare("select chave.idChave, chave.situacao,
-            CASE WHEN agendar.data_agendar = date(now()) THEN 'sim'
-            ELSE 'nao' end as agendado, chave.idPredio, chave.descricao, agendar.turno, agendar.id_cliente, agendar.data_agendar from chave left join agendar on (chave.idChave = agendar.idChave)");
-
-        
-
-        }catch(PDOException $ex){
-            echo $ex;
-        }
-        
-    }
     
 }
 

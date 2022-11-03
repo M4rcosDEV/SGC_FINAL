@@ -1,17 +1,28 @@
 <?php
-function registrarUSO($idChave, $data){
+include_once 'postAgendar.php';
+
+
+
+
+
+/*function registrarUSO($idChave, $data){
     //$dataEntrega = $this->Data;
     $banco = new Banco();
     $conexao = $banco->conectar();
     //$dtEntrega=date("Y-m-d",strtotime($dataEntrega));
 
-    $hoje = date('Y-m-d');
     try{
-      //  if('2022/11/06' == '2022/11/01'){
-            $stmt = $conexao->prepare("UPDATE chave SET situacao = 1 WHERE idChave = :id_chave");
-            $stmt->bindParam('id_chave', $idChave);
+        $agendadas = getAgendada();
 
-            $stmt->execute();
+        foreach($agendadas as $agendar){
+            if($agendar->agendado === 'sim'){
+                $stmt = $conexao->prepare("UPDATE chave SET situacao = 1 WHERE idChave = :id_chave");
+                $stmt->bindParam(':id_chave', $idChave);
+                $stmt->execute();
+            }
+                
+        }
+            
 
             echo "Chave agendada";
      //   }
@@ -29,5 +40,5 @@ function registrarUSO($idChave, $data){
     // }else{
     //     //echo 'Chave ainda disponivel';
     // }
-}
+}*/
 ?>
