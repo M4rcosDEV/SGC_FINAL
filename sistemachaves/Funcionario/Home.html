@@ -31,47 +31,12 @@
     <div class="POPUPS">
 
         <!-- Agendar Prédio -->
-        <div class="PoPuAgendarChave">
-            <!-- Formulário Cadastro Prédio -->
-            <form class="FormaAgendarChave"  method="POST" action="" id="FormaAgendarChave">
-                <div>
-                    <img src="../Assets/Prédio.png" alt="Ilustração Predio">
-                    <div></div>
-                </div>
-                <div>
-                    <div>
-                        <h4>Sala 101</h4>
-                        <h4>Predio 1</h4>
-                    </div>
-                    <div class="informacoes_agendamento">
-                        <div>
-                            <label for="Matricula">Matricula: </label>
-                            <input type="number" name="Matricula" id="Matricula_agendamento" placeholder="Digite aqui...">
-                        </div>
-                        <div>
-                            <label for="data">Data: </label>
-                            <input type="date" name="data" id="data_agendamento" placeholder="Digite aqui...">
-                        </div>
-                        <div>
-                            <label for="turno_agendamento">Turno: </label>
-                            <select id="turno_agendamento" name="turno_agendamento" form="PoPuAgendarChave">
-                                <option value="Turno1">Turno 1</option>
-                                <option value="Turno2">Turno 2</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div><i class='bx bx-x-circle' id="FechaAgendarChave"></i></div>
-                    <input type="submit" value="Agendar" id="SubmitAgendarChave">
-                </div>
-            </form>
-        </div>
+        
         <div class="PoPuRetirarChave">
             <!-- Formulário Cadastro Prédio action="../Funcionario/PHP/Agendar/postAgendar.php"  -->
             <form class="FormaRetirarChave" method="POST" id="FormaRetirarChave">
                 <div>
-                    <img src="../Assets/Prédio.png" alt="Ilustração Predio">
+                    <img src="../Assets/Chave2.png" alt="Ilustração Predio">
                     <div></div>
                 </div>
                 <div>
@@ -81,12 +46,19 @@
                     </div>
                     <div class="informacoes_Retirada">
                         <div>
-                            <label for="Matricula">Matricula: </label>
+                            <label for="Matricula">Novo Número: </label>
                             <input type="number" name="Matricula" id="Matricula_agendamento" placeholder="Digite aqui...">
                         </div>
                         <div>
-                            <label for="data">Senha: </label>
-                            <input type="password" name="data" id="data_agendamento" placeholder="Digite aqui...">
+                            <label for="idChave">Descrição da chave: </label>
+                            <select id="DescriChave" name="DescriChave" form="CadastroChaves">
+                                <option value="Sala">Sala</option>
+                                <option value="Laboratório">Laboratório</option>
+                                <option value="Auditório">Auditório</option>
+                                <option value="Ginásio">Ginásio</option>
+                                <option value="Banheiro">Banheiro</option>
+                                <option value="Outros">Outros</option>
+                            </select>
                         </div>
                         <div>
                         </div>
@@ -94,7 +66,7 @@
                 </div>
                 <div>
                     <div><i class='bx bx-x-circle' id="FechaRetirarChave"></i></div>
-                    <input type="submit" value="Agendar" id="SubmitRetirarChave">
+                    <input type="submit" value="Alterar" id="SubmitRetirarChave">
                 </div>
             </form>
         </div>

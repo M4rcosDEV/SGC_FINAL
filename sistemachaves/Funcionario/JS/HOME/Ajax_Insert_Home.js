@@ -1,10 +1,15 @@
 var date = new Date();
+var date1 = new Date();
 
-var horario = String(date.getHours()+':'+date.getMinutes()+':'+date.getSeconds())
+var horarioPego = String(date.getHours()+':'+date.getMinutes()+':'+date.getSeconds())
 
-console.log(horario);
+date1.setHours(date1.getHours() + 5)
+date1.setMinutes(date1.getMinutes() + 35)
 
+var horarioDeolver = String( date1.getHours() +':'+ date1.getMinutes() +':'+date.getSeconds())
 
+console.log(horarioPego)
+console.log(horarioDeolver)
 //  --------    Gerenciamento de todas os predios    --------
 function GerenciamentoPredios(){
 
@@ -205,7 +210,7 @@ function GerenciamentoPredios(){
                     if (("Predio_"+chavesLI['idPredio']) == ul.id && chavesLI['situacao'] == 0){
                         var text =`<li class="Bloco_Chaves_LI_DISP" id="Predio_${chavesLI['idPredio']}">
                                                     <div>
-                                                        <input type="checkbox">
+                                                        <button type="button"><i class='bx bxs-pencil'></i></button>
                                                     </div>
                                                     <div>
                                                         <img src="../Assets/Chave.png" alt="Ilustração chave">
@@ -372,14 +377,14 @@ function GerenciamentoPredios(){
                                                             'tipo': 'RetirarChave',
                                                             'idChave': chavesLI['idChave'],
                                                             'Matricula': $('#Matricula_Retirada').val(),
-                                                            'hora': horario,
+                                                            'hora': horarioDeolver,
                                                             'senha': $('#senha_retirada').val()
                                                         },
                                                         success: (function(msg){
 
                                                             console.log(chavesLI['idChave']);
                                                             console.log($('#Matricula_Retirada').val());
-                                                            console.log(horario);
+                                                            console.log(horarioDeolver);
                                                             console.log($('#senha_retirada').val());
                                                             console.log(msg);
                                                             /*Blur*/

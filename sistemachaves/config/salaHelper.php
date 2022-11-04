@@ -13,7 +13,6 @@ if(isset($_POST['tipo'])){
     if($tipo === 'cadastrarsala'){
         cadastrar();
     }else if($tipo === "excluiraluno"){
-        excluir_aluno();
     }
 }
 

@@ -2,6 +2,7 @@
 
 include_once 'banco.php';
 
+
 class Update {
     public $idChave;
     public $nome_cliente;

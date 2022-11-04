@@ -1289,15 +1289,24 @@
 /*checkbox*/
 .Bloco_Chaves_LI_DISP>div:nth-child(1) {
     width: 250px;
+    height: 20px;
     margin-top: 10px;
     display: flex;
-    opacity: 0;
     justify-content: flex-end;
+    align-items: center;
 }
-
-.checkstyle {
-    width: 100px;
-    height: 100px;
+.Bloco_Chaves_LI_DISP>div:nth-child(1) > button {
+    background: none;
+    border: none;
+    text-decoration: none;
+    color: #406abd;
+    font-size: 20px;
+    transition: all 0.5s ease-in-out;
+}
+.Bloco_Chaves_LI_DISP>div:nth-child(1) > button:hover {
+    color: #FFC700;
+    font-size: 23px;
+    transition: all 0.5s ease-in-out;
 }
 
 /*img chave*/
