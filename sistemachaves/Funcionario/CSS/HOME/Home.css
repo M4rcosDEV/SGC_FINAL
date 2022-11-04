@@ -841,6 +841,7 @@
     align-items: center;
     justify-content: center;
     transition: 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .Cadastr_Predio>i {
@@ -872,6 +873,7 @@
     align-items: center;
     justify-content: center;
     transition: 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .Apagar_Predio>i {
@@ -1278,13 +1280,18 @@
     position: relative;
     z-index: 0;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease-in-out;
 }
-
+.Bloco_Chaves_LI_DISP:hover{
+    box-shadow: 0px 20px 40px rgba(255, 156, 0, 0.08);
+    transition: all 0.5s ease-in-out;
+}
 /*checkbox*/
 .Bloco_Chaves_LI_DISP>div:nth-child(1) {
     width: 250px;
     margin-top: 10px;
     display: flex;
+    opacity: 0;
     justify-content: flex-end;
 }
 
@@ -1361,6 +1368,7 @@
     color: white;
     font-size: 15px;
     transition: all 0.2s ease-in-out;
+    cursor:pointer;
 }
 
 .Bloco_Chaves_LI_DISP>div:nth-child(4)>input:hover {
