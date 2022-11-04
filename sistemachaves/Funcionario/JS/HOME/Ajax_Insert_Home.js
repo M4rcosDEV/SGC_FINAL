@@ -1,3 +1,10 @@
+var date = new Date();
+
+var horario = String(date.getHours()+':'+date.getMinutes())
+
+console.log(horario);
+
+
 //  --------    Gerenciamento de todas os predios    --------
 function GerenciamentoPredios(){
 

@@ -152,7 +152,7 @@ session_start();
                 </div>
                 <div>
                     <div><i class='bx bx-x-circle' id="FechaRetirarChave"></i></div>
-                    <input type="submit" value="Agendar" id="SubmitRetirarChave">
+                    <input type="submit" value="Retirar" id="SubmitRetirarChave">
                 </div>
             </form>
         </div>
