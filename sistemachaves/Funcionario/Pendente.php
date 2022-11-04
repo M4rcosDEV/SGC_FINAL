@@ -1,6 +1,6 @@
 <?php
-
-include_once '../config/agendamentoHelper.php';
+include_once '../Funcionario/PHP/Conexao.php';
+include_once '../config/pendenteHelper.php';
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ include_once '../config/agendamentoHelper.php';
     <!-- CSS GLOBAL -->
     <link href='./CSS/GLOBAL/Tab_Bar.css' rel='stylesheet'>
     <!-- CSS -->
-    <link href="./CSS/Pendente.css" rel="stylesheet" type="text/css" />
+    <link href="./CSS/pendente.css" rel="stylesheet" type="text/css" />
     <!-- JAVASCRIPT GLOBAL -->
     <script src="./JS/GLOBAL/TabBar.js" type="text/javascript" defer></script>
     <!-- JAVASCRIPT -->
@@ -129,24 +129,25 @@ include_once '../config/agendamentoHelper.php';
         </div>
         <!-- Bloco com chaves pendentes -->
         <?php
-        $pendentes = getPendentes();
+        $pendentes = getPendente();
         foreach ($pendentes as $pen) {
-            echo '<div class="Main_Cont2">
-            <div class = "container-pendente">
-            <img src="../Assets/Chave.png" alt="chave do container">
-            <div class = "linha-horizontal"></div>
-            <div class="informacoes-pendente">' .
-            '<p> Chave: ' . $pen->id_chave . '</p>' .
-            '<p> Usuário: ' . $pen->nome_cliente . '</p>' .
-            '<p> Data de emissão: ' .$pen->data_agendamento -> format('d/m/Y') . '</p>' .
-            '</div>'.
-            '<div class ="linha-horizontal"></div>
-            <div class="botao-chave" onclick="receberChave()">
-            <button class="chave-recebida">Recebida</button>
-            <i class="bx bx-check-circle"></i>
-            </div>
-            </div>
-            </div>';
+            if($pen->retirado === 'Pendente'){
+                echo '<div class="Main_Cont2">
+                <div class = "container-pendente">
+                <img src="../Assets/Chave.png" alt="chave do container">
+                <div class = "linha-horizontal"></div>
+                <div class="informacoes-pendente">' .
+                '<p> Chave: ' . $pen->id_chave . '</p>' .
+                '<p> Usuário: ' . $pen->nome. '</p>' .
+                '</div>'.
+                '<div class ="linha-horizontal"></div>
+                <div class="botao-chave" onclick="receberChave()">
+                <button class="chave-recebida">Recebida</button>
+                <i class="bx bx-check-circle"></i>
+                </div>
+                </div>
+                </div>';
+            }
         }
         ?>
         <!-- Bloco com Chaves -->

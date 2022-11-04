@@ -23,13 +23,18 @@
     font-family: 'Armata', sans-serif;
     text-decoration: none;
     background: none;
-    border: none;
     margin-left: 10px;
     color: white;
+    border: hidden;
     font-size: 15px;
     font-weight: 300;
     cursor: default;
 }
+.container-input > .input:focus{
+    outline: none;
+    border: hidden;
+}
+
 input[type=number]{
     -moz-appearance: textfield;
 }
