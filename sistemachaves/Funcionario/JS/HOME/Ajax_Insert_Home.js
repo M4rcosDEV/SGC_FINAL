@@ -384,7 +384,7 @@ function GerenciamentoPredios(){
 
                                                             console.log(chavesLI['idChave']);
                                                             console.log($('#Matricula_Retirada').val());
-                                                            console.log(horario);
+                                                            console.log(horarioDeolver);
                                                             console.log($('#senha_retirada').val());
                                                             console.log(msg);
                                                             /*Blur*/
