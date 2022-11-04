@@ -6,7 +6,7 @@ include_once './Conexao.php';
 
 if(isset($_POST['tipo'])){
     $tipo = $_POST['tipo'];
-    if($tipo === 'AgendarChave'){
+    if($tipo === 'RetirarChave'){
         Retirar_C();
     }
 }

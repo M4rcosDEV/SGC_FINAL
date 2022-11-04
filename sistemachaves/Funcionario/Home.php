@@ -140,11 +140,11 @@ session_start();
                     <div class="informacoes_Retirada">
                         <div>
                             <label for="Matricula">Matricula: </label>
-                            <input type="number" name="Matricula" id="Matricula_agendamento" placeholder="Digite aqui...">
+                            <input type="number" name="Matricula" id="Matricula_Retirada" placeholder="Digite aqui...">
                         </div>
                         <div>
                             <label for="data">Senha: </label>
-                            <input type="password" name="data" id="data_agendamento" placeholder="Digite aqui...">
+                            <input type="password" name="data" id="senha_retirada" placeholder="Digite aqui...">
                         </div>
                         <div>
                         </div>

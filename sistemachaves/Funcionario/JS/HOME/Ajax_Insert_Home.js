@@ -1,6 +1,6 @@
 var date = new Date();
 
-var horario = String(date.getHours()+':'+date.getMinutes())
+var horario = String(date.getHours()+':'+date.getMinutes()+':'+date.getSeconds())
 
 console.log(horario);
 
@@ -331,8 +331,9 @@ function GerenciamentoPredios(){
                     popupAgendar();
                 })
             })
+
             var RetirarLi = document.querySelectorAll('#RetirarChave');
-            $.each(RetirarLi, (indexLi, Li) =>{
+            $.each(RetirarLi, (indexLi, Li) => {
                 Li.addEventListener('click', ()=>{
                     function popupRetirar(){
                         $.getJSON('./PHP/Gerenciamento/chave.php', function(chaves){
@@ -364,17 +365,22 @@ function GerenciamentoPredios(){
                                             buttonSubmitRetirarChave.addEventListener('click', (event)=>{ // Botão Salvar
                                             event.preventDefault();
                                                     $.ajax({
-                                                        url: './PHP/Agendar/postAgendar.php',
+                                                        url: './PHP/Retirar/RetirarHelper.php',
                                                         type: 'POST',
                                                         dataType: 'HTML',
                                                         data:{
-                                                            'tipo': 'AgendarChave',
+                                                            'tipo': 'RetirarChave',
                                                             'idChave': chavesLI['idChave'],
-                                                            'Matricula': $('#Matricula_agendamento').val(),
-                                                            'turno': $('#turno_agendamento').val(),
-                                                            'data': $('#data_agendamento').val()
+                                                            'Matricula': $('#Matricula_Retirada').val(),
+                                                            'hora': horario,
+                                                            'senha': $('#senha_retirada').val()
                                                         },
                                                         success: (function(msg){
+
+                                                            console.log(chavesLI['idChave']);
+                                                            console.log($('#Matricula_Retirada').val());
+                                                            console.log(horario);
+                                                            console.log($('#senha_retirada').val());
                                                             console.log(msg);
                                                             /*Blur*/
                                                             POPUPS.style.display = 'none';
