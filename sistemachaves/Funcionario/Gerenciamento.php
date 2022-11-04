@@ -146,9 +146,9 @@
                     </div>
                     <div>
                         <label for="idChave">Descrição da chave: </label>
-                        <select id="DescriChave" name="DescriChave" form="CadastroChaves">
+                        <select id="DescriChave" name="DescriChave">
                             <option value="Sala">Sala</option>
-                            <option value="Laboratório">Laboratório</option>
+                            <option value="Lab">Lab</option>
                             <option value="Auditório">Auditório</option>
                             <option value="Ginásio">Ginásio</option>
                             <option value="Banheiro">Banheiro</option>
@@ -178,9 +178,9 @@
                     </div>
                     <div>
                         <label for="idChave">Descrição da chave: </label>
-                        <select id="DescriChave" name="DescriChave" form="CadastroChaves">
+                        <select id="DescriChave" name="DescriChave">
                             <option value="Sala">Sala</option>
-                            <option value="Laboratório">Laboratório</option>
+                            <option value="Lab">Lab</option>
                             <option value="Auditório">Auditório</option>
                             <option value="Ginásio">Ginásio</option>
                             <option value="Banheiro">Banheiro</option>

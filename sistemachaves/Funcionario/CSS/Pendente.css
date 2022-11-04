@@ -7,6 +7,45 @@
     font-family: 'Alata', sans-serif;
     color: white;
 }
+.informacoes-pendente {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.container-input > label {
+    font-family: 'Armata', sans-serif;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 20px;
+}
+.container-input > .input {
+    font-family: 'Armata', sans-serif;
+    text-decoration: none;
+    background: none;
+    margin-left: 10px;
+    color: white;
+    border: hidden;
+    font-size: 20px;
+    font-weight: 300;
+    cursor: default;
+}
+.container-input > .input:focus{
+    outline: none;
+    border: hidden;
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
+}
+input[type=data]{
+    background: transparent;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 .Main_Cont1 > h3{
     font-weight: 500;
 }
@@ -51,7 +90,6 @@
     background: url(../../Assets/fundo-pendentes.png);
     background-size: contain;
     background-repeat: no-repeat;
-    background-size: cover;
     background-position: center;
     max-width: 924px;
     width: 80%;
@@ -59,11 +97,17 @@
     transition: all 0.5s ease-in-out;
     overflow: hidden;
     margin-top: 50px;
+    margin-left: 20px;
 }
 .container-pendente:hover{
     filter: drop-shadow(5px 10px 20px rgba(0, 0, 0, 0.1));
 }
-
+.container-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    align-items: baseline;
+}
 .container-pendente>img {
     width: 37px;
     transform: rotate(180deg);
@@ -122,11 +166,33 @@ p {
     color: #00FF0A;
 }
 
-.Main_Cont2{
-    padding-left: 55px;
-    display: flex;
-    align-items: center;
-    width: 1200px;
-    height: 140px;
-    margin-bottom: 30px;
+.botao-chave {
+    width: 134px;
+    height: 129px;
+    border-radius: 17px;
+
+    border: none;
+    background-color: #2D4A81;
+    color: white;
+    
+    cursor: pointer;
+    animation: 2s ease-in-out;
+    font-size: 20px;
+    padding-bottom: 70px;
+    font-family: 'Armata', sans-serif;
+}
+.botao-chave:hover {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.048);
+}
+.botao-entregar { 
+    position: relative;
+}
+.botao-entregar > i {
+    position: absolute;
+    top: 60px;
+    right: 50px;
+    color: #aaa;
+    font-size: 40px;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
 }
