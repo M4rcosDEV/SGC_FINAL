@@ -60,6 +60,20 @@
         scale: 1;
     }
 }
+.iconsAgendar {
+}
+.iconsAgendar > i{
+    font-size: 80px;
+    color: #6350bb;
+}
+.iconsRetirar > i{
+    font-size: 80px;
+    color: rgb(255, 123, 0);
+}
+.iconsAlterar > i {
+    font-size: 80px;
+    color: #4ba34f;
+}
 
 .PoPuCadastroPredio {
     background-image: linear-gradient(120deg, #2D4065 10%, #00ff2a 500%);
@@ -306,6 +320,7 @@
     color: #FFC700;
     font-size: 18px;
 }
+
 /*-----------------------------------------------------------------------------------------*/
 .FormaAgendarChave {
     background-image: linear-gradient(120deg, #2D4065 10%, rgb(174, 0, 255) 400%);
@@ -590,7 +605,24 @@
 .informacoes_Retirada>div>input:focus {
     outline: none;
 }
-
+/************/
+.Select_Alterar >  label{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    line-height: 18px;
+}
+.Select_Alterar >  select{
+    width: 130px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+} 
 /*salvar e fecha*/
 .FormaRetirarChave>div:nth-child(3) {
     display: flex;
@@ -632,6 +664,177 @@
     font-size: 18px;
 }
 /*-------------------------------------------------------------------------------------------------*/
+
+/*-------------------*/
+.FormaAlterarChave {
+    background-image: linear-gradient(120deg, #2D4065 10%, rgb(145, 255, 0) 400%);
+    width: 450px;
+    height: 280px;
+    border-radius: 20px;
+    box-shadow: 12px 12px 40px rgba(0, 0, 0, 0.4);
+    animation: animacaoPopCad 0.2s ease-in-out;
+}
+
+.FormaAlterarChave {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-left: 20px;
+    justify-content: center;
+    animation: animacaoPopCadActive 0.4s ease-in-out;
+}
+
+.FormaAlterarChave>div:nth-child(1) {
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.FormaAlterarChave>div:nth-child(1)>div {
+    height: 200px;
+    width: 2px;
+    background-color: #5C81CA;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.FormaAlterarChave>div:nth-child(1) > img {
+    width: 70px;
+}
+/*inform*/
+.FormaAlterarChave>div:nth-child(2)> div > h4:nth-child(1) {
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+}
+.FormaAlterarChave>div:nth-child(2)> div > h4:nth-child(2) {
+    line-height: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(255, 136, 0);
+}
+.FormaAlterarChave>div:nth-child(2)> div {
+    padding-bottom: 20px;
+}
+.FormaAlterarChave>div:nth-child(2) {
+    padding-left: 20px;
+    padding-right: 5px;
+    padding-top: 10px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 10px;
+}
+.informacoes_Retirada > div:nth-child(3) > select{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    border: 0px;
+    padding-left: 10px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);   
+}
+.informacoes_Retirada > div:nth-child(1) > input{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    width: 140px;
+    height: 30px;
+    border-radius: 20px;
+    border: 0px;
+    padding-left: 10px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);   
+}
+.informacoes_Retirada {
+    width: 250px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.informacoes_Retirada>h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: white;
+}
+
+.informacoes_Retirada>div {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.informacoes_Retirada>div>input {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    width: 120px;
+    height: 30px;
+    border-radius: 20px;
+    border: 0px;
+    padding-left: 10px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.informacoes_Retirada>div>input:focus {
+    outline: none;
+}
+
+/*salvar e fecha*/
+.FormaAlterarChave>div:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 195px;
+    width: 80px;
+    margin-top: 10px;
+}
+
+.FormaAlterarChave>div:nth-child(3)>div>i {
+    font-size: 30px;
+    color: #5C81CA;
+    transform: rotate(0deg);
+    transition: 0.4s ease-in-out;
+}
+
+.FormaAlterarChave>div:nth-child(3)>div>i:hover {
+    color: #ff4747;
+    transform: rotate(90deg);
+    transition: 0.4s ease-in-out;
+}
+
+.FormaAlterarChave>div:nth-child(3)>input {
+    font-size: 15px;
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background-image: linear-gradient(270deg, rgb(84, 148, 0) 0%, #f0cd5b 100%);
+    transition: all 0.4s ease-in-out;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.FormaAlterarChave>div:nth-child(3)>input:hover {
+    color: red;
+    font-size: 18px;
+}
+
+/******************************************************/
+
+
+
 /* CONFIG DIMENSÃO CONTAINERES MAIN */
 .Main_Cont1 {
     height: 120px;

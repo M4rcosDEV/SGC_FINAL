@@ -41,23 +41,13 @@
    // }
 
     function alterar(){
-        // $numChave=strip_tags($_POST[ 'numChave']);
-        // $numPredio=strip_tags($_POST[ 'numPredio']);
-
-        
         $idChave = $_POST['idChave'];
         $Situacao = 0;
         $idPredio = $_POST['idPredio'];
-        $Descricao = 'Sala';
-        //  $Descricao = $_POST['descriChave'];
-        //  echo $Descricao;
-        //echo $idChave. '<br>';
-        //echo $idPredio. '<br>';
-        // echo $idChave. '<br>';
-        // echo $idPredio. '<br>';
-        
-        //$chave = new Chave($idChave, $Situacao, $idPredio, $Descricao);
-        //$chave -> alterarChave($numChave, $numPredio);
+        $Descricao = $_POST['descriChave'];
+
+        $chave = new Chave($idChave, $Situacao, $idPredio, $Descricao);
+        $chave -> alterarChave();
         header("Location: http://localhost/SGC_FINAL/SISTEMACHAVES/Funcionario/Gerenciamento.php");
     }
 
