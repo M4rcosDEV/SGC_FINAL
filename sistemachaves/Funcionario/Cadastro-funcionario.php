@@ -31,7 +31,6 @@
             <form action="../config/funcionarioHelper.php" name="formCadFuncionario" method="POST"
                 class="formulario" target="_self" onsubmit="return cadastrar()">
                 <input style="display: none" name="tipo" id="tipo" type="text" value="cadastrarFuncionario">
-
                 <h1 class="titulo-login">Cadastre sua conta</h1>
 
                 <?php

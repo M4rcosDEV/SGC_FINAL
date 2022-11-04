@@ -2,10 +2,10 @@
 
 include_once 'banco.php';
 
-class Update { 
-    $idChave; 
-    $nome_cliente;
-    $data_agendamento;
+class Update {
+    public $idChave;
+    public $nome_cliente;
+    public $data_agendamento;
 
     function __construct($idChave, $nome_cliente, $data_agendamento){
         $this->idChave = $idChave;
@@ -15,8 +15,17 @@ class Update {
     function atualizarAgendamento() {
         $banco = new Banco();
         $conexao = $banco->conectar();
-        try { 
-            
+        try {
+            $stmt = $conexao->prepare("update chave set situacao = 0 where idChave = :idChave");
+            $stmt->bindParam(':idChave', $this->idChave);
+            $stmt->execute();
+            $stmt = $conexao->prepare("delete from agendar where idChave = :idChave");
+            $stmt->bindParam(':idChave', $this->idChave);
+            $stmt->execute();
+            $_SESSION['agendar_entregue'] = true;
+        }
+        catch(PDOException $ex) {
+            echo 'Erro: ' . $ex->getMessage();
         }
     }
 }

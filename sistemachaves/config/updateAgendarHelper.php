@@ -9,10 +9,12 @@ if(isset($_POST['tipo'])) {
     }
 }
 
-function atualizar() { 
+function atualizar() {
     $idChave = $_POST['idChave'];
     $nome_cliente = $_POST['nome_cliente'];
     $data_agendamento = $_POST['data_agendamento'];
+    
     $atualizar = new Update($idChave, $nome_cliente, $data_agendamento);
     $atualizar->atualizarAgendamento();
+    header('Location: ../Funcionario/Agendamento.php');
 }

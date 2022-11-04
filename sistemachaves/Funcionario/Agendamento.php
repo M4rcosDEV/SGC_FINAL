@@ -1,5 +1,6 @@
 <?php
 include_once '../config/agendamentoHelper.php';
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -121,6 +122,16 @@ include_once '../config/agendamentoHelper.php';
     </header>
     <main class="Main">
         <!-- Bloco com Nome do Usuário -->
+        <?php
+            if (isset($_SESSION['agendar_entregue'])):
+            ?>
+            <script>
+                alert('Chave entregue com sucesso!');
+            </script>
+            <?php
+            endif;
+            unset($_SESSION['agendar_entregue']);
+            ?>
         <div class="Main_Cont1">
         <i class='bx bx-chevron-right' ></i>
             <h3>Chaves Agendadas</h3>
@@ -132,30 +143,30 @@ include_once '../config/agendamentoHelper.php';
             // $data = substr($pen->data_agendamento, 0, 10);
             echo '<div class="Main_Cont2">' . 
             
-            '<form name="formAgend" method="POST" action="../config/updateAgendarHelper.php" target="_self">'.
+            '<form name="formAgend" method="POST" action="../config/updateAgendarHelper.php" target="_self" onsubmit="return atualizar()">'.
             '<div class = "container-pendente">
             <input style="display: none" name="tipo" id="tipo" type="text" value="updateAgendar">
             <img src="../Assets/Chave.png" alt="chave do container">
             <div class = "linha-horizontal"></div>'.
-            //Inicio informacoes pendente 
+            //Inicio informacoes pendente
             '<div class="informacoes-pendente">' .
             '<div class="container-input">'.
             '<label for="idChave">Chave:</label>'.
-            '<input type="number" name="idChave" value='. $pen->id_chave . ' class="input" disabled>' .
+            '<input type="number" readonly name="idChave" value="'. $pen->id_chave . '" class="input">' .
             '</div>'.
             '<div class="container-input">' .
             '<label for="nome_cliente">Usuário: </label>'.
-            '<input type="text" name="nome_cliente" value='. $pen->nome_cliente . ' class="input" disabled>' .
+            '<input type="text" readonly name="nome_cliente" value="'. $pen->nome_cliente . '" class="input">' .
             '</div>'.
             '<div class="container-input">'.
             '<label for="data_agendamento">Data:</label>'.
-            '<input type="text" name="data_agendamento" value='. $pen->data_agendamento->format('d/m/Y'). ' class="input">'.
+            '<input type="text" readonly name="data_agendamento" value="'. $pen->data_agendamento->format('d/m/Y'). '" class="input">'.
             '</div>'.
             '</div>'.
-            //Fim informações pendente 
-            '<div class="botao-chave">
-            <input type="submit" value="entregue" class="chave-recebida">
-            <i class="bx bx-check-circle"></i>
+            //Fim informações pendente
+            '<div class="botao-entregar">
+            <input type="submit" value="entregue" class="botao-chave">
+            <i class="bx bx-check-circle" id="icone-entregar"></i>
             </div>
             </div>
             </form>
@@ -163,7 +174,6 @@ include_once '../config/agendamentoHelper.php';
         }
         ?>
         <div class="Main_Cont3">
-            
         </div>
     </main>
 </body>
