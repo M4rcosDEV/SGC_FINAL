@@ -42,14 +42,12 @@
             }
         }
 
-        function alterarChave($novoNumChave, $novoNumPredio){
+        function alterarChave(){
             $banco = new Banco();
             $conexao = $banco->conectar();
             try{
-                $stmt = $conexao->prepare("UPDATE chave SET idChave = novaChave, idPredio= novoPredio, descricao= novaDesc WHERE idChave = :id_chave AND idPredio = :id_predio");
+                $stmt = $conexao->prepare("UPDATE chave SET idChave = novaChave, descricao= novaDesc WHERE idChave = :id_chave");
                 $stmt->bindParam('novaChave', $novoNumChave);
-                $stmt->bindParam('novoPredio', $novoNumPredio);
-                $novaDesc = 'casa';
                 $stmt->bindParam('novaDesc', $novaDesc);
                 $stmt->bindParam(':id_chave', $this->idChave);
                 $stmt->bindParam(':id_predio', $this->idPredio);

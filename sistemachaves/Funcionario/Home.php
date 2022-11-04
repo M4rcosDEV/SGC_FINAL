@@ -90,8 +90,8 @@ session_start();
         <div class="PoPuAgendarChave">
             <!-- Formulário Cadastro Prédio action="../Funcionario/PHP/Agendar/postAgendar.php"  -->
             <form class="FormaAgendarChave" method="POST" id="FormaAgendarChave">
-                <div>
-                    <img src="../Assets/Prédio.png" alt="Ilustração Predio">
+                <div class="iconsAgendar">
+                    <i class='bx bxs-hourglass-top'></i>
                     <div></div>
                 </div>
                 <div>
@@ -128,8 +128,8 @@ session_start();
         <div class="PoPuRetirarChave">
             <!-- Formulário Cadastro Prédio action="../Funcionario/PHP/Agendar/postAgendar.php"  -->
             <form class="FormaRetirarChave" method="POST" id="FormaRetirarChave">
-                <div>
-                    <img src="../Assets/Prédio.png" alt="Ilustração Predio">
+                <div class="iconsRetirar">
+                     <i class='bx bx-timer'></i>
                     <div></div>
                 </div>
                 <div>
@@ -153,6 +153,45 @@ session_start();
                 <div>
                     <div><i class='bx bx-x-circle' id="FechaRetirarChave"></i></div>
                     <input type="submit" value="Retirar" id="SubmitRetirarChave">
+                </div>
+            </form>
+        </div>
+        <!-- Retirar Chave -->
+        <div class="PoPuAlterarChave">
+            <!-- Formulário Cadastro Prédio action="../Funcionario/PHP/Agendar/postAgendar.php"  -->
+            <form class="FormaAlterarChave" method="POST" id="FormaAlterarChave">
+                <div class="iconsAlterar">
+                    <i class='bx bx-rename'></i>
+                    <div></div>
+                </div>
+                <div>
+                    <div>
+                        <h4 id="NumeroSalaAlterar">Sala ???</h4>
+                        <h4 id="NumeroPredioAlterar">Predio ???</h4>
+                    </div>
+                    <div class="informacoes_Retirada">
+                        <div>
+                            <label for="Novo_idSala">Novo id: </label>
+                            <input type="number" name="Novo_idSala" id="Novo_idSala" placeholder="Digite aqui...">
+                        </div>
+                        <div class="Select_Alterar">
+                            <label for="DescriChaveAlterar">Descrição da chave: </label>
+                            <select id="DescriChaveAlterar" name="DescriChaveAlterar">
+                                <option value="Sala">Sala</option>
+                                <option value="Lab">Lab</option>
+                                <option value="Auditório">Auditório</option>
+                                <option value="Ginásio">Ginásio</option>
+                                <option value="Banheiro">Banheiro</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div><i class='bx bx-x-circle' id="FechaAlterarChave"></i></div>
+                    <input type="submit" value="Alterar" id="SubmitAlterarChave">
                 </div>
             </form>
         </div>

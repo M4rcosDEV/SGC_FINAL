@@ -209,7 +209,7 @@ function GerenciamentoPredios(){
                 $.each(chaves, function(index, chavesLI){
                     if (("Predio_"+chavesLI['idPredio']) == ul.id && chavesLI['situacao'] == 0){
                         var text =`<li class="Bloco_Chaves_LI_DISP" id="Predio_${chavesLI['idPredio']}">
-                                                    <div>
+                                                    <div id="button_alterar" class="idChave_${chavesLI['idChave']}">
                                                         <button type="button"><i class='bx bxs-pencil'></i></button>
                                                     </div>
                                                     <div>
@@ -275,6 +275,7 @@ function GerenciamentoPredios(){
                                         var div_PopupExcluirPredios = document.querySelector('.PoPuExcluirPredio') // Delete
                                         var div_PopupAgendarChave = document.querySelector('.PoPuAgendarChave') // Agendar
                                         var div_PopupRetirarChave = document.querySelector('.PoPuRetirarChave') // Agendar
+                                        var div_PoPuAlterarChave = document.querySelector('.PoPuAlterarChave') // Agendar
                                         /*----------------------------------------------------------------------------------*/
                                         var buttonFechaSubmit = document.getElementById('FechaAgendarChave');
                                         var buttonSubmitAgendarChave = document.getElementById('SubmitAgendarChave');
@@ -291,6 +292,7 @@ function GerenciamentoPredios(){
                                             div_PopupRetirarChave.style.display = "none";
                                             div_PopupCadPredios.style.display = "none";
                                             div_PopupExcluirPredios.style.display = "none";
+                                            div_PoPuAlterarChave.style.display = "none";
                                             
                                         buttonSubmitAgendarChave.addEventListener('click', (event)=>{ // Botão Salvar
                                             event.preventDefault();
@@ -306,8 +308,6 @@ function GerenciamentoPredios(){
                                                             'data': $('#data_agendamento').val()
                                                         },
                                                         success: (function(msg){
-                                                            console.log('testeb04');
-                                                            console.log($('#data_agendamento').val());
                                                             /*Blur*/
                                                             POPUPS.style.display = 'none';
                                                             POPUPS.classList.remove("active");
@@ -328,6 +328,87 @@ function GerenciamentoPredios(){
                                             /*O que será aberto*/
                                             div_PopupAgendarChave.style.display = "none";
                                             div_PopupAgendarChave.style.display = "none";
+                                        });
+                                    }
+                            })
+                        })
+                    }
+                    popupAgendar();
+                })
+            })
+
+            var Alterarli = document.querySelectorAll('#button_alterar');
+            $.each(Alterarli, (indexLi, Li) =>{
+                Li.addEventListener('click', ()=>{
+                    console.log(Li)
+                    function popupAgendar(){
+                        $.getJSON('./PHP/Gerenciamento/chave.php', function(chaves){
+                                $.each(chaves, function(indexChave, chavesLI){
+                                    if (Li.className == ('idChave_'+chavesLI['idChave'])){
+                                        /*----------------------------------------------------------------------------------*/
+                                        var POPUPS = document.querySelector('.POPUPS');
+                                        var div_PopupCadPredios = document.querySelector('.PoPuCadastroPredio'); // Cadastro
+                                        var div_PopupExcluirPredios = document.querySelector('.PoPuExcluirPredio') // Delete
+                                        var div_PopupAgendarChave = document.querySelector('.PoPuAgendarChave') // Agendar
+                                        var div_PopupRetirarChave = document.querySelector('.PoPuRetirarChave') // Agendar
+                                        var div_PoPuAlterarChave = document.querySelector('.PoPuAlterarChave') // Agendar
+                                        /*----------------------------------------------------------------------------------*/
+                                        var buttonFechaSubmit = document.getElementById('FechaAlterarChave');
+                                        var buttonSubmitAlterarChave = document.getElementById('SubmitAlterarChave');
+                                        document.getElementById('NumeroSalaAlterar').innerHTML = `${chavesLI['descricao']} ${chavesLI['idChave']}`;
+                                        document.getElementById('NumeroPredioAlterar').innerHTML = `Predio ${chavesLI['idPredio']}`;
+                                        /*----------------------------------------------------------------------------------*/
+                                        /*Blur*/
+                                            POPUPS.style.display = 'flex';
+                                            POPUPS.classList.add("active");
+                                        /*O que será aberto*/
+                                        div_PoPuAlterarChave.style.display = "flex";
+                                        div_PoPuAlterarChave.classList.add("active");
+                                        /*O que será oculto*/
+                                            div_PopupRetirarChave.style.display = "none";
+                                            div_PopupCadPredios.style.display = "none";
+                                            div_PopupExcluirPredios.style.display = "none";
+                                            div_PopupAgendarChave.style.display = "none";
+                                            
+                                            buttonSubmitAlterarChave.addEventListener('click', (event)=>{ // Botão Salvar
+                                            event.preventDefault();
+                                                    $.ajax({
+                                                        url: './PHP/Gerenciamento/AlterarChave.php',
+                                                        type: 'POST',
+                                                        dataType: 'HTML',
+                                                        data:{
+                                                            'tipo': 'alterarChave',
+                                                            'idChave': chavesLI['idChave'],
+                                                            'NewidChave': $('#Novo_idSala').val(),
+                                                            'descriChave': chavesLI['descricao'],
+                                                            'NewDescricao': $('#DescriChaveAlterar').val(),
+                                                        },
+                                                        success: (function(msg){
+                                                            console.log(msg)
+                                                            console.log(chavesLI['idChave'])
+                                                            console.log($('#Novo_idSala').val())
+                                                            console.log('-------------------------')
+                                                            console.log(chavesLI['descricao'])
+                                                            console.log($('#DescriChaveAlterar').val())
+                                                            /*Blur*/
+                                                            POPUPS.style.display = 'none';
+                                                            POPUPS.classList.remove("active");
+                                                            /*O que será aberto*/
+                                                            div_PoPuAlterarChave.style.display = "none";
+                                                            div_PoPuAlterarChave.style.display = "none";
+                                                            document.getElementById('Novo_idSala').innerHTML = "";
+                                                            
+                                                })
+                                            })
+                                        })
+
+                                        buttonFechaSubmit.addEventListener('click', ()=>{ // Botão Fecha
+                                            /*Blur*/
+                                            POPUPS.style.display = 'none';
+                                            POPUPS.classList.remove("active");
+                                            /*O que será aberto*/
+                                            div_PoPuAlterarChave.style.display = "none";
+                                            div_PoPuAlterarChave.style.display = "none";
                                         });
                                     }
                             })
