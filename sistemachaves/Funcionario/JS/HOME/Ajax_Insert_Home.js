@@ -205,7 +205,7 @@ function GerenciamentoPredios(){
                     if (("Predio_"+chavesLI['idPredio']) == ul.id && chavesLI['situacao'] == 0){
                         var text =`<li class="Bloco_Chaves_LI_DISP" id="Predio_${chavesLI['idPredio']}">
                                                     <div>
-                                                        <input type="checkbox">
+                                                        <button type="button"><i class='bx bxs-pencil'></i></button>
                                                     </div>
                                                     <div>
                                                         <img src="../Assets/Chave.png" alt="Ilustração chave">

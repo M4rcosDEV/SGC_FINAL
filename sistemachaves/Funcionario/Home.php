@@ -261,7 +261,7 @@ session_start();
         <div class="Main_Cont2">
             <!-- Predios Titulo -->
             <div>
-                <h4>EM USO</h4>
+                <h4>PRÉDIOS</h4>
                 <li class="Cadastr_Predio">
                     <i class='bx bx-plus' ></i>
                 </li>

@@ -5,9 +5,7 @@ const IndiItemActive = document.querySelector('.indicador2');
 const IndiItemActive2 = document.querySelector('.indicador3');
 
 LiItens.forEach((item, index)=>{
-    item.addEventListener('click', ()=>{
-        document.querySelector('.Item_Barra.active').classList.remove('active');
-        item.classList.add('active');
+    
         if (index == 5){
             IndiItemActive.style.top = `${index*49+365}px`;
             IndiItemActive2.style.top = `${index*49+365}px`;
@@ -18,7 +16,6 @@ LiItens.forEach((item, index)=>{
             IndiItemActive.style.top = `${index*55+202}px`;
             IndiItemActive2.style.top = `${index*55+201}px`;
         }
-    });
 });
 
 //----INDICADOR STATUS/DIMENSÃO BARRA-------
