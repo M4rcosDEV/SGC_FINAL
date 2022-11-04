@@ -1,10 +1,15 @@
 var date = new Date();
+var date1 = new Date();
 
-var horario = String(date.getHours()+':'+date.getMinutes()+':'+date.getSeconds())
+var horarioPego = String(date.getHours()+':'+date.getMinutes()+':'+date.getSeconds())
 
-console.log(horario);
+date1.setHours(date1.getHours() + 5)
+date1.setMinutes(date1.getMinutes() + 35)
 
+var horarioDeolver = String( date1.getHours() +':'+ date1.getMinutes() +':'+date.getSeconds())
 
+console.log(horarioPego)
+console.log(horarioDeolver)
 //  --------    Gerenciamento de todas os predios    --------
 function GerenciamentoPredios(){
 
@@ -372,7 +377,7 @@ function GerenciamentoPredios(){
                                                             'tipo': 'RetirarChave',
                                                             'idChave': chavesLI['idChave'],
                                                             'Matricula': $('#Matricula_Retirada').val(),
-                                                            'hora': horario,
+                                                            'hora': horarioDeolver,
                                                             'senha': $('#senha_retirada').val()
                                                         },
                                                         success: (function(msg){
