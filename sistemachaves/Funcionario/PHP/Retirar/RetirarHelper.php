@@ -1,8 +1,7 @@
 <?php
 
-include_once 'InsertAgendar.php';
 include_once 'ClassRetirar.php';
-include_once './Conexao.php';
+include_once '../Conexao.php';
 
 if(isset($_POST['tipo'])){
     $tipo = $_POST['tipo'];
