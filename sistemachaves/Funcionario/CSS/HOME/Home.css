@@ -27,7 +27,7 @@
     height: 781px;
     width: 1440px;
     backdrop-filter: blur(2px);
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     animation: animacaoPop 0.4s ease-in-out;

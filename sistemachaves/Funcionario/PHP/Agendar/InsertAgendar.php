@@ -2,7 +2,6 @@
 <?php
 
 include_once '../Conexao.php';
-include_once 'funcaoRefresh.php';
 
 class Agendar{
     public $idChave;

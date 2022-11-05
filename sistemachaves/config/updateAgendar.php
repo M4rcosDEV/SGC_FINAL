@@ -3,9 +3,9 @@
 include_once 'banco.php';
 
 class Update { 
-    $idChave; 
-    $nome_cliente;
-    $data_agendamento;
+    public $idChave; 
+    public $nome_cliente;
+    public $data_agendamento;
 
     function __construct($idChave, $nome_cliente, $data_agendamento){
         $this->idChave = $idChave;
