@@ -27,8 +27,9 @@ create table predio (
 /*
 SITUAÇÕES CHAVE:
 0 - DISPONIVEL
-1 - EM USO
-2 - MANUTENÇÃO
+1 - AGENDADA/EM USO
+2 - RETIRADA/EM USO
+3 - MANUTENÇÃO
 */
 create table chave ( 
 	idChave integer primary key,  
@@ -47,7 +48,19 @@ create table agendar (
     foreign key(id_cliente) references cliente(matricula),
     primary key(idChave, id_cliente)
 );
-select * from agendar;
+
+
+create table retirar(
+    idChave integer,
+    id_cliente varchar(15),
+    hora time,
+    senha varchar(255) not null,
+    foreign key(idChave) references chave(idChave),
+    foreign key(id_cliente) references cliente(matricula),
+    primary key(idChave, id_cliente)
+);
+
+
 create table emprestimo (
 	id_emprestimo integer auto_increment primary key,
     idChave integer,
@@ -56,22 +69,4 @@ create table emprestimo (
 	foreign key(idChave, id_cliente) references agendar(idChave, id_cliente),
     foreign key(id_funcionario) references administrador(id_administrador)
 );
-
-select * from administrador;
-select * from cliente;
-select * from agendar;
-select * from chave;
-
-select chave.idChave, 
-chave.situacao, 	
-CASE WHEN agendar.data_agendar = date(now()) THEN 'sim'
-ELSE 'nao' end as agendado, chave.idPredio, chave.descricao, 
-agendar.turno, agendar.id_cliente, agendar.data_agendar from chave left join agendar on (chave.idChave = agendar.idChave);
-
-
-select chave.idChave, 
-chave.situacao, 	
-CASE WHEN agendar.data_agendar = date(now()) THEN 'sim'
-ELSE 'nao' end as agendado, chave.idPredio, chave.descricao 
- from chave left join agendar on (chave.idChave = agendar.idChave);
 
