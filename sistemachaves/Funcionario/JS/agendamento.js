@@ -1,6 +1,7 @@
 var botaoReceber = document.querySelector(".botao-chave");
 
 var chavePendente = document.querySelector(".container-pendente");
+var icone = document.querySelector("#icone-entregar");
 
 // botaoReceber.addEventListener('click', receberChave);
 
@@ -12,3 +13,11 @@ function receberChave() {
         chavePendente.style.display = "none";
     }
 }
+function mudarCor() {
+    icone.style.color = '#00FF0A';
+}
+function voltarCor() {
+    icone.style.color = '#fff';
+}
+botaoReceber.addEventListener('mouseover', mudarCor);
+botaoReceber.addEventListener('mouseout', voltarCor);
