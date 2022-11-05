@@ -1,6 +1,6 @@
 <?php
 
-include_once '../Conexao.php';
+include_once './Conexao.php';
 
 class Retirar{
     public $idChave;
@@ -19,14 +19,13 @@ class Retirar{
         $conexao = $banco->conectar();
         try{
             
-            $stmt = $conexao->prepare("INSERT INTO retirar (idChave, id_cliente, hora, senha) 
-            VALUES (:idChave, :id_cliente, :hora, :senha)");
+            $stmt = $conexao->prepare("INSERT INTO retirar (idChave, id_cliente, hora, senha) VALUES (:idChave, :id_cliente, :hora, :senha)");
             
             $stmt->bindParam(':idChave', $this->idChave);
             $stmt->bindParam(':id_cliente', $this->id_cliente);
-            $stmt->bindParam(':turno', $this->hora);
-            $stmt->bindParam(':data_agendar', $this->senha);
-            
+            $stmt->bindParam(':hora', $this->hora);
+            $stmt->bindParam(':senha', $this->senha);
+
             $stmt->execute();
             echo "Chave agendada";
             
