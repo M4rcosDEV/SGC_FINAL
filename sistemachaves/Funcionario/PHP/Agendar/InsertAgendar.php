@@ -38,8 +38,6 @@ class Agendar{
             // $stmt->bindParam('id_chave', $this->idChave);
             // }
             $stmt->execute();
-            
-            
             echo "Chave agendada";
             
 
@@ -47,7 +45,6 @@ class Agendar{
             echo "Erro ao excluir predio: " . $ex;
         }
     }
-    
     function registrarUSO(){
         //$dataEntrega = $this->Data;
         $banco = new Banco();
@@ -59,9 +56,9 @@ class Agendar{
             if('2022/11/06' == '2022/11/06'){
                 $stmt = $conexao->prepare("UPDATE chave SET situacao = 1 WHERE idChave = :id_chave");
                 $stmt->bindParam('id_chave', $this->idChave);
-    
+
                 $stmt->execute();
-            
+
                 echo "Chave agendada";
             }
 
@@ -70,7 +67,7 @@ class Agendar{
         }
         // //$dataUser = '2022/11/02';
         // $hoje = date('Y/m/d');
-    
+
         // if($hoje == $this->Data){
         //     //echo 'Chave indisponivel';
         //     $stmt = $conexao->prepare("UPDATE chave SET situacao = 1 WHERE idChave = :id_chave");
@@ -80,21 +77,17 @@ class Agendar{
         // }
     }
 
-    
-        setTimeout(function(){
-             registrarUSO()
-        }, 1000);
-    
+
     // function getAgendar(){
     //     $banco = new Banco();
     //     $conexao = $banco->conectar();
-        
+
     //     try{
 
     //             $stmt = $conexao->prepare("select data_agendar from agendar where idChave = 100");
-    
+
     //             $stmt->execute();
-            
+
     //             echo "Chave agendada";
 
     //     } catch(PDOException $ex){
