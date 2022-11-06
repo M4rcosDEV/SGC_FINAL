@@ -2,7 +2,6 @@
 
 include_once '../Conexao.php';
 
-header("refresh: 1");
 
 class Agendar{
     public $idChave;
@@ -48,6 +47,7 @@ class Agendar{
             echo "Erro ao excluir predio: " . $ex;
         }
     }
+    
     function registrarUSO(){
         //$dataEntrega = $this->Data;
         $banco = new Banco();
@@ -80,6 +80,11 @@ class Agendar{
         // }
     }
 
+    
+        setTimeout(function(){
+             registrarUSO()
+        }, 1000);
+    
     // function getAgendar(){
     //     $banco = new Banco();
     //     $conexao = $banco->conectar();

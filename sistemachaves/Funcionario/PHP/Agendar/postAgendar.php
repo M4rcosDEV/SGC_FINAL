@@ -18,6 +18,7 @@ function Agendar_C(){
     $predio = new Agendar($id_chave, $id_cliente, $turno, $data);
     $predio->Agendar_Chave();
     $predio->registrarUSO();
+    
     // $predio->getAgendar();
     // header("Location:../Funcionario/sala.php?id_predio=");
 }
