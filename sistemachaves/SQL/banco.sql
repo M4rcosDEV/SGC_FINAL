@@ -49,13 +49,6 @@ create table agendar (
     primary key(idChave, id_cliente)
 );
 
-select chave.idChave, 
-        chave.situacao, 	
-        CASE WHEN  CURTIME() <= retirar.hora THEN 'RetiradaEmUso'
-        WHEN CURTIME() > retirar.hora THEN 'Pendente'
-        WHEN chave.situacao = 1 THEN 'AgendadaEstaEmUSo'
-        ELSE 'Disponivel' end as retirado, chave.idPredio, chave.descricao 
-        from chave left join retirar on (chave.idChave = retirar.idChave);
 
 create table retirar(
     idChave integer,

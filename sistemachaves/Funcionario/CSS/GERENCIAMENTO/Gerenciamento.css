@@ -1,5 +1,11 @@
 @import url(/Funcionario/CSS/Tab_Bar.css);
 
+.indicador2{
+    top: 258px;
+}
+.indicador3{
+    top: 458px;
+}
 .Main{
     overflow: hidden;
 }

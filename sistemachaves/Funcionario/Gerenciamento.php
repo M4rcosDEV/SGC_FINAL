@@ -88,7 +88,7 @@
                     </li>
                     <!-- Item 5 = Agendamento -->
                     <li class="Li_Barra">
-                        <a href="./Agendamento.php" class="Item_Barra">
+                        <a href="../Funcionario/Agendamento.php" class="Item_Barra">
                             <div class="Div_Item_Barra">
                                 <i class='bx bx-bell'></i>
                             </div>
@@ -107,7 +107,7 @@
                     </li>
                     <!-- Item 7 = Sair -->
                     <li class="Li_Barra">
-                        <a href="../Funcionario/index.php" class="Item_Barra_Sair">
+                        <a href="../config/logout.php" class="Item_Barra_Sair">
                             <i class='bx bx-exit'></i>
                         </a>
                     </li>
@@ -117,7 +117,6 @@
         <!-- Indicadores do Status da Barra Lateral -->
             <div class="indicadores">
                 <div class="indicador2"></div>
-                <div class="indicador3"></div>
             </div>
     </header>
     <main class="Main">
@@ -158,69 +157,6 @@
                     <div>
                         <input type="text" name="tipo" value="AddChave" style="display: none">
                         <input type="submit" value="Salvar" id="SubmitAddChave">
-                    </div>
-                </form>
-            </div>
-            <!-- Alterar Chave -->
-            <div class="botao chave" id="botao-alterar1"><h3>Alterar de Chaves</h3></div>
-            
-            <div class="form2_alt_Chaves" id="formChave">
-                <div><h3>Alterar Chaves</h3></div>
-                <form id="AlterarChaves" action="../Funcionario/PHP/GERENCIAMENTO/Chave.php" method="POST">
-                    
-                    <div>
-                        <label for="idChave">Número da chave: </label>
-                        <input type="number" name="idChave" id="idChave">
-                    </div>
-                    <div>
-                        <label for="idPredio">Número da Prédio: </label>
-                        <input type="number" name="idPredio" id="idPredio">
-                    </div>
-                    <div>
-                        <label for="idChave">Descrição da chave: </label>
-                        <select id="DescriChave" name="DescriChave">
-                            <option value="Sala">Sala</option>
-                            <option value="Lab">Lab</option>
-                            <option value="Auditório">Auditório</option>
-                            <option value="Ginásio">Ginásio</option>
-                            <option value="Banheiro">Banheiro</option>
-                            <option value="Outros">Outros</option>
-                        </select>
-                    </div>
-                    
-                    <div>
-                        <input type="text" name="tipo" value="alterarChave" style="display: none">
-
-                        <input type="submit" value="Alterar" id="SubmitAlterarPredio">
-
-                        
-
-                        <!-- <script type="text/javascript" defer>
-	                        function pegarInfo() {
-		                    // define as variáveis nome e sobrenome
-                            let numChave = prompt("Novo número: ");
-                            let numPredio = prompt("Novo número: ");
-                            let descricao = prompt('[1] Sala\n[2]Laboratorio');
-                            // REQUISIÇÃO AJAX
-                            // cria o objeto XMLHttpRequest
-                            const xhttp = new XMLHttpRequest();
-                            // chama a função quando a requisição é recebida
-                            xhttp.onload = function() { 
-                                document.getElementById("demo").innerHTML = this.responseText;
-                            }
-                            // faz a requisição AJAX - método POST
-                            xhttp.open("POST", "../Funcionario/PHP/GERENCIAMENTO/Chave.php");
-                            // adiciona um header para a requisição HTTP
-                            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                            // especifica os dados que deseja enviar   
-                            xhttp.send("nome="+nome+"&sobrenome="+sobrenome);
-	                        }
-                        </script> -->
-                        <!-- <form action="../Funcionario/PHP/GERENCIAMENTO/Chave.php" method="POST" name="form1">
-	                        <input type="hidden" name="numChave" id="numChave">
-                            <input type="hidden" name="numPredio" id="numPredio">
-                        </form> -->
-
                     </div>
                 </form>
             </div>

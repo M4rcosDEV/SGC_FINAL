@@ -52,7 +52,7 @@ session_start();
                 <ul class="Ul_Barra">
                     <!-- Item 1 = Home -->
                     <li class="Li_Barra">
-                        <a href="./Home.php" class="Item_Barra">
+                        <a href="../Funcionario/Home.php" class="Item_Barra">
                             <div class="Div_Item_Barra">
                                 <i class='bx bx-home'></i>
                             </div>
@@ -61,7 +61,7 @@ session_start();
                     </li>
                     <!-- Item 2 = Cadastro -->
                     <li class="Li_Barra">
-                        <a href="./Gerenciamento.php" class="Item_Barra">
+                        <a href="../Funcionario/Gerenciamento.php" class="Item_Barra">
                             <div class="Div_Item_Barra">
                                 <i class='bx bxs-key'></i>
                             </div>
@@ -70,7 +70,7 @@ session_start();
                     </li>
                     <!-- Item 3 = Pendetes -->
                     <li class="Li_Barra">
-                        <a href="./Pendente.php" class="Item_Barra">
+                        <a href="../Funcionario/Pendente.php" class="Item_Barra">
                             <div class="Div_Item_Barra">
                                 <i class='bx bx-time-five'></i>
                             </div>
@@ -79,7 +79,7 @@ session_start();
                     </li>
                     <!-- Item 4 = Solicitações -->
                     <li class="Li_Barra">
-                        <a href="./Solicitacoes.php" class="Item_Barra">
+                        <a href="../Funcionario/Solicitacoes.php" class="Item_Barra">
                             <div class="Div_Item_Barra">
                                 <i class='bx bx-archive-in'></i>
                             </div>
@@ -88,7 +88,7 @@ session_start();
                     </li>
                     <!-- Item 5 = Agendamento -->
                     <li class="Li_Barra">
-                        <a href="./Agendamento.php" class="Item_Barra active">
+                        <a href="../Funcionario/Agendamento.php" class="Item_Barra active">
                             <div class="Div_Item_Barra">
                                 <i class='bx bx-bell'></i>
                             </div>
@@ -107,7 +107,7 @@ session_start();
                     </li>
                     <!-- Item 7 = Sair -->
                     <li class="Li_Barra">
-                        <a href="../Funcionario/index.php" class="Item_Barra_Sair">
+                        <a href="../config/logout.php" class="Item_Barra_Sair">
                             <i class='bx bx-exit'></i>
                         </a>
                     </li>
@@ -117,7 +117,6 @@ session_start();
         <!-- Indicadores do Status da Barra Lateral -->
             <div class="indicadores">
                 <div class="indicador2"></div>
-                <div class="indicador3"></div>
             </div>
     </header>
     <main class="Main">

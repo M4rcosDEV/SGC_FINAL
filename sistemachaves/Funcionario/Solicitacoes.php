@@ -58,11 +58,11 @@
                     </li>
                     <!-- Item 2 = Cadastro -->
                     <li class="Li_Barra">
-                        <a href="../Funcionario/Cadastro.php" class="Item_Barra">
+                        <a href="../Funcionario/Gerenciamento.php" class="Item_Barra">
                             <div class="Div_Item_Barra">
                                 <i class='bx bxs-key'></i>
                             </div>
-                            <span class="Name_Item_Barra Status1">Cadastro</span>
+                            <span class="Name_Item_Barra Status1">Gerenciamento</span>
                         </a>
                     </li>
                     <!-- Item 3 = Pendetes -->
@@ -104,7 +104,7 @@
                     </li>
                     <!-- Item 7 = Sair -->
                     <li class="Li_Barra">
-                        <a href="../Funcionario/index.php" class="Item_Barra_Sair">
+                        <a href="../config/logout.php" class="Item_Barra_Sair">
                             <i class='bx bx-exit'></i>
                         </a>
                     </li>
@@ -114,7 +114,6 @@
         <!-- Indicadores do Status da Barra Lateral -->
             <div class="indicadores">
                 <div class="indicador2"></div>
-                <div class="indicador3"></div>
             </div>
     </header>
     <main class="Main">

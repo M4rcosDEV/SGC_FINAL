@@ -145,8 +145,7 @@ function GerenciamentoPredios(){
                                 })
                             })
 
-                            arrowRight.forEach(elementArrowR =>{
-
+                            arrowRight.forEach(elementArrowR =>{  
                                 if (elementArrowR.className == ('Predio_'+elementPredio['idPredio'])){
                                     if (elementPredio['COUNT(idChave)'] > 4){
                                         elementArrowR.style.cssText = "display: flex";
@@ -180,7 +179,6 @@ function GerenciamentoPredios(){
                     }, 'JSON')
                 }
                 Carrossel();
-                getChaves();
             })
         })
     }
@@ -190,6 +188,8 @@ function GerenciamentoPredios(){
     function RefreshChaves(){
         var btn = document.querySelector('.Refresh_Chaves');
         btn.addEventListener('click', function(){
+            $('.Bloco_Chaves_LI_DISP').remove();
+            $('.Bloco_Chaves_LI_USO').remove();
             getChaves();
         })
     }
@@ -276,6 +276,7 @@ function GerenciamentoPredios(){
                                         var div_PopupAgendarChave = document.querySelector('.PoPuAgendarChave') // Agendar
                                         var div_PopupRetirarChave = document.querySelector('.PoPuRetirarChave') // Agendar
                                         var div_PoPuAlterarChave = document.querySelector('.PoPuAlterarChave') // Agendar
+
                                         /*----------------------------------------------------------------------------------*/
                                         var buttonFechaSubmit = document.getElementById('FechaAgendarChave');
                                         var buttonSubmitAgendarChave = document.getElementById('SubmitAgendarChave');
@@ -397,6 +398,9 @@ function GerenciamentoPredios(){
                                                             div_PoPuAlterarChave.style.display = "none";
                                                             div_PoPuAlterarChave.style.display = "none";
                                                             document.getElementById('Novo_idSala').innerHTML = "";
+                                                            $('.Bloco_Chaves_LI_DISP').remove();
+                                                            $('.Bloco_Chaves_LI_USO').remove();
+                                                            getChaves();
                                                             
                                                 })
                                             })
@@ -431,6 +435,8 @@ function GerenciamentoPredios(){
                                         var div_PopupExcluirPredios = document.querySelector('.PoPuExcluirPredio') // Delete
                                         var div_PopupAgendarChave = document.querySelector('.PoPuAgendarChave') // Agendar
                                         var div_PopupRetirarChave = document.querySelector('.PoPuRetirarChave') // Agendar
+                                        var div_PoPuAlterarChave = document.querySelector('.PoPuAlterarChave') // Agendar
+
                                         /*----------------------------------------------------------------------------------*/
                                         var buttonFechaSubmit = document.getElementById('FechaRetirarChave');
                                         var buttonSubmitRetirarChave = document.getElementById('SubmitRetirarChave');
@@ -447,6 +453,7 @@ function GerenciamentoPredios(){
                                             div_PopupCadPredios.style.display = "none";
                                             div_PopupExcluirPredios.style.display = "none";
                                             div_PopupAgendarChave.style.display = "none";
+                                            div_PoPuAlterarChave.style.display = "none";
 
                                             buttonSubmitRetirarChave.addEventListener('click', (event)=>{ // Botão Salvar
                                             event.preventDefault();
@@ -497,7 +504,6 @@ function GerenciamentoPredios(){
             })
         })
     }
-
 
     function getSalas(){
         

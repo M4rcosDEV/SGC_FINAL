@@ -5,6 +5,8 @@ function PopusHome(){ //Todos os popus da home
     var div_PopupExcluirPredios = document.querySelector('.PoPuExcluirPredio') // Delete
     var div_PopupAgendarChave = document.querySelector('.PoPuAgendarChave') // Agendar
     var div_PopupRetirarChave = document.querySelector('.PoPuRetirarChave') // Agendar
+    var div_PoPuAlterarChave = document.querySelector('.PoPuAlterarChave') // Agendar
+
 
     //Cadastro
     function PopupCadPredio(){
@@ -23,6 +25,7 @@ function PopusHome(){ //Todos os popus da home
             div_PopupExcluirPredios.style.display = "none";
             div_PopupAgendarChave.style.display = "none";
             div_PopupRetirarChave.style.display = "none";
+            div_PoPuAlterarChave.style.display = "none";
         });
         
         buttonSalvarPredio.addEventListener('click', ()=>{ // Botão Salvar
@@ -61,6 +64,7 @@ function PopusHome(){ //Todos os popus da home
             div_PopupCadPredios.style.display = "none";
             div_PopupAgendarChave.style.display = "none";
             div_PopupRetirarChave.style.display = "none";
+            div_PoPuAlterarChave.style.display = "none";
 
         });
         

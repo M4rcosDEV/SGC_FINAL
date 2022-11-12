@@ -175,7 +175,7 @@ session_start();
                             <input type="number" name="Novo_idSala" id="Novo_idSala" placeholder="Digite aqui...">
                         </div>
                         <div class="Select_Alterar">
-                            <label for="DescriChaveAlterar">Descrição da chave: </label>
+                            <label for="DescriChaveAlterar">Descrição: </label>
                             <select id="DescriChaveAlterar" name="DescriChaveAlterar">
                                 <option value="Sala">Sala</option>
                                 <option value="Lab">Lab</option>
@@ -283,7 +283,6 @@ session_start();
         <!-- Indicadores do Status da Barra Lateral -->
             <div class="indicadores">
                 <div class="indicador2"></div>
-                <div class="indicador3"></div>
             </div>
     </header>
 

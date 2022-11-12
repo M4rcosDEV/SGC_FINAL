@@ -4,19 +4,6 @@ const LiItens = document.querySelectorAll('.Item_Barra');
 const IndiItemActive = document.querySelector('.indicador2');
 const IndiItemActive2 = document.querySelector('.indicador3');
 
-LiItens.forEach((item, index)=>{
-    
-        if (index == 5){
-            IndiItemActive.style.top = `${index*49+365}px`;
-            IndiItemActive2.style.top = `${index*49+365}px`;
-        } else if (index == 0) {
-            IndiItemActive.style.top = `${index*49+202}px`;
-            IndiItemActive2.style.top = `${index*49+201}px`;
-        } else {
-            IndiItemActive.style.top = `${index*55+202}px`;
-            IndiItemActive2.style.top = `${index*55+201}px`;
-        }
-});
 
 //----INDICADOR STATUS/DIMENSÃO BARRA-------
 const IndiDimen = document.querySelector('.indicador1');

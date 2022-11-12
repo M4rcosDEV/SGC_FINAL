@@ -1,5 +1,4 @@
-@import url(./Funcionario/CSS/GLOBAL/Fonts&Color.css);
-
+@import url(../Funcionario/CSS/GLOBAL/Fonts&Color.css);
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -24,7 +23,7 @@ body{
     overflow-y: hidden;
 }
 .Header{
-    height: 781px;
+    height: 791px;
     width: 220px;
     overflow: hidden;
     background-image: linear-gradient(180deg, #38507D 0%, #23314E 100%);;
@@ -34,7 +33,7 @@ body{
 
 }
 .Header.status2{
-    height: 781px;
+    height: 791px;
     width: 60px;
     overflow: hidden;
     background-image: linear-gradient(180deg, #38507D 0%, #23314E 100%);;
@@ -44,7 +43,7 @@ body{
 
 }
 .Main{
-    height: 781px;
+    height: 791px;
     width: 1220px;
     background: #202E49;
     /*background: linear-gradient(68.1deg, #1F2D48 38.1%, #2e426b 164.22%);*/
@@ -53,7 +52,7 @@ body{
     overflow-y: scroll;
 }
 .Main.status2{
-    height: 781px;
+    height: 791px;
     width: 1380px;
     background: #202E49;
     /*background: linear-gradient(68.1deg, #1F2D48 38.1%, #2e426b 164.22%);*/
@@ -325,7 +324,7 @@ body{
     left: 60px;
     box-shadow: -2px 0px 0px #ff8800;
     transition: 0.5s ease-in-out;
-    opacity: 1;
+    opacity: 0;
     filter: blur(6px);
     transition: 0.5s ease-in-out;
 }

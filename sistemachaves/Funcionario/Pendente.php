@@ -54,7 +54,7 @@ include_once '../config/updatePendenteHelper.php';
                 <ul class="Ul_Barra">
                     <!-- Item 1 = Home -->
                     <li class="Li_Barra">
-                        <a href="./Home.php" class="Item_Barra">
+                        <a href="../Funcionario/Home.php" class="Item_Barra">
                             <div class="Div_Item_Barra">
                                 <i class='bx bx-home'></i>
                             </div>
@@ -63,7 +63,7 @@ include_once '../config/updatePendenteHelper.php';
                     </li>
                     <!-- Item 2 = Cadastro -->
                     <li class="Li_Barra">
-                        <a href="./Gerenciamento.php" class="Item_Barra">
+                        <a href="../Funcionario/Gerenciamento.php" class="Item_Barra">
                             <div class="Div_Item_Barra">
                                 <i class='bx bxs-key'></i>
                             </div>
@@ -72,7 +72,7 @@ include_once '../config/updatePendenteHelper.php';
                     </li>
                     <!-- Item 3 = Pendetes -->
                     <li class="Li_Barra">
-                        <a href="./Pendente.php" class="Item_Barra active">
+                        <a href="../Funcionario/Pendente.php" class="Item_Barra active">
                             <div class="Div_Item_Barra">
                                 <i class='bx bx-time-five'></i>
                             </div>
@@ -81,7 +81,7 @@ include_once '../config/updatePendenteHelper.php';
                     </li>
                     <!-- Item 4 = Solicitações -->
                     <li class="Li_Barra">
-                        <a href="./Solicitacoes.php" class="Item_Barra">
+                        <a href="../Funcionario/Solicitacoes.php" class="Item_Barra">
                             <div class="Div_Item_Barra">
                                 <i class='bx bx-archive-in'></i>
                             </div>
@@ -90,7 +90,7 @@ include_once '../config/updatePendenteHelper.php';
                     </li>
                     <!-- Item 5 = Agendamento -->
                     <li class="Li_Barra">
-                        <a href="./Agendamento.php" class="Item_Barra">
+                        <a href="../Funcionario/Agendamento.php" class="Item_Barra">
                             <div class="Div_Item_Barra">
                                 <i class='bx bx-bell'></i>
                             </div>
@@ -119,7 +119,6 @@ include_once '../config/updatePendenteHelper.php';
         <!-- Indicadores do Status da Barra Lateral -->
             <div class="indicadores">
                 <div class="indicador2"></div>
-                <div class="indicador3"></div>
             </div>
     </header>
     <main class="Main">
